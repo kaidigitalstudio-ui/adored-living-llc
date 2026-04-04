@@ -45,8 +45,8 @@ export default function Contact() {
         eyebrow="Reach Out"
         title="We're Here to Help"
         description="Whether you have questions, want to schedule a tour, or simply need someone to talk to — we're here with open arms and no pressure."
-        bgImage="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1600&q=80"
-        bgAlt="Beautiful community garden in bloom"
+        bgImage="https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=1600&q=80"
+        bgAlt="Warm, welcoming home interior"
       />
 
       {/* ===== CONTACT SECTION ===== */}

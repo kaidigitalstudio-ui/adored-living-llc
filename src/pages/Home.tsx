@@ -9,9 +9,9 @@ const WHY_ITEMS = [
     desc: 'With a maximum of 6 residents, your loved one receives genuine individual attention — not just a bed in a crowd. Our caregivers know every resident\'s story, preferences, and needs.',
   },
   {
-    icon: '🌱',
-    title: 'Connected to Nature',
-    desc: 'Our homes feature beautiful community gardens and inviting outdoor patios. Fresh air, greenery, and seasonal blooms are always close by — supporting both physical wellness and peace of mind.',
+    icon: '💬',
+    title: 'Open Family Communication',
+    desc: 'We keep families informed, involved, and at ease. Our owners are always reachable — you\'ll never feel out of the loop about your loved one\'s day-to-day wellbeing.',
   },
   {
     icon: '💊',
@@ -72,11 +72,11 @@ const SERVICES = [
     desc: 'Meaningful social engagement, recreational activities, and emotional support to keep spirits bright every day.',
   },
   {
-    img: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80',
-    imgAlt: 'Beautiful community garden with blooming flowers',
-    icon: '🌿',
-    title: 'Community Gardens',
-    desc: 'Enjoy our lush outdoor gardens and patios — peaceful spaces for relaxation, gentle activity, and connection with nature.',
+    img: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&q=80',
+    imgAlt: 'Seniors enjoying activities and social time together',
+    icon: '🎶',
+    title: 'Activities & Recreation',
+    desc: 'Engaging daily activities, outings, and social events that bring joy, purpose, and connection to every resident\'s routine.',
   },
 ]
 
@@ -133,7 +133,7 @@ export default function Home() {
     <>
       {/* ===== HERO ===== */}
       <section className="hero" aria-labelledby="hero-heading">
-        <div className="hero-bg" role="img" aria-label="Lush community garden in bloom" />
+        <div className="hero-bg" role="img" aria-label="Warm, welcoming assisted living home" />
         <div className="container">
           <div className="hero-content">
             <span className="eyebrow">Michigan's Home-Style Assisted Living</span>
@@ -172,8 +172,8 @@ export default function Home() {
         <div className="container">
           <div className="intro-band-inner">
             {[
-              { icon: '🏡', text: 'Residential neighborhood setting' },
-              { icon: '🌿', text: 'Community gardens & outdoor patios' },
+              { icon: '🏡', text: 'Residential, home-like setting' },
+              { icon: '👥', text: 'Maximum 6 residents per home' },
               { icon: '❤️', text: 'Owner-operated, family-run care' },
               { icon: '✅', text: 'Michigan state licensed' },
             ].map(({ icon, text }) => (
@@ -219,10 +219,10 @@ export default function Home() {
                 loading="lazy"
               />
               <div className="about-badge">
-                <div className="badge-icon" aria-hidden="true">🌿</div>
+                <div className="badge-icon" aria-hidden="true">🏡</div>
                 <div className="badge-text">
-                  <strong>Nature-Centered Living</strong>
-                  <span>Gardens, patios &amp; fresh air — always</span>
+                  <strong>A True Home</strong>
+                  <span>Not a facility — a real home with real family</span>
                 </div>
               </div>
             </div>
@@ -244,7 +244,7 @@ export default function Home() {
                 {[
                   { icon: '💛', title: 'Compassion First', desc: 'Every interaction is guided by genuine warmth and empathy for each resident and their family.' },
                   { icon: '🌟', title: 'Dignity Always', desc: 'We support daily activities in ways that preserve independence and personal pride.' },
-                  { icon: '🤲', title: 'Personalized Care', desc: 'No two residents are alike — our care plans are thoughtfully tailored to each person\'s unique needs.' },
+                  { icon: '📋', title: 'Personalized Care', desc: 'No two residents are alike — our care plans are thoughtfully tailored to each person\'s unique needs.' },
                 ].map(({ icon, title, desc }) => (
                   <div className="value-item" role="listitem" key={title}>
                     <div className="value-icon" aria-hidden="true">{icon}</div>

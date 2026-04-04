@@ -7,7 +7,7 @@ const VALUES = [
   { icon: '💛', title: 'Compassion', desc: 'We lead with empathy. Every interaction — from morning greetings to medication reminders — is an opportunity to show each resident that they are seen, valued, and loved.' },
   { icon: '🌟', title: 'Dignity', desc: 'We preserve the independence and self-worth of every resident. Assistance is provided in ways that empower, never diminish — always with respect for privacy and personal choice.' },
   { icon: '🤝', title: 'Respect', desc: 'Every life story deserves honor. We take time to understand where our residents have come from, what they have built, and who they continue to be — and we celebrate that every day.' },
-  { icon: '🌿', title: 'Holistic Wellness', desc: 'True wellbeing is physical, emotional, and social. Our gardens, activities, meals, and companionship are all designed to nurture the whole person — mind, body, and spirit.' },
+  { icon: '💜', title: 'Holistic Wellness', desc: 'True wellbeing is physical, emotional, and social. Our activities, meals, companionship, and comfortable spaces are all designed to nurture the whole person — mind, body, and spirit.' },
   { icon: '🏡', title: 'Home-Like Environment', desc: 'Clinical settings can feel cold. We deliberately create warm, comfortable, personal spaces that feel like real homes — because they are real homes, and our residents are real family.' },
   { icon: '📋', title: 'Accountability', desc: 'Families trust us with the people they love most. We honor that trust with transparency, open communication, and an unwavering commitment to the highest standards of care.' },
 ]
@@ -26,8 +26,8 @@ export default function About() {
         eyebrow="Our Story"
         title="Built on Love, Rooted in Community"
         description="We started Adored Living because we believe every senior deserves a home — not just a facility. Discover the heart behind our care."
-        bgImage="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=1600&q=80"
-        bgAlt="Peaceful garden path"
+        bgImage="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1600&q=80"
+        bgAlt="Caregiver with senior resident"
       />
 
       {/* ===== MISSION ===== */}
@@ -97,7 +97,7 @@ export default function About() {
                 loading="lazy"
               />
               <div className="about-badge">
-                <div className="badge-icon" aria-hidden="true">💚</div>
+                <div className="badge-icon" aria-hidden="true">💜</div>
                 <div className="badge-text">
                   <strong>Family-First Always</strong>
                   <span>You are never alone in this journey</span>

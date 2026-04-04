@@ -62,8 +62,8 @@ export default function FAQ() {
         eyebrow="Common Questions"
         title="We're Here to Help You Understand"
         description="Choosing care for a loved one brings up many questions. We've answered the most common ones here — and we're always just a phone call away."
-        bgImage="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=1600&q=80"
-        bgAlt="Peaceful garden path in morning light"
+        bgImage="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1600&q=80"
+        bgAlt="Caregiver and senior resident sharing a warm moment"
       />
 
       <section className="section" aria-labelledby="faq-heading">

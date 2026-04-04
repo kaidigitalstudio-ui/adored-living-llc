@@ -80,8 +80,8 @@ export default function Locations() {
         eyebrow="Our Homes"
         title="Two Warm Michigan Locations"
         description="Both of our homes offer the same intimate, compassionate care in beautiful residential settings — each a true home for every resident."
-        bgImage="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1600&q=80"
-        bgAlt="Peaceful garden with blooming flowers"
+        bgImage="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1600&q=80"
+        bgAlt="Warm residential home exterior"
       />
 
       {/* ===== LOCATIONS INTRO ===== */}
@@ -179,7 +179,7 @@ export default function Locations() {
               { icon: '🏠', title: 'A Full Home Tour', desc: 'We\'ll walk you through every room — bedrooms, living areas, kitchen, and of course our beautiful gardens and outdoor spaces.' },
               { icon: '💬', title: 'Open Q&A', desc: 'There are no rushed timelines here. Ask us anything — about care, pricing, routines, staff, or whatever is on your heart.' },
               { icon: '📋', title: 'Personalized Next Steps', desc: 'If you\'re interested, we\'ll discuss your loved one\'s specific needs and talk through how we can best support them.' },
-              { icon: '🌿', title: 'Meet the Residents', desc: 'With permission, you may have the chance to briefly meet current residents and get a real sense of the warmth and community here.' },
+              { icon: '💜', title: 'Meet the Residents', desc: 'With permission, you may have the chance to briefly meet current residents and get a real sense of the warmth and community here.' },
               { icon: '❓', title: 'No Pressure, Ever', desc: 'We know this is a deeply personal decision. Our goal is simply to give you the information and comfort you need to make the best choice for your family.' },
             ].map(({ icon, title, desc }) => (
               <div className="why-card" role="listitem" key={title}>

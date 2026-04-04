@@ -1,21 +1,21 @@
 /* ============================================================
    Adored Living LLC — Global Styles
-   Light, airy, nature-inspired design for seniors & families
+   Soft lavender & warm white — professional, caring, elegant
    ============================================================ */
 
 /* --- Custom Properties --- */
 :root {
-  --sage:          #5C7F65;
-  --sage-light:    #7FA88A;
-  --sage-pale:     #C8DEC9;
-  --sage-bg:       #EEF4EE;
+  --sage:          #7B6FA0;
+  --sage-light:    #9D94BF;
+  --sage-pale:     #D8D3EE;
+  --sage-bg:       #F0EDF9;
   --terracotta:    #C0714A;
   --terracotta-lt: #E09070;
-  --cream:         #FAF8F3;
-  --cream-dark:    #F0EDE6;
-  --text:          #2B3830;
-  --text-mid:      #4E5E55;
-  --text-light:    #7A8C81;
+  --cream:         #FAF9FF;
+  --cream-dark:    #EAE6F5;
+  --text:          #2A2535;
+  --text-mid:      #4A4560;
+  --text-light:    #7A748F;
   --white:         #FFFFFF;
   --shadow-sm:     0 2px 8px rgba(0,0,0,.07);
   --shadow-md:     0 6px 24px rgba(0,0,0,.10);
@@ -116,7 +116,7 @@ p:last-child { margin-bottom: 0; }
   border-color: var(--sage-light);
   color: var(--white);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(92,127,101,.35);
+  box-shadow: 0 8px 24px rgba(123,111,160,.35);
 }
 
 .btn-outline {
@@ -223,7 +223,7 @@ p:last-child { margin-bottom: 0; }
   background: var(--sage-light) !important;
   color: var(--white) !important;
   transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(92,127,101,.3);
+  box-shadow: 0 4px 16px rgba(123,111,160,.3);
 }
 
 .nav-toggle {
@@ -260,9 +260,9 @@ p:last-child { margin-bottom: 0; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1920&q=80');
+  background-image: url('https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=1920&q=80');
   background-size: cover;
-  background-position: center 40%;
+  background-position: center 30%;
 }
 
 .hero-bg::after {
@@ -271,9 +271,9 @@ p:last-child { margin-bottom: 0; }
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(30,50,38,.68) 0%,
-    rgba(30,50,38,.42) 50%,
-    rgba(30,50,38,.28) 100%
+    rgba(30,24,50,.72) 0%,
+    rgba(30,24,50,.46) 50%,
+    rgba(30,24,50,.28) 100%
   );
 }
 
@@ -632,7 +632,7 @@ p:last-child { margin-bottom: 0; }
    CTA BANNER
    ============================================================ */
 .cta-banner {
-  background: linear-gradient(135deg, var(--sage) 0%, #3D5C45 100%);
+  background: linear-gradient(135deg, var(--sage) 0%, #4A3F72 100%);
   padding: 80px 0;
   position: relative;
   overflow: hidden;
@@ -923,7 +923,7 @@ p:last-child { margin-bottom: 0; }
    ============================================================ */
 .page-hero {
   padding: 160px 0 80px;
-  background: linear-gradient(135deg, var(--sage) 0%, #3D5C45 100%);
+  background: linear-gradient(135deg, var(--sage) 0%, #4A3F72 100%);
   position: relative;
   overflow: hidden;
 }
@@ -1066,7 +1066,7 @@ p:last-child { margin-bottom: 0; }
    FOOTER
    ============================================================ */
 .site-footer {
-  background: #1E2B22;
+  background: #1A1728;
   color: rgba(255,255,255,.75);
   padding: 72px 0 0;
 }
