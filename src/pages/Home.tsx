@@ -81,15 +81,53 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== LOCATIONS PREVIEW ===== */}
+      <section className="section section--alt" aria-labelledby="locations-heading">
+        <div className="container">
+          <SectionHeader eyebrow="Our Homes" title="Two Beautiful Michigan Locations" description="Serving the Rochester Hills and Clarkston communities with the same warm, personalized care at each home." center id="locations-heading" />
+          <div className="locations-grid" role="list">
+            {LOCATIONS.map(({ id, img, imgAlt, badge, title, address, phone, phoneHref, email, feature }) => (
+              <article className="location-card" role="listitem" key={id}>
+                <div className="location-img" style={{ backgroundImage: `url('${img}')` }} role="img" aria-label={imgAlt}>
+                  <span className="location-badge">{badge}</span>
+                </div>
+                <div className="location-body">
+                  <h3>{title}</h3>
+                  <div className="location-address">
+                    <MapPin size={15} strokeWidth={2} aria-hidden="true" />
+                    <span>{address}</span>
+                  </div>
+                  <div className="location-details">
+                    <div className="loc-detail">
+                      <div className="detail-icon" aria-hidden="true"><Phone size={14} strokeWidth={2} /></div>
+                      <a href={phoneHref}>{phone}</a>
+                    </div>
+                    <div className="loc-detail">
+                      <div className="detail-icon" aria-hidden="true"><Mail size={14} strokeWidth={2} /></div>
+                      <a href={`mailto:${email}`}>{email}</a>
+                    </div>
+                    <div className="loc-detail">
+                      <div className="detail-icon" aria-hidden="true"><HomeIcon size={14} strokeWidth={2} /></div>
+                      <span>{feature}</span>
+                    </div>
+                  </div>
+                  <Link to={`/locations#${id}`} className="btn btn-primary">Learn More</Link>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ===== INTRO BAND ===== */}
       <div className="intro-band">
         <div className="container">
           <div className="intro-band-inner">
             {[
-              { Icon: HomeIcon,         text: 'Residential, home-like setting' },
-              { Icon: Users,        text: 'Maximum 6 residents per home' },
-              { Icon: Heart,        text: 'Owner-operated, family-run care' },
-              { Icon: ShieldCheck,  text: 'Michigan state licensed' },
+              { Icon: HomeIcon,    text: 'Residential, home-like setting' },
+              { Icon: Users,       text: 'Maximum 6 residents per home' },
+              { Icon: Heart,       text: 'Owner-operated, family-run care' },
+              { Icon: ShieldCheck, text: 'Michigan state licensed' },
             ].map(({ Icon, text }) => (
               <div className="intro-pill" key={text}>
                 <div className="pill-icon" aria-hidden="true"><Icon size={20} strokeWidth={1.75} /></div>
@@ -139,9 +177,9 @@ export default function Home() {
 
               <div className="values-list" role="list">
                 {[
-                  { Icon: Heart,        title: 'Compassion First', desc: 'Every interaction is guided by genuine warmth and empathy for each resident and their family.' },
-                  { Icon: Star,         title: 'Dignity Always',   desc: 'We support daily activities in ways that preserve independence and personal pride.' },
-                  { Icon: CheckCircle,  title: 'Personalized Care', desc: 'No two residents are alike — our care plans are thoughtfully tailored to each person\'s unique needs.' },
+                  { Icon: Heart,       title: 'Compassion First',  desc: 'Every interaction is guided by genuine warmth and empathy for each resident and their family.' },
+                  { Icon: Star,        title: 'Dignity Always',    desc: 'We support daily activities in ways that preserve independence and personal pride.' },
+                  { Icon: CheckCircle, title: 'Personalized Care', desc: 'No two residents are alike — our care plans are thoughtfully tailored to each person\'s unique needs.' },
                 ].map(({ Icon, title, desc }) => (
                   <div className="value-item" role="listitem" key={title}>
                     <div className="value-icon" aria-hidden="true"><Icon size={22} strokeWidth={1.5} /></div>
@@ -192,44 +230,6 @@ export default function Home() {
                     <strong>{name}</strong>
                     <span>{role}</span>
                   </div>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ===== LOCATIONS PREVIEW ===== */}
-      <section className="section" aria-labelledby="locations-heading">
-        <div className="container">
-          <SectionHeader eyebrow="Our Homes" title="Two Beautiful Michigan Locations" description="Serving the Rochester Hills and Clarkston communities with the same warm, personalized care at each home." center id="locations-heading" />
-          <div className="locations-grid" role="list">
-            {LOCATIONS.map(({ id, img, imgAlt, badge, title, address, phone, phoneHref, email, feature }) => (
-              <article className="location-card" role="listitem" key={id}>
-                <div className="location-img" style={{ backgroundImage: `url('${img}')` }} role="img" aria-label={imgAlt}>
-                  <span className="location-badge">{badge}</span>
-                </div>
-                <div className="location-body">
-                  <h3>{title}</h3>
-                  <div className="location-address">
-                    <MapPin size={15} strokeWidth={2} aria-hidden="true" />
-                    <span>{address}</span>
-                  </div>
-                  <div className="location-details">
-                    <div className="loc-detail">
-                      <div className="detail-icon" aria-hidden="true"><Phone size={14} strokeWidth={2} /></div>
-                      <a href={phoneHref}>{phone}</a>
-                    </div>
-                    <div className="loc-detail">
-                      <div className="detail-icon" aria-hidden="true"><Mail size={14} strokeWidth={2} /></div>
-                      <a href={`mailto:${email}`}>{email}</a>
-                    </div>
-                    <div className="loc-detail">
-                      <div className="detail-icon" aria-hidden="true"><HomeIcon size={14} strokeWidth={2} /></div>
-                      <span>{feature}</span>
-                    </div>
-                  </div>
-                  <Link to={`/locations#${id}`} className="btn btn-primary">Learn More</Link>
                 </div>
               </article>
             ))}
