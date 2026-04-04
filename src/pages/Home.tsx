@@ -154,34 +154,41 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== OUR MISSION ===== */}
+      {/* ===== ABOUT SPLIT ===== */}
       <section className="section section--alt" aria-labelledby="about-heading">
         <div className="container">
-          <div className="text-center" style={{ marginBottom: 56 }}>
-            <span className="eyebrow">Our Mission</span>
-            <h2 id="about-heading">Care Built on Compassion,<br />Dignity &amp; Respect</h2>
-          </div>
-
-          <blockquote className="mission-quote">
-            "We aim to provide the finest assisted living experience for our residents — treating every person with the compassion, dignity, and respect they deserve. Our residents are family, and we feel truly blessed to serve them every day."
-          </blockquote>
-
-          <div className="mission-values" role="list">
-            {[
-              { Icon: Heart,       title: 'Compassion First',  desc: 'Every interaction — from morning greetings to medication reminders — is guided by genuine warmth and empathy.' },
-              { Icon: Star,        title: 'Dignity Always',    desc: 'We assist with daily activities in ways that preserve independence and personal pride, never diminishing who someone is.' },
-              { Icon: CheckCircle, title: 'Personalized Care', desc: 'No two residents are alike. Care plans are thoughtfully tailored to each person\'s unique needs, preferences, and history.' },
-            ].map(({ Icon, title, desc }) => (
-              <div className="mission-value-card" role="listitem" key={title}>
-                <div className="mission-value-icon" aria-hidden="true"><Icon size={26} strokeWidth={1.5} /></div>
-                <h3>{title}</h3>
-                <p>{desc}</p>
+          <div className="grid-2">
+            <div className="about-image">
+              <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=900&q=80" alt="Caregiver gently holding hands with a senior resident" loading="lazy" />
+              <div className="about-badge">
+                <div className="badge-icon" aria-hidden="true"><HomeIcon size={24} strokeWidth={1.5} color="white" /></div>
+                <div className="badge-text">
+                  <strong>A True Home</strong>
+                  <span>Not a facility — a real home with real family</span>
+                </div>
               </div>
-            ))}
-          </div>
+            </div>
 
-          <div className="text-center" style={{ marginTop: 48 }}>
-            <Link to="/about" className="btn btn-primary btn-lg">Learn Our Story</Link>
+            <div className="about-content">
+              <span className="eyebrow">Our Mission</span>
+              <h2 id="about-heading">Care Built on Compassion, Dignity &amp; Respect</h2>
+              <p>At Adored Living LLC, we operate two licensed residential care homes in Michigan — each designed to feel like exactly that: a home. We believe seniors shouldn't have to choose between independence and the support they need.</p>
+              <p>Our residents are treated like family, because to us, they are. We love our residents and feel truly blessed to serve them and their families every single day.</p>
+
+              <div className="values-list" role="list">
+                {[
+                  { Icon: Heart,       title: 'Compassion First',  desc: 'Every interaction is guided by genuine warmth and empathy for each resident and their family.' },
+                  { Icon: Star,        title: 'Dignity Always',    desc: 'We support daily activities in ways that preserve independence and personal pride.' },
+                  { Icon: CheckCircle, title: 'Personalized Care', desc: 'No two residents are alike — our care plans are thoughtfully tailored to each person\'s unique needs.' },
+                ].map(({ Icon, title, desc }) => (
+                  <div className="value-item" role="listitem" key={title}>
+                    <div className="value-icon" aria-hidden="true"><Icon size={22} strokeWidth={1.5} /></div>
+                    <p><strong>{title}</strong> {desc}</p>
+                  </div>
+                ))}
+              </div>
+              <Link to="/about" className="btn btn-primary">Learn Our Story</Link>
+            </div>
           </div>
         </div>
       </section>
