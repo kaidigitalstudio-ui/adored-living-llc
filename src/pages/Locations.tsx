@@ -182,7 +182,7 @@ function LocationContent({ id, title, address, mapUrl, phone, phoneHref, email, 
 
       <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
         <Link to="/contact" className="btn btn-primary">Schedule a Visit</Link>
-        <a href={mapUrl} target="_blank" rel="noopener noreferrer" className="btn btn-accent">Get Directions</a>
+        <a href={mapUrl} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">Get Directions</a>
       </div>
     </div>
   )

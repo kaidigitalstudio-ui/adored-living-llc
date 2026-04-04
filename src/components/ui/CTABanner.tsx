@@ -33,7 +33,7 @@ export default function CTABanner({
             <p>{description}</p>
           </div>
           <div className="cta-actions">
-            <Link to={primaryTo} className="btn btn-accent btn-lg">{primaryLabel}</Link>
+            <Link to={primaryTo} className="btn btn-white btn-lg">{primaryLabel}</Link>
             {secondaryHref ? (
               <a href={secondaryHref} className="btn btn-outline btn-lg">{secondaryLabel}</a>
             ) : secondaryTo ? (

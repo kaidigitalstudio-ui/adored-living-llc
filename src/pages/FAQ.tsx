@@ -68,7 +68,7 @@ export default function FAQ() {
           <p>No question is too small. Whether you're just beginning to explore care options or ready to make a decision, our team is here to guide you with patience and warmth.</p>
           <div style={{ display: 'flex', gap: 16, justifyContent: 'center', marginTop: 36, flexWrap: 'wrap' }}>
             <a href="tel:+12489319009" className="btn btn-primary btn-lg">Call (248) 931-9009</a>
-            <a href="mailto:adoredlivingllc@gmail.com" className="btn btn-accent btn-lg">Send an Email</a>
+            <a href="mailto:adoredlivingllc@gmail.com" className="btn btn-secondary btn-lg">Send an Email</a>
           </div>
         </div>
       </section>

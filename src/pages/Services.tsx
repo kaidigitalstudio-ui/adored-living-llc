@@ -150,7 +150,7 @@ export default function Services() {
             <p>We believe care should never come with a confusing bill. Our all-inclusive rate covers everything described on this page — from meals and medications to housekeeping and activities. Contact us to learn more about our rates and what makes Adored Living the right fit for your family.</p>
             <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap', marginTop: 8 }}>
               <Link to="/contact" className="btn btn-primary btn-lg">Ask About Rates</Link>
-              <Link to="/contact" className="btn btn-accent btn-lg">Schedule a Tour</Link>
+              <Link to="/contact" className="btn btn-secondary btn-lg">Schedule a Tour</Link>
             </div>
           </div>
         </div>

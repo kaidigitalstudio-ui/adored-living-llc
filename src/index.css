@@ -130,17 +130,17 @@ p:last-child { margin-bottom: 0; }
   transform: translateY(-2px);
 }
 
-.btn-accent {
-  background: var(--terracotta);
-  color: var(--white);
-  border-color: var(--terracotta);
+.btn-white {
+  background: var(--white);
+  color: var(--sage);
+  border-color: var(--white);
 }
-.btn-accent:hover {
-  background: var(--terracotta-lt);
-  border-color: var(--terracotta-lt);
-  color: var(--white);
+.btn-white:hover {
+  background: var(--sage-pale);
+  border-color: var(--sage-pale);
+  color: var(--sage);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(192,113,74,.35);
+  box-shadow: 0 8px 24px rgba(255,255,255,.25);
 }
 
 .btn-lg { padding: 20px 48px; font-size: 1.1rem; }
