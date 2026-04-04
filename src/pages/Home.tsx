@@ -39,8 +39,8 @@ const TESTIMONIALS = [
 ]
 
 const LOCATIONS: LocationItem[] = [
-  { id: 'rochester-hills', img: 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80', imgAlt: 'Rochester Hills home exterior', badge: 'Rochester Hills', title: 'Rochester Hills Home', address: '185 E South Blvd, Rochester Hills, MI 48307', phone: '(248) 931-9009', phoneHref: 'tel:+12489319009', email: 'adoredlivingllc@gmail.com', feature: 'Comfortable outdoor seating areas' },
-  { id: 'clarkston', img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80', imgAlt: 'Clarkston home exterior', badge: 'Clarkston', title: 'Clarkston Home', address: '5111 Heath Ave, Clarkston, MI 48346', phone: '(248) 931-9009', phoneHref: 'tel:+12489319009', email: 'adoredlivingllc@gmail.com', feature: 'Peaceful residential neighborhood' },
+  { id: 'rochester-hills', img: '/rochester-hills.jpg', imgAlt: 'Rochester Hills home exterior', badge: 'Rochester Hills', title: 'Rochester Hills Home', address: '185 E South Blvd, Rochester Hills, MI 48307', phone: '(248) 931-9009', phoneHref: 'tel:+12489319009', email: 'adoredlivingllc@gmail.com', feature: 'Comfortable outdoor seating areas' },
+  { id: 'clarkston', img: '/clarkston.webp', imgAlt: 'Clarkston home exterior with accessible ramp and flower beds', badge: 'Clarkston', title: 'Clarkston Home', address: '5111 Heath Ave, Clarkston, MI 48346', phone: '(248) 931-9009', phoneHref: 'tel:+12489319009', email: 'adoredlivingllc@gmail.com', feature: 'Peaceful residential neighborhood' },
 ]
 
 export default function Home() {

@@ -28,8 +28,8 @@ const LOCATIONS: Location[] = [
     phone: '(248) 931-9009',
     phoneHref: 'tel:+12489319009',
     email: 'adoredlivingllc@gmail.com',
-    img: 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=900&q=80',
-    imgAlt: 'Warm residential home exterior surrounded by trees',
+    img: '/rochester-hills.jpg',
+    imgAlt: 'Rochester Hills home exterior surrounded by mature trees',
     features: ['Private furnished bedrooms', 'Shared living room with television', 'Comfortable outdoor seating areas', 'Quiet residential neighborhood', 'Easy access for family visits', 'State-licensed facility'],
   },
   {
@@ -41,8 +41,8 @@ const LOCATIONS: Location[] = [
     phone: '(248) 931-9009',
     phoneHref: 'tel:+12489319009',
     email: 'adoredlivingllc@gmail.com',
-    img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80',
-    imgAlt: 'Welcoming home in a peaceful suburban neighborhood',
+    img: '/clarkston.webp',
+    imgAlt: 'Clarkston home exterior with accessible ramp and flower beds',
     features: ['Private furnished bedrooms', 'Shared living room with television', 'Peaceful residential neighborhood', 'Outdoor patio and seating', 'Close to local amenities', 'State-licensed facility'],
   },
 ]
@@ -65,8 +65,8 @@ export default function Locations() {
         eyebrow="Our Homes"
         title="Two Warm Michigan Locations"
         description="Both of our homes offer the same intimate, compassionate care in beautiful residential settings — each a true home for every resident."
-        bgImage="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1600&q=80"
-        bgAlt="Warm residential home exterior"
+        bgImage="/rochester-hills.jpg"
+        bgAlt="Rochester Hills home exterior surrounded by mature trees"
       />
 
       {/* ===== INTRO ===== */}
