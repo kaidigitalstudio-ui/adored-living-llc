@@ -48,7 +48,6 @@ export default function Home() {
     <>
       {/* ===== HERO ===== */}
       <section className="hero" aria-labelledby="hero-heading">
-        <div className="hero-bg" role="img" aria-label="Warm, welcoming assisted living home" />
         <div className="container">
           <div className="hero-content">
             <span className="eyebrow">Michigan's Home-Style Assisted Living</span>
@@ -62,7 +61,7 @@ export default function Home() {
             </p>
             <div className="hero-actions">
               <Link to="/services" className="btn btn-primary btn-lg">Explore Our Care</Link>
-              <Link to="/contact" className="btn btn-outline btn-lg">Schedule a Visit</Link>
+              <Link to="/contact" className="btn btn-secondary btn-lg">Schedule a Visit</Link>
             </div>
 
             <div className="hero-trust" aria-label="Quick facts">
