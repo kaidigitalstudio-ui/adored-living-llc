@@ -797,7 +797,6 @@ p:last-child { margin-bottom: 0; }
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  font-size: .8rem;
   color: var(--sage);
   transition: transform var(--transition), background var(--transition);
 }
@@ -1066,8 +1065,8 @@ p:last-child { margin-bottom: 0; }
    FOOTER
    ============================================================ */
 .site-footer {
-  background: #1A1728;
-  color: rgba(255,255,255,.75);
+  background: var(--cream-dark);
+  border-top: 1px solid var(--sage-pale);
   padding: 72px 0 0;
 }
 
@@ -1076,15 +1075,15 @@ p:last-child { margin-bottom: 0; }
   grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
   gap: 48px;
   padding-bottom: 56px;
-  border-bottom: 1px solid rgba(255,255,255,.1);
+  border-bottom: 1px solid var(--sage-pale);
 }
 
-.footer-brand .logo-primary { color: var(--sage-pale); font-size: 1.5rem; font-family: var(--font-serif); }
-.footer-brand .logo-sub     { color: rgba(255,255,255,.45); font-size: .65rem; letter-spacing: .14em; text-transform: uppercase; }
-.footer-brand p             { margin-top: 16px; font-size: .9rem; line-height: 1.7; color: rgba(255,255,255,.6); }
+.footer-brand .logo-primary { color: var(--sage); font-size: 1.5rem; font-family: var(--font-serif); }
+.footer-brand .logo-sub     { color: var(--text-light); font-size: .65rem; letter-spacing: .14em; text-transform: uppercase; }
+.footer-brand p             { margin-top: 16px; font-size: .9rem; line-height: 1.7; color: var(--text-mid); }
 
 .footer-col h4 {
-  color: var(--white);
+  color: var(--text);
   font-size: .85rem;
   letter-spacing: .1em;
   text-transform: uppercase;
@@ -1094,17 +1093,20 @@ p:last-child { margin-bottom: 0; }
 }
 
 .footer-col ul { display: flex; flex-direction: column; gap: 10px; }
-.footer-col ul a { font-size: .9rem; color: rgba(255,255,255,.6); transition: color var(--transition); }
-.footer-col ul a:hover { color: var(--sage-pale); }
+.footer-col ul a { font-size: .9rem; color: var(--text-mid); transition: color var(--transition); }
+.footer-col ul a:hover { color: var(--sage); }
 
 .footer-contact-item {
   display: flex;
   align-items: flex-start;
   gap: 10px;
   margin-bottom: 12px;
+  color: var(--text-mid);
 }
-.footer-contact-item .fc-icon { font-size: 1rem; flex-shrink: 0; margin-top: 2px; }
-.footer-contact-item span { font-size: .88rem; color: rgba(255,255,255,.6); line-height: 1.5; }
+.footer-contact-item .fc-icon { flex-shrink: 0; margin-top: 2px; color: var(--sage); }
+.footer-contact-item span { font-size: .88rem; color: var(--text-mid); line-height: 1.5; }
+.footer-contact-item a { color: var(--text-mid); }
+.footer-contact-item a:hover { color: var(--sage); }
 
 .footer-bottom {
   padding: 24px 0;
@@ -1114,9 +1116,9 @@ p:last-child { margin-bottom: 0; }
   gap: 16px;
   flex-wrap: wrap;
 }
-.footer-bottom p { font-size: .82rem; color: rgba(255,255,255,.4); margin: 0; }
-.footer-bottom a { color: rgba(255,255,255,.4); font-size: .82rem; }
-.footer-bottom a:hover { color: var(--sage-pale); }
+.footer-bottom p { font-size: .82rem; color: var(--text-light); margin: 0; }
+.footer-bottom a { color: var(--text-light); font-size: .82rem; }
+.footer-bottom a:hover { color: var(--sage); }
 
 /* ============================================================
    SKIP LINK

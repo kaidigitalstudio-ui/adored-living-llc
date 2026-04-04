@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { Phone, Mail, MapPin } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -34,22 +35,22 @@ export default function Footer() {
               <li><Link to="/services">Medication Management</Link></li>
               <li><Link to="/services">Housekeeping</Link></li>
               <li><Link to="/services">Companionship</Link></li>
-              <li><Link to="/services">Community Gardens</Link></li>
+              <li><Link to="/services">Activities &amp; Recreation</Link></li>
             </ul>
           </div>
 
           <div className="footer-col">
             <h4>Contact Us</h4>
             <div className="footer-contact-item">
-              <span className="fc-icon" aria-hidden="true">📞</span>
+              <Phone size={15} strokeWidth={1.75} className="fc-icon" aria-hidden="true" />
               <span><a href="tel:+12489319009">(248) 931-9009</a></span>
             </div>
             <div className="footer-contact-item">
-              <span className="fc-icon" aria-hidden="true">✉️</span>
+              <Mail size={15} strokeWidth={1.75} className="fc-icon" aria-hidden="true" />
               <span><a href="mailto:adoredlivingllc@gmail.com">adoredlivingllc@gmail.com</a></span>
             </div>
             <div className="footer-contact-item">
-              <span className="fc-icon" aria-hidden="true">📍</span>
+              <MapPin size={15} strokeWidth={1.75} className="fc-icon" aria-hidden="true" />
               <span>Rochester Hills, MI &amp; Clarkston, MI</span>
             </div>
           </div>
