@@ -85,6 +85,25 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== INTRO BAND ===== */}
+      <div className="intro-band">
+        <div className="container">
+          <div className="intro-band-inner">
+            {[
+              { Icon: HomeIcon,    text: 'Residential, home-like setting' },
+              { Icon: Users,       text: 'Maximum 6 residents per home' },
+              { Icon: Heart,       text: 'Owner-operated, family-run care' },
+              { Icon: ShieldCheck, text: 'Michigan state licensed' },
+            ].map(({ Icon, text }) => (
+              <div className="intro-pill" key={text}>
+                <div className="pill-icon" aria-hidden="true"><Icon size={20} strokeWidth={1.75} /></div>
+                {text}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* ===== LOCATIONS PREVIEW ===== */}
       <section className="section section--alt" aria-labelledby="locations-heading">
         <div className="container">
@@ -122,25 +141,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* ===== INTRO BAND ===== */}
-      <div className="intro-band">
-        <div className="container">
-          <div className="intro-band-inner">
-            {[
-              { Icon: HomeIcon,    text: 'Residential, home-like setting' },
-              { Icon: Users,       text: 'Maximum 6 residents per home' },
-              { Icon: Heart,       text: 'Owner-operated, family-run care' },
-              { Icon: ShieldCheck, text: 'Michigan state licensed' },
-            ].map(({ Icon, text }) => (
-              <div className="intro-pill" key={text}>
-                <div className="pill-icon" aria-hidden="true"><Icon size={20} strokeWidth={1.75} /></div>
-                {text}
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
 
       {/* ===== WHY ADORED ===== */}
       <section className="section" aria-labelledby="why-heading">
