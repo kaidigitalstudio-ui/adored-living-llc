@@ -163,7 +163,7 @@ export default function Home() {
         <div className="container">
           <div className="grid-2">
             <div className="about-image">
-              <img src="/wheelchair-portrait.avif" alt="Caregiver with a senior resident in a wheelchair" loading="lazy" />
+              <img src="/holding-hands.jpg" alt="Family members holding hands with a senior resident" loading="lazy" />
               <div className="about-badge">
                 <div className="badge-icon" aria-hidden="true"><HomeIcon size={24} strokeWidth={1.5} color="white" /></div>
                 <div className="badge-text">
