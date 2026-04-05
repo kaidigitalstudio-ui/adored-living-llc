@@ -41,7 +41,7 @@ export default function Contact() {
 
           <div className="contact-grid">
             {/* Info Column */}
-            <div className="contact-info">
+            <div className="contact-info" data-animate>
               <h3>Contact Information</h3>
               <p>We're available to speak with you Monday through Sunday. Don't hesitate to call, email, or fill out the form — we'll respond promptly with care and warmth.</p>
 
@@ -86,7 +86,7 @@ export default function Contact() {
             </div>
 
             {/* Form Column */}
-            <div className="contact-form">
+            <div className="contact-form" data-animate data-delay={150}>
               <h3>Send Us a Message</h3>
 
               {submitted ? (

@@ -1210,3 +1210,21 @@ p:last-child { margin-bottom: 0; }
   .hero-trust { flex-direction: column; gap: 16px; }
   .contact-form { padding: 24px 18px; }
 }
+
+/* ============================================================
+   SCROLL ANIMATIONS
+   ============================================================ */
+@media (prefers-reduced-motion: no-preference) {
+  [data-animate] {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.55s ease-out, transform 0.55s ease-out;
+  }
+  [data-animate="fade"] {
+    transform: none;
+  }
+  [data-animate].in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

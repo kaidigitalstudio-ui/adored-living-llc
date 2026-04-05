@@ -38,7 +38,7 @@ export default function About() {
       <section className="section" aria-labelledby="mission-heading">
         <div className="container">
           <div className="grid-2">
-            <div>
+            <div data-animate>
               <span className="eyebrow">Who We Are</span>
               <h2 id="mission-heading">A Home, Not a Facility</h2>
               <p style={{ fontSize: '1.1rem' }}>
@@ -57,7 +57,7 @@ export default function About() {
                 every person in their care. That closeness is what sets Adored Living apart.
               </p>
             </div>
-            <div className="about-image">
+            <div className="about-image" data-animate data-delay={150}>
               <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=900&q=80" alt="Senior resident enjoying morning light in a bright, welcoming room" loading="lazy" />
             </div>
           </div>
@@ -69,8 +69,8 @@ export default function About() {
         <div className="container">
           <SectionHeader eyebrow="What Guides Us" title="Our Core Values" description="Everything we do flows from these principles — they are not posters on a wall but the daily practice of everyone on our team." center id="values-heading" />
           <div className="why-grid" style={{ marginTop: 56 }} role="list">
-            {VALUES.map(({ Icon, title, desc }) => (
-              <div className="why-card" role="listitem" key={title}>
+            {VALUES.map(({ Icon, title, desc }, i) => (
+              <div className="why-card" role="listitem" key={title} data-animate data-delay={i * 80}>
                 <div className="why-icon" aria-hidden="true"><Icon size={28} strokeWidth={1.5} /></div>
                 <h3>{title}</h3>
                 <p>{desc}</p>
@@ -84,7 +84,7 @@ export default function About() {
       <section className="section" aria-labelledby="promise-heading">
         <div className="container">
           <div className="grid-2">
-            <div className="about-image">
+            <div className="about-image" data-animate>
               <img src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=900&q=80" alt="Two seniors laughing together over a cup of tea" loading="lazy" />
               <div className="about-badge">
                 <div className="badge-icon" aria-hidden="true"><Heart size={24} strokeWidth={1.5} color="white" /></div>
@@ -95,7 +95,7 @@ export default function About() {
               </div>
             </div>
 
-            <div className="about-content">
+            <div className="about-content" data-animate data-delay={150}>
               <span className="eyebrow">Our Promise</span>
               <h2 id="promise-heading">What You Can Always Expect From Us</h2>
               <p>When you choose Adored Living, you are choosing a partner. We promise:</p>

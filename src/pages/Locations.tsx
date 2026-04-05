@@ -83,7 +83,7 @@ export default function Locations() {
             <div className="grid-2" style={{ gap: 60 }}>
               {idx % 2 === 0 ? (
                 <>
-                  <div className="about-image">
+                  <div className="about-image" data-animate>
                     <img src={img} alt={imgAlt} loading="lazy" />
                     <div className="about-badge">
                       <div className="badge-icon" aria-hidden="true"><MapPin size={22} strokeWidth={1.5} color="white" /></div>
@@ -93,12 +93,12 @@ export default function Locations() {
                       </div>
                     </div>
                   </div>
-                  <LocationContent id={id} title={title} address={address} mapUrl={mapUrl} phone={phone} phoneHref={phoneHref} email={email} features={features} />
+                  <LocationContent id={id} title={title} address={address} mapUrl={mapUrl} phone={phone} phoneHref={phoneHref} email={email} features={features} delay={150} />
                 </>
               ) : (
                 <>
                   <LocationContent id={id} title={title} address={address} mapUrl={mapUrl} phone={phone} phoneHref={phoneHref} email={email} features={features} />
-                  <div className="about-image">
+                  <div className="about-image" data-animate data-delay={150}>
                     <img src={img} alt={imgAlt} loading="lazy" />
                     <div className="about-badge">
                       <div className="badge-icon" aria-hidden="true"><MapPin size={22} strokeWidth={1.5} color="white" /></div>
@@ -120,8 +120,8 @@ export default function Locations() {
         <div className="container">
           <SectionHeader eyebrow="What to Expect" title="When You Come to Visit" description="We warmly welcome families to tour either of our homes at any time. Here's what a typical visit looks like." center id="expect-heading" />
           <div className="why-grid" style={{ marginTop: 56 }} role="list">
-            {EXPECT_ITEMS.map(({ Icon, title, desc }) => (
-              <div className="why-card" role="listitem" key={title}>
+            {EXPECT_ITEMS.map(({ Icon, title, desc }, i) => (
+              <div className="why-card" role="listitem" key={title} data-animate data-delay={i * 80}>
                 <div className="why-icon" aria-hidden="true"><Icon size={28} strokeWidth={1.5} /></div>
                 <h3>{title}</h3>
                 <p>{desc}</p>
@@ -147,11 +147,12 @@ export default function Locations() {
 interface LocationContentProps {
   id: string; title: string; address: string; mapUrl: string
   phone: string; phoneHref: string; email: string; features: string[]
+  delay?: number
 }
 
-function LocationContent({ id, title, address, mapUrl, phone, phoneHref, email, features }: LocationContentProps) {
+function LocationContent({ id, title, address, mapUrl, phone, phoneHref, email, features, delay }: LocationContentProps) {
   return (
-    <div className="about-content">
+    <div className="about-content" data-animate data-delay={delay ?? 0}>
       <span className="eyebrow">Our Home</span>
       <h2 id={`loc-${id}`}>{title}</h2>
       <div className="location-address" style={{ marginBottom: 24 }}>

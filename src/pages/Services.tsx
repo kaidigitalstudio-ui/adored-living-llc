@@ -104,8 +104,8 @@ export default function Services() {
         <div className="container">
           <SectionHeader eyebrow="All-Inclusive Living" title="One Simple Rate — Everything Covered" description="We understand that families navigating care options often face confusing pricing structures. At Adored Living, we keep it simple: one straightforward, all-inclusive rate covers all basic supplies, foods, and services — so you can focus on what matters most." center id="alinc-heading" />
           <div className="ai-features" style={{ marginTop: 48 }} role="list">
-            {INCLUDED_ITEMS.map(({ Icon, label }) => (
-              <div className="ai-feature" role="listitem" key={label}>
+            {INCLUDED_ITEMS.map(({ Icon, label }, i) => (
+              <div className="ai-feature" role="listitem" key={label} data-animate data-delay={i * 60}>
                 <div className="feat-icon" aria-hidden="true"><Icon size={26} strokeWidth={1.5} /></div>
                 {label}
               </div>
@@ -120,8 +120,8 @@ export default function Services() {
           <SectionHeader eyebrow="Our Care Services" title="What We Provide Each Day" center id="detail-heading" />
 
           <div className="services-detail">
-            {SERVICES.map(({ id, img, imgAlt, Icon, title, description, includes, reverse }) => (
-              <article key={id} id={id} className={`service-row${reverse ? ' reverse' : ''}`} aria-labelledby={`svc-${id}`}>
+            {SERVICES.map(({ id, img, imgAlt, Icon, title, description, includes, reverse }, i) => (
+              <article key={id} id={id} className={`service-row${reverse ? ' reverse' : ''}`} aria-labelledby={`svc-${id}`} data-animate data-delay={i * 60}>
                 <div className="service-row-img">
                   <img src={img} alt={imgAlt} loading="lazy" />
                 </div>

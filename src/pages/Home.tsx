@@ -53,7 +53,7 @@ export default function Home() {
       {/* ===== HERO ===== */}
       <section className="hero" aria-labelledby="hero-heading">
         <div className="container">
-          <div className="hero-content">
+          <div className="hero-content" data-animate="fade">
             <span className="eyebrow">Michigan's Home-Style Assisted Living</span>
             <h1 id="hero-heading">
               Where Every Day Feels<br />
@@ -94,8 +94,8 @@ export default function Home() {
               { Icon: Users,       text: 'Maximum 6 residents per home' },
               { Icon: Heart,       text: 'Owner-operated, family-run care' },
               { Icon: ShieldCheck, text: 'Michigan state licensed' },
-            ].map(({ Icon, text }) => (
-              <div className="intro-pill" key={text}>
+            ].map(({ Icon, text }, i) => (
+              <div className="intro-pill" key={text} data-animate data-delay={i * 80}>
                 <div className="pill-icon" aria-hidden="true"><Icon size={20} strokeWidth={1.75} /></div>
                 {text}
               </div>
@@ -109,8 +109,8 @@ export default function Home() {
         <div className="container">
           <SectionHeader eyebrow="Our Homes" title="Two Beautiful Michigan Locations" description="Serving the Rochester Hills and Clarkston communities with the same warm, personalized care at each home." center id="locations-heading" />
           <div className="locations-grid" role="list">
-            {LOCATIONS.map(({ id, img, imgAlt, badge, title, address, phone, phoneHref, email, feature }) => (
-              <article className="location-card" role="listitem" key={id}>
+            {LOCATIONS.map(({ id, img, imgAlt, badge, title, address, phone, phoneHref, email, feature }, i) => (
+              <article className="location-card" role="listitem" key={id} data-animate data-delay={i * 120}>
                 <div className="location-img" style={{ backgroundImage: `url('${img}')` }} role="img" aria-label={imgAlt}>
                   <span className="location-badge">{badge}</span>
                 </div>
@@ -147,8 +147,8 @@ export default function Home() {
         <div className="container">
           <SectionHeader eyebrow="Why Families Choose Us" title="A Different Kind of Care" description="We believe seniors deserve more than just assistance — they deserve a vibrant, joyful community where they are truly known and cherished." center id="why-heading" />
           <div className="why-grid" role="list">
-            {WHY_ITEMS.map(({ Icon, title, desc }) => (
-              <div className="why-card" role="listitem" key={title}>
+            {WHY_ITEMS.map(({ Icon, title, desc }, i) => (
+              <div className="why-card" role="listitem" key={title} data-animate data-delay={i * 80}>
                 <div className="why-icon" aria-hidden="true"><Icon size={28} strokeWidth={1.5} /></div>
                 <h3>{title}</h3>
                 <p>{desc}</p>
@@ -162,11 +162,11 @@ export default function Home() {
       <section className="section section--alt" aria-labelledby="about-heading">
         <div className="container">
           <div className="grid-2">
-            <div className="about-image">
+            <div className="about-image" data-animate>
               <img src="/holding-hands.jpg" alt="Family members holding hands with a senior resident" loading="lazy" />
             </div>
 
-            <div className="about-content">
+            <div className="about-content" data-animate data-delay={150}>
               <span className="eyebrow">Our Mission</span>
               <h2 id="about-heading">Care Built on Compassion, Dignity &amp; Respect</h2>
               <p>At Adored Living LLC, we operate two licensed residential care homes in Michigan — each designed to feel like exactly that: a home. We believe seniors shouldn't have to choose between independence and the support they need.</p>
@@ -195,8 +195,8 @@ export default function Home() {
         <div className="container">
           <SectionHeader eyebrow="All-Inclusive Care" title="Everything Your Loved One Needs" description="One simple monthly rate — no hidden fees, no surprise add-ons. Every service below is included." center id="included-heading" />
           <div className="ai-features" style={{ marginTop: 48 }} role="list">
-            {INCLUDED_ITEMS.map(({ Icon, label }) => (
-              <div className="ai-feature" role="listitem" key={label}>
+            {INCLUDED_ITEMS.map(({ Icon, label }, i) => (
+              <div className="ai-feature" role="listitem" key={label} data-animate data-delay={i * 60}>
                 <div className="feat-icon" aria-hidden="true"><Icon size={26} strokeWidth={1.5} /></div>
                 {label}
               </div>
@@ -213,8 +213,8 @@ export default function Home() {
         <div className="container">
           <SectionHeader eyebrow="Family Stories" title="Voices of Those We Serve" description="The trust families place in us is the greatest honor we know. Here is what they say about life at Adored Living." center id="testimonials-heading" />
           <div className="testimonials-grid" role="list">
-            {TESTIMONIALS.map(({ quote, name, role, initial }) => (
-              <article className="testimonial-card" role="listitem" key={name}>
+            {TESTIMONIALS.map(({ quote, name, role, initial }, i) => (
+              <article className="testimonial-card" role="listitem" key={name} data-animate data-delay={i * 120}>
                 <div className="stars" aria-label="5 out of 5 stars">★★★★★</div>
                 <p className="testimonial-text">{quote}</p>
                 <div className="testimonial-author">
