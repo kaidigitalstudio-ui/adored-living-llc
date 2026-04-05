@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom'
 import {
   Users, MessageCircle, Pill, Home as HomeIcon, UtensilsCrossed, ShieldCheck,
-  Heart, Laugh, Music, Phone, Mail, MapPin, CheckCircle, Star,
+  Heart, Music, Phone, Mail, MapPin, CheckCircle, Star,
+  Shirt, Bath, Droplets, Tv,
   type LucideIcon,
 } from 'lucide-react'
 import SectionHeader from '../components/ui/SectionHeader'
 import CTABanner from '../components/ui/CTABanner'
 
 interface WhyItem { Icon: LucideIcon; title: string; desc: string }
-interface ServiceItem { img: string; imgAlt: string; Icon: LucideIcon; title: string; desc: string }
 interface LocationItem {
   id: string; img: string; imgAlt: string; badge: string; title: string
   address: string; phone: string; phoneHref: string; email: string; feature: string
@@ -23,13 +23,17 @@ const WHY_ITEMS: WhyItem[] = [
   { Icon: ShieldCheck,  title: 'Safe, Licensed & Trusted',       desc: 'Fully licensed by the State of Michigan with all health and safety standards met. Families can visit freely, and peace of mind comes standard with every aspect of our care.' },
 ]
 
-const SERVICES: ServiceItem[] = [
-  { img: 'https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80', imgAlt: 'Fresh nutritious home-cooked meal', Icon: UtensilsCrossed, title: 'Meals & Nutrition', desc: 'Three fresh, nutritious meals daily plus snacks — all dietary needs accommodated with care and attention.' },
-  { img: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80', imgAlt: 'Caregiver assisting a resident', Icon: Heart, title: 'Personal Care Assistance', desc: 'Compassionate, dignified help with bathing, grooming, mobility, and daily living activities whenever needed.' },
-  { img: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&q=80', imgAlt: 'Organized medication management', Icon: Pill, title: 'Medication Management', desc: 'Secure medication administration following physician guidance, with accurate records and prescription support.' },
-  { img: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80', imgAlt: 'Clean, bright residential home', Icon: HomeIcon, title: 'Housing & Housekeeping', desc: 'Fully furnished private rooms with shared living spaces, plus routine cleaning, laundry, and all linens provided.' },
-  { img: 'https://images.unsplash.com/photo-1609220136736-443140cfeaa8?w=600&q=80', imgAlt: 'Seniors enjoying social activities', Icon: Laugh, title: 'Companionship & Activities', desc: 'Meaningful social engagement, recreational activities, and emotional support to keep spirits bright every day.' },
-  { img: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&q=80', imgAlt: 'Seniors enjoying recreational time', Icon: Music, title: 'Activities & Recreation', desc: 'Engaging daily activities, outings, and social events that bring joy, purpose, and connection to every resident\'s routine.' },
+interface IncludedItem { Icon: LucideIcon; label: string }
+
+const INCLUDED_ITEMS: IncludedItem[] = [
+  { Icon: UtensilsCrossed, label: 'Meals & Snacks' },
+  { Icon: HomeIcon,        label: 'Housekeeping' },
+  { Icon: Shirt,           label: 'Laundry & Linens' },
+  { Icon: Pill,            label: 'Medications' },
+  { Icon: Bath,            label: 'Personal Care' },
+  { Icon: Droplets,        label: 'Toiletries' },
+  { Icon: Music,           label: 'Activities' },
+  { Icon: Tv,              label: 'Common Areas' },
 ]
 
 const TESTIMONIALS = [
@@ -193,20 +197,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== SERVICES PREVIEW ===== */}
-      <section className="section" aria-labelledby="services-heading">
+      {/* ===== WHAT'S INCLUDED ===== */}
+      <section className="section" aria-labelledby="included-heading">
         <div className="container">
-          <SectionHeader eyebrow="What We Offer" title="Comprehensive Care, Covered" description="From meals and medication to personal care and companionship, everything your loved one needs is thoughtfully provided." center id="services-heading" />
-          <div className="services-grid" role="list">
-            {SERVICES.map(({ img, imgAlt, Icon, title, desc }) => (
-              <article className="service-card" role="listitem" key={title}>
-                <div className="service-card-img" style={{ backgroundImage: `url('${img}')` }} role="img" aria-label={imgAlt} />
-                <div className="service-card-body">
-                  <div className="service-icon" aria-hidden="true"><Icon size={24} strokeWidth={1.5} /></div>
-                  <h3>{title}</h3>
-                  <p>{desc}</p>
-                </div>
-              </article>
+          <SectionHeader eyebrow="All-Inclusive Care" title="Everything Your Loved One Needs" description="One simple monthly rate — no hidden fees, no surprise add-ons. Every service below is included." center id="included-heading" />
+          <div className="ai-features" style={{ marginTop: 48 }} role="list">
+            {INCLUDED_ITEMS.map(({ Icon, label }) => (
+              <div className="ai-feature" role="listitem" key={label}>
+                <div className="feat-icon" aria-hidden="true"><Icon size={26} strokeWidth={1.5} /></div>
+                {label}
+              </div>
             ))}
           </div>
           <div className="text-center" style={{ marginTop: 48 }}>
