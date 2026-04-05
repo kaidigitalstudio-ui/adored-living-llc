@@ -163,7 +163,7 @@ export default function Home() {
         <div className="container">
           <div className="grid-2">
             <div className="about-image">
-              <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=900&q=80" alt="Caregiver gently holding hands with a senior resident" loading="lazy" />
+              <img src="/wheelchair-portrait.avif" alt="Caregiver with a senior resident in a wheelchair" loading="lazy" />
               <div className="about-badge">
                 <div className="badge-icon" aria-hidden="true"><HomeIcon size={24} strokeWidth={1.5} color="white" /></div>
                 <div className="badge-text">
