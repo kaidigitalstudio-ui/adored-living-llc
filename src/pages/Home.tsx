@@ -164,13 +164,6 @@ export default function Home() {
           <div className="grid-2">
             <div className="about-image">
               <img src="/holding-hands.jpg" alt="Family members holding hands with a senior resident" loading="lazy" />
-              <div className="about-badge">
-                <div className="badge-icon" aria-hidden="true"><HomeIcon size={24} strokeWidth={1.5} color="white" /></div>
-                <div className="badge-text">
-                  <strong>A True Home</strong>
-                  <span>Not a facility — a real home with real family</span>
-                </div>
-              </div>
             </div>
 
             <div className="about-content">
