@@ -17,7 +17,7 @@ export default function PageHero({ eyebrow, title, description, bgImage, bgAlt }
       />
       <div className="container">
         <div className="page-hero-content" data-animate="fade">
-          <span className="eyebrow" style={{ color: 'var(--lavender-pale)' }}>{eyebrow}</span>
+          <span className="eyebrow">{eyebrow}</span>
           <h1>{title}</h1>
           <p>{description}</p>
         </div>
