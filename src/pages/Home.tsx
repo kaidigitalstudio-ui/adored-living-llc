@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import {
   Users, MessageCircle, Pill, Home as HomeIcon, UtensilsCrossed, ShieldCheck,
-  Heart, Music, Phone, Mail, MapPin, CheckCircle, Star,
+  Heart, Music, Phone, Mail, MapPin,
   Shirt, Bath, Droplets, Tv,
   type LucideIcon,
 } from 'lucide-react'
@@ -190,14 +190,15 @@ export default function Home() {
               <p>At Adored Living LLC, we operate <Link to="/locations">two licensed residential care homes in Michigan</Link> — each designed to feel like exactly that: a home. We believe seniors shouldn't have to choose between independence and the support they need.</p>
               <p>Our residents are treated like family, because to us, they are. We love our residents and feel truly blessed to serve them and their families every single day.</p>
 
-              <div className="values-list" role="list">
+              <div className="mission-values-row">
                 {[
-                  { Icon: Heart,       title: 'Compassion First',  desc: 'Every interaction is guided by genuine warmth and empathy for each resident and their family.' },
-                  { Icon: Star,        title: 'Dignity Always',    desc: 'We support daily activities in ways that preserve independence and personal pride.' },
-                  { Icon: CheckCircle, title: 'Personalized Care', desc: 'No two residents are alike — our care plans are thoughtfully tailored to each person\'s unique needs.' },
+                  { title: 'Compassion First',  desc: 'Genuine warmth in every interaction' },
+                  { title: 'Dignity Always',    desc: 'Care that preserves independence' },
+                  { title: 'Personalized Care', desc: 'Tailored to each resident\'s needs' },
                 ].map(({ title, desc }) => (
-                  <div className="value-item" role="listitem" key={title}>
-                    <p><strong>{title}</strong> {desc}</p>
+                  <div className="mission-value" key={title}>
+                    <strong>{title}</strong>
+                    <span>{desc}</span>
                   </div>
                 ))}
               </div>

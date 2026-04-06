@@ -1221,6 +1221,37 @@ p:last-child { margin-bottom: 0; }
 }
 
 /* ============================================================
+   MISSION VALUES ROW
+   ============================================================ */
+.mission-values-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 28px 0 32px;
+  padding: 24px 0;
+  border-top: 1px solid var(--lavender-pale);
+  border-bottom: 1px solid var(--lavender-pale);
+}
+.mission-value {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.mission-value strong {
+  font-size: .95rem;
+  color: var(--lavender);
+  font-family: var(--font-serif);
+}
+.mission-value span {
+  font-size: .88rem;
+  color: var(--text-mid);
+  line-height: 1.45;
+}
+@media (max-width: 768px) {
+  .mission-values-row { grid-template-columns: 1fr; gap: 16px; }
+}
+
+/* ============================================================
    HERO PHONE
    ============================================================ */
 .hero-phone {
