@@ -42,15 +42,6 @@ const TESTIMONIALS = [
   { quote: '"The all-inclusive pricing was such a relief — no surprises or confusing bills. But more than that, my aunt is thriving. She loves the other residents, enjoys the meals, and sleeps peacefully every night."', name: 'Linda P.', role: 'Niece of Resident', initial: 'L' },
 ]
 
-const IS_RIGHT_ITEMS = [
-  'Needs help with bathing, dressing, grooming, or daily mobility',
-  'Would thrive in a small, home-like setting rather than a large facility',
-  'Benefits from consistent caregivers who truly know them',
-  'Enjoys a warm, social community of fellow residents',
-  'Does not require 24/7 skilled nursing or complex medical procedures',
-  'Family wants open, ongoing communication with care staff',
-]
-
 const HOW_IT_WORKS = [
   { step: 1, title: 'Reach Out', desc: 'Call, email, or fill out our contact form. We\'ll answer your questions warmly, with no pressure and no commitment required.' },
   { step: 2, title: 'Tour Our Home', desc: 'Visit either location to meet our team, see the space, and get a genuine feel for what daily life at Adored Living looks like.' },
