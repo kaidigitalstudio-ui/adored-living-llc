@@ -179,8 +179,8 @@ export default function Home() {
       {/* ===== ABOUT SPLIT ===== */}
       <section className="section section--alt" aria-labelledby="about-heading">
         <div className="container">
-          <div className="grid-2">
-            <div className="about-image" data-animate>
+          <div className="grid-2" style={{ alignItems: 'flex-start' }}>
+            <div className="about-image" data-animate style={{ marginTop: '36px' }}>
               <img src="/caregiver-assist.png" alt="Caregiver assisting a senior resident in a wheelchair" loading="lazy" />
             </div>
 
