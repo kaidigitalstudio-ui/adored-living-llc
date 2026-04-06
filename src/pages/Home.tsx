@@ -210,25 +210,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== IS ADORED LIVING RIGHT ===== */}
-      <section className="section" aria-labelledby="is-right-heading">
-        <div className="container text-center">
-          <SectionHeader eyebrow="Is This the Right Fit?" title="Is Adored Living Right for My Loved One?" description="Our homes are designed for seniors who need personal care support but want to remain in a warm, home-like setting — not an institutional facility." center id="is-right-heading" />
-          <div className="is-right-grid" role="list">
-            {IS_RIGHT_ITEMS.map((item, i) => (
-              <div className="is-right-item" role="listitem" key={item} data-animate data-delay={i * 70}>
-                <CheckCircle size={18} strokeWidth={2} aria-hidden="true" />
-                <span>{item}</span>
-              </div>
-            ))}
-          </div>
-          <p className="is-right-note">
-            We provide non-medical personal care — not skilled nursing or complex medical procedures. If your loved one requires intensive medical care, we'll help connect you with appropriate resources.
-          </p>
-        </div>
-      </section>
-
-      {/* ===== WHAT'S INCLUDED ===== */}
+{/* ===== WHAT'S INCLUDED ===== */}
       <section className="section" aria-labelledby="included-heading">
         <div className="container">
           <SectionHeader eyebrow="All-Inclusive Care" title="Everything Your Loved One Needs" description="One simple monthly rate — no hidden fees, no surprise add-ons. Every service below is included." center id="included-heading" />
