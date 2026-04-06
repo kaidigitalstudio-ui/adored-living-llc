@@ -96,7 +96,7 @@ export default function Home() {
             </div>
           </div>
           <div className="hero-img-wrap" data-animate data-delay={200}>
-            <img src="/wheelchair-portrait.avif" alt="Caregiver attentively caring for a senior resident" loading="eager" />
+            <img src="/hero-caregiver.png" alt="Caregiver warmly embracing a senior resident at home" loading="eager" />
           </div>
           </div>
         </div>
