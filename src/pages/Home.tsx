@@ -163,7 +163,7 @@ export default function Home() {
         <div className="container">
           <div className="grid-2">
             <div className="about-image" data-animate>
-              <img src="/holding-hands.jpg" alt="Family members holding hands with a senior resident" loading="lazy" />
+              <img src="/caregiver-assist.png" alt="Caregiver assisting a senior resident in a wheelchair" loading="lazy" />
             </div>
 
             <div className="about-content" data-animate data-delay={150}>
