@@ -591,19 +591,12 @@ p:last-child { margin-bottom: 0; }
 
 .testimonial-card::before {
   content: '\201C';
-  position: absolute;
-  top: 20px;
-  right: 28px;
+  display: block;
   font-family: var(--font-serif);
-  font-size: 5rem;
+  font-size: 4rem;
   line-height: 1;
   color: var(--lavender-pale);
-  z-index: 0;
-  pointer-events: none;
-}
-.testimonial-card > * {
-  position: relative;
-  z-index: 1;
+  margin-bottom: 12px;
 }
 
 .stars {
