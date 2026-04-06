@@ -1343,7 +1343,8 @@ p:last-child { margin-bottom: 0; }
   line-height: 1;
   font-size: 1.25rem;
   font-weight: 700;
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
+  font-variant-numeric: lining-nums;
   margin: 0 auto 24px;
   position: relative;
   z-index: 1;
