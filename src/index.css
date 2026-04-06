@@ -587,6 +587,8 @@ p:last-child { margin-bottom: 0; }
   padding: 36px 32px;
   box-shadow: var(--shadow-sm);
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .testimonial-card::before {
@@ -619,6 +621,7 @@ p:last-child { margin-bottom: 0; }
   display: flex;
   align-items: center;
   gap: 14px;
+  margin-top: auto;
 }
 
 .author-avatar {
