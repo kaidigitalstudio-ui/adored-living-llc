@@ -177,9 +177,8 @@ export default function Home() {
                   { Icon: Heart,       title: 'Compassion First',  desc: 'Every interaction is guided by genuine warmth and empathy for each resident and their family.' },
                   { Icon: Star,        title: 'Dignity Always',    desc: 'We support daily activities in ways that preserve independence and personal pride.' },
                   { Icon: CheckCircle, title: 'Personalized Care', desc: 'No two residents are alike — our care plans are thoughtfully tailored to each person\'s unique needs.' },
-                ].map(({ Icon, title, desc }) => (
+                ].map(({ title, desc }) => (
                   <div className="value-item" role="listitem" key={title}>
-                    <div className="value-icon" aria-hidden="true"><Icon size={22} strokeWidth={1.5} /></div>
                     <p><strong>{title}</strong> {desc}</p>
                   </div>
                 ))}
