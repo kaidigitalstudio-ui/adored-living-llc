@@ -53,8 +53,8 @@ export default function About() {
           <div className="grid-2" style={{ alignItems: 'flex-start' }}>
             <div data-animate>
               <span className="eyebrow">How It Began</span>
-              <h2 id="story-heading">We Created the Home We Wished Had Existed</h2>
-              <p style={{ fontSize: '1.1rem' }}>
+              <h2 id="story-heading" style={{ marginBottom: '1.5rem' }}>We Created the Home We Wished Had Existed</h2>
+              <p>
                 Adored Living was born from a deeply personal experience. When our founders were searching
                 for care for someone they loved, they were struck by how few options truly felt like
                 <em> home</em>. Most facilities were clean and capable — but cold. The warmth, the
