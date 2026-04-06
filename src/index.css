@@ -207,10 +207,13 @@ p:last-child { margin-bottom: 0; }
   transition: all var(--transition);
   display: block;
 }
-.nav-links a:hover,
-.nav-links a.active {
+.nav-links a:hover {
   color: var(--lavender);
   background: var(--lavender-bg);
+}
+.nav-links a.active {
+  color: var(--white);
+  background: var(--lavender);
 }
 
 .nav-cta {
