@@ -76,9 +76,9 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div style={{ marginTop: 40, padding: '28px 24px', background: 'var(--sage-bg)', borderRadius: 'var(--radius-md)', borderLeft: '3px solid var(--sage)' }}>
+              <div style={{ marginTop: 40, padding: '28px 24px', background: 'var(--lavender-bg)', borderRadius: 'var(--radius-md)', borderLeft: '3px solid var(--lavender)' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
-                  <Home size={18} strokeWidth={1.75} color="var(--sage)" aria-hidden="true" />
+                  <Home size={18} strokeWidth={1.75} color="var(--lavender)" aria-hidden="true" />
                   <h4 style={{ fontFamily: 'var(--font-serif)', color: 'var(--text)', margin: 0 }}>Come Visit Us</h4>
                 </div>
                 <p style={{ fontSize: '.92rem', marginBottom: 0 }}>We warmly invite you for a personal tour. See the home, meet our team, and experience the warmth of Adored Living for yourself — no commitment required.</p>
@@ -90,8 +90,8 @@ export default function Contact() {
               <h3>Send Us a Message</h3>
 
               {submitted ? (
-                <div role="alert" style={{ background: 'var(--sage-bg)', border: '1px solid var(--sage-pale)', borderRadius: 'var(--radius-md)', padding: '32px 28px', textAlign: 'center' }}>
-                  <h4 style={{ fontFamily: 'var(--font-serif)', color: 'var(--sage)', marginBottom: 8 }}>Thank You!</h4>
+                <div role="alert" style={{ background: 'var(--lavender-bg)', border: '1px solid var(--lavender-pale)', borderRadius: 'var(--radius-md)', padding: '32px 28px', textAlign: 'center' }}>
+                  <h4 style={{ fontFamily: 'var(--font-serif)', color: 'var(--lavender)', marginBottom: 8 }}>Thank You!</h4>
                   <p style={{ marginBottom: 0 }}>Your message has been received. We'll be in touch with you very soon.</p>
                 </div>
               ) : (

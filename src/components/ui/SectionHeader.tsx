@@ -19,7 +19,7 @@ export default function SectionHeader({
     <div className={`section-header${center ? ' text-center' : ''}`} data-animate="fade">
       <span
         className="eyebrow"
-        style={lightEyebrow ? { color: 'var(--sage-pale)' } : undefined}
+        style={lightEyebrow ? { color: 'var(--lavender-pale)' } : undefined}
       >
         {eyebrow}
       </span>

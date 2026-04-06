@@ -27,7 +27,7 @@ export default function CTABanner({
         <div className="cta-inner" data-animate="fade">
           <div className="cta-text">
             {eyebrow && (
-              <span className="eyebrow" style={{ color: 'var(--sage-pale)' }}>{eyebrow}</span>
+              <span className="eyebrow" style={{ color: 'var(--lavender-pale)' }}>{eyebrow}</span>
             )}
             <h2>{title}</h2>
             <p>{description}</p>
