@@ -81,23 +81,24 @@ export default function Home() {
               <span className="hero-phone-sep">— Available 7 days a week</span>
             </p>
 
-            <div className="hero-trust" aria-label="Quick facts">
-              {[
-                { num: '6',             label: 'Max Residents' },
-                { num: '2',             label: 'Michigan Locations' },
-                { num: 'All‑Inclusive', label: 'Care & Services' },
-                { num: 'Licensed',      label: 'State of Michigan' },
-              ].map(({ num, label }) => (
-                <div className="trust-item" key={label}>
-                  <span className="trust-number">{num}</span>
-                  <span className="trust-label">{label}</span>
-                </div>
-              ))}
-            </div>
           </div>
           <div className="hero-img-wrap" data-animate data-delay={200}>
             <img src="/hero-caregiver.png" alt="Caregiver warmly embracing a senior resident at home" loading="eager" />
           </div>
+          </div>
+
+          <div className="hero-trust" aria-label="Quick facts">
+            {[
+              { num: '6',             label: 'Max Residents' },
+              { num: '2',             label: 'Michigan Locations' },
+              { num: 'All‑Inclusive', label: 'Care & Services' },
+              { num: 'Licensed',      label: 'State of Michigan' },
+            ].map(({ num, label }) => (
+              <div className="trust-item" key={label}>
+                <span className="trust-number">{num}</span>
+                <span className="trust-label">{label}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
