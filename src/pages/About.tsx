@@ -1,26 +1,39 @@
 import { Link } from 'react-router-dom'
-import { Heart, Star, Users, Smile, Home, ClipboardList, Check, type LucideIcon } from 'lucide-react'
+import { Heart, Star, Users, Home, ClipboardList, Check, type LucideIcon } from 'lucide-react'
 import PageHero from '../components/ui/PageHero'
 import SectionHeader from '../components/ui/SectionHeader'
 import CTABanner from '../components/ui/CTABanner'
 
-interface ValueItem  { Icon: LucideIcon; title: string; desc: string }
 interface PromiseItem { title: string; desc: string }
 
-const VALUES: ValueItem[] = [
-  { Icon: Heart,         title: 'Compassion',           desc: 'We lead with empathy. Every interaction — from morning greetings to medication reminders — is an opportunity to show each resident that they are seen, valued, and loved.' },
-  { Icon: Star,          title: 'Dignity',               desc: 'We preserve the independence and self-worth of every resident. Assistance is provided in ways that empower, never diminish — always with respect for privacy and personal choice.' },
-  { Icon: Users,         title: 'Respect',               desc: 'Every life story deserves honor. We take time to understand where our residents have come from, what they have built, and who they continue to be — and we celebrate that every day.' },
-  { Icon: Smile,         title: 'Holistic Wellness',     desc: 'True wellbeing is physical, emotional, and social. Our activities, meals, companionship, and comfortable spaces are all designed to nurture the whole person — mind, body, and spirit.' },
-  { Icon: Home,          title: 'Home-Like Environment', desc: 'Clinical settings can feel cold. We deliberately create warm, comfortable, personal spaces that feel like real homes — because they are real homes, and our residents are real family.' },
-  { Icon: ClipboardList, title: 'Accountability',        desc: 'Families trust us with the people they love most. We honor that trust with transparency, open communication, and an unwavering commitment to the highest standards of care.' },
+const VALUES: { Icon: LucideIcon; title: string; desc: string }[] = [
+  { Icon: Heart,         title: 'Compassion',     desc: 'Genuine warmth in every interaction' },
+  { Icon: Star,          title: 'Dignity',         desc: 'Care that preserves independence' },
+  { Icon: Users,         title: 'Respect',         desc: 'Every life story deserves honor' },
+  { Icon: Home,          title: 'Home First',      desc: 'A real home, not a facility' },
+  { Icon: ClipboardList, title: 'Accountability',  desc: 'Transparent, trustworthy partnership' },
 ]
 
 const PROMISE_ITEMS: PromiseItem[] = [
-  { title: 'Open Communication',            desc: 'You will always be able to reach us. We keep families informed, involved, and at ease.' },
+  { title: 'Open Communication',             desc: 'You will always be able to reach us. We keep families informed, involved, and at ease.' },
   { title: 'Consistent, Quality Caregivers', desc: 'We invest in our staff — because stable, trained, caring people make all the difference.' },
-  { title: 'A Stress-Free Atmosphere',      desc: 'Our homes are peaceful, clean, and serene — designed for residents and families to feel at ease the moment they walk in.' },
-  { title: 'No Surprises',                  desc: 'Our all-inclusive rate means you know exactly what to expect. Care, meals, supplies, and services — all covered, simply.' },
+  { title: 'A Stress-Free Atmosphere',       desc: 'Our homes are peaceful, clean, and serene — designed for residents and families to feel at ease the moment they walk in.' },
+  { title: 'No Surprises',                   desc: 'Our all-inclusive rate means you know exactly what to expect. Care, meals, supplies, and services — all covered, simply.' },
+]
+
+const TEAM = [
+  {
+    name: '[Owner Name]',
+    role: 'Co-Founder & Owner',
+    img: '',
+    bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+  },
+  {
+    name: '[Owner Name]',
+    role: 'Co-Founder & Owner',
+    img: '',
+    bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+  },
 ]
 
 export default function About() {
@@ -30,50 +43,80 @@ export default function About() {
         eyebrow="Our Story"
         title="Built on Love, Rooted in Community"
         description="We started Adored Living because we believe every senior deserves a home — not just a facility. Discover the heart behind our care."
-        bgImage="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1600&q=80"
-        bgAlt="Caregiver with senior resident"
+        bgImage=""
+        bgAlt=""
       />
 
-      {/* ===== MISSION ===== */}
-      <section className="section" aria-labelledby="mission-heading">
+      {/* ===== FOUNDERS' STORY ===== */}
+      <section className="section" aria-labelledby="story-heading">
         <div className="container">
-          <div className="grid-2">
+          <div className="grid-2" style={{ alignItems: 'flex-start' }}>
             <div data-animate>
-              <span className="eyebrow">Who We Are</span>
-              <h2 id="mission-heading">A Home, Not a Facility</h2>
+              <span className="eyebrow">How It Began</span>
+              <h2 id="story-heading">We Created the Home We Wished Had Existed</h2>
               <p style={{ fontSize: '1.1rem' }}>
-                Adored Living LLC was founded with one simple belief: that aging deserves to be met with
-                grace, joy, and genuine human connection. We operate two intimate, licensed residential care
-                homes in Michigan — in Rochester Hills and Clarkston — each licensed by the State of Michigan.
+                Adored Living was born from a deeply personal experience. When our founders were searching
+                for care for someone they loved, they were struck by how few options truly felt like
+                <em> home</em>. Most facilities were clean and capable — but cold. The warmth, the
+                individuality, the sense of belonging that seniors deserve simply wasn't there.
               </p>
               <p>
-                Unlike large institutional settings, our homes accommodate a maximum of 6 residents at a
-                time. This is intentional. It means our caregivers truly know each person — their routines,
-                their favorites, their history, and their hopes. It means no one gets lost in the crowd.
+                So they decided to build something different. Something smaller, more personal, and rooted
+                in the belief that the later years of life should be filled with dignity, connection, and joy
+                — not just medical management.
               </p>
               <p>
-                Our owners are not distant executives. They are here. Present. Working alongside staff,
-                getting to know residents and families, and holding themselves personally accountable for
-                every person in their care. That closeness is what sets Adored Living apart.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua — a personal detail about the founders' background or
+                motivation goes here. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+              </p>
+              <p>
+                Today, Adored Living operates two licensed homes in Rochester Hills and Clarkston — and
+                every decision we make still flows from that original intention: to love our residents the
+                way we'd want our own family loved.
               </p>
             </div>
-            <div className="about-image" data-animate data-delay={150}>
+            <div className="about-image" data-animate data-delay={150} style={{ marginTop: 36 }}>
               <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=900&q=80" alt="Senior resident enjoying morning light in a bright, welcoming room" loading="lazy" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* ===== VALUES ===== */}
-      <section className="section section--alt" aria-labelledby="values-heading">
+      {/* ===== TEAM ===== */}
+      <section className="section section--alt" aria-labelledby="team-heading">
         <div className="container">
-          <SectionHeader eyebrow="What Guides Us" title="Our Core Values" description="Everything we do flows from these principles — they are not posters on a wall but the daily practice of everyone on our team." center id="values-heading" />
-          <div className="why-grid" style={{ marginTop: 56 }} role="list">
+          <SectionHeader eyebrow="Who We Are" title="Meet the Owners" description="Adored Living is owner-operated — meaning the people who built this vision are present every day, personally invested in every resident." center id="team-heading" />
+          <div className="team-grid">
+            {TEAM.map(({ name, role, img, bio }, i) => (
+              <div className="team-card" key={name + i} data-animate data-delay={i * 120}>
+                <div className="team-photo" aria-hidden="true">
+                  {img
+                    ? <img src={img} alt={name} loading="lazy" />
+                    : <div className="team-photo-placeholder"><Heart size={32} strokeWidth={1.5} color="var(--lavender-pale)" /></div>
+                  }
+                </div>
+                <div className="team-info">
+                  <strong className="team-name">{name}</strong>
+                  <span className="team-role">{role}</span>
+                  <p>{bio}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== VALUES STRIP ===== */}
+      <section className="section" aria-labelledby="values-heading">
+        <div className="container">
+          <SectionHeader eyebrow="What Guides Us" title="Our Core Values" description="These principles aren't posters on a wall — they're the daily practice of everyone on our team." center id="values-heading" />
+          <div className="values-strip" role="list">
             {VALUES.map(({ Icon, title, desc }, i) => (
-              <div className="why-card" role="listitem" key={title} data-animate data-delay={i * 80}>
-                <div className="why-icon" aria-hidden="true"><Icon size={28} strokeWidth={1.5} /></div>
-                <h3>{title}</h3>
-                <p>{desc}</p>
+              <div className="values-strip-item" role="listitem" key={title} data-animate data-delay={i * 70}>
+                <div className="values-strip-icon" aria-hidden="true"><Icon size={22} strokeWidth={1.5} /></div>
+                <strong>{title}</strong>
+                <span>{desc}</span>
               </div>
             ))}
           </div>
@@ -81,7 +124,7 @@ export default function About() {
       </section>
 
       {/* ===== OUR PROMISE ===== */}
-      <section className="section" aria-labelledby="promise-heading">
+      <section className="section section--alt" aria-labelledby="promise-heading">
         <div className="container">
           <div className="grid-2">
             <div className="about-image" data-animate>

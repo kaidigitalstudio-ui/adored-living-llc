@@ -570,6 +570,106 @@ p:last-child { margin-bottom: 0; }
 .value-item strong { color: var(--text); display: block; margin-bottom: 2px; }
 
 /* ============================================================
+   TEAM
+   ============================================================ */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px;
+  margin-top: 56px;
+}
+
+.team-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.team-photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--lavender-bg);
+}
+
+.team-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.team-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-info {
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.team-name {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.team-role {
+  font-size: .88rem;
+  color: var(--lavender);
+  font-weight: 600;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.team-info p { font-size: .95rem; color: var(--text-mid); line-height: 1.7; margin: 0; }
+
+/* ============================================================
+   VALUES STRIP
+   ============================================================ */
+.values-strip {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  margin-top: 52px;
+  border: 1px solid var(--lavender-pale);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.values-strip-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  padding: 32px 20px;
+  border-right: 1px solid var(--lavender-pale);
+}
+
+.values-strip-item:last-child { border-right: none; }
+
+.values-strip-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--lavender-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--lavender);
+  margin-bottom: 4px;
+}
+
+.values-strip-item strong { font-size: .95rem; color: var(--text); font-family: var(--font-serif); }
+.values-strip-item span   { font-size: .82rem; color: var(--text-mid); line-height: 1.45; }
+
+/* ============================================================
    TESTIMONIALS
    ============================================================ */
 .testimonials-section { background: var(--white); padding: 100px 0; }
@@ -1139,6 +1239,11 @@ p:last-child { margin-bottom: 0; }
   .services-grid,
   .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
 
+  .values-strip { grid-template-columns: repeat(3, 1fr); }
+  .values-strip-item:nth-child(3) { border-right: none; }
+  .values-strip-item:nth-child(4),
+  .values-strip-item:nth-child(5) { border-top: 1px solid var(--lavender-pale); }
+
   .contact-grid { grid-template-columns: 1fr; }
   .contact-form { padding: 36px 28px; }
 
@@ -1187,7 +1292,16 @@ p:last-child { margin-bottom: 0; }
 
   .why-grid,
   .services-grid,
-  .testimonials-grid { grid-template-columns: 1fr; }
+  .testimonials-grid,
+  .team-grid { grid-template-columns: 1fr; }
+
+  .values-strip { grid-template-columns: repeat(2, 1fr); }
+  .values-strip-item:nth-child(3) { border-right: 1px solid var(--lavender-pale); }
+  .values-strip-item:nth-child(2),
+  .values-strip-item:nth-child(4) { border-right: none; }
+  .values-strip-item:nth-child(3),
+  .values-strip-item:nth-child(4),
+  .values-strip-item:nth-child(5) { border-top: 1px solid var(--lavender-pale); }
 
   .form-row { grid-template-columns: 1fr; }
 
