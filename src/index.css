@@ -596,7 +596,7 @@ p:last-child { margin-bottom: 0; }
   font-size: 4rem;
   line-height: 1;
   color: var(--lavender-pale);
-  margin-bottom: 12px;
+  margin-bottom: 0;
 }
 
 .stars {
