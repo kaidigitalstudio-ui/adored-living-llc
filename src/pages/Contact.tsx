@@ -88,6 +88,7 @@ export default function Contact() {
             {/* Form Column */}
             <div className="contact-form" data-animate data-delay={150}>
               <h3>Send Us a Message</h3>
+              <p style={{ fontSize: '.95rem', color: 'var(--text-mid)', marginBottom: 28, marginTop: 4 }}>We read every message personally and typically respond within a few hours.</p>
 
               {submitted ? (
                 <div role="alert" style={{ background: 'var(--lavender-bg)', border: '1px solid var(--lavender-pale)', borderRadius: 'var(--radius-md)', padding: '32px 28px', textAlign: 'center' }}>
@@ -143,7 +144,8 @@ export default function Contact() {
                     <label htmlFor="message">How Can We Help? *</label>
                     <textarea id="message" name="message" required value={form.message} onChange={handleChange} placeholder="Tell us a little about your loved one's needs, or what questions you'd like to discuss…" />
                   </div>
-                  <button type="submit" className="btn btn-primary btn-lg" style={{ width: '100%' }}>Send Message</button>
+                  <button type="submit" className="btn btn-primary btn-lg" style={{ width: '100%' }}>Send Your Message</button>
+                  <p style={{ fontSize: '.85rem', color: 'var(--text-light)', textAlign: 'center', marginTop: 12, marginBottom: 0 }}>No sales pressure — just a warm conversation.</p>
                 </form>
               )}
             </div>

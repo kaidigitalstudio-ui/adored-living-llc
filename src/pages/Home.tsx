@@ -59,6 +59,7 @@ export default function Home() {
       {/* ===== HERO ===== */}
       <section className="hero" aria-labelledby="hero-heading">
         <div className="container">
+          <div className="hero-inner">
           <div className="hero-content" data-animate="fade">
             <span className="eyebrow">Michigan's Home-Style Assisted Living</span>
             <h1 id="hero-heading">
@@ -93,6 +94,10 @@ export default function Home() {
                 </div>
               ))}
             </div>
+          </div>
+          <div className="hero-img-wrap" data-animate data-delay={200}>
+            <img src="/wheelchair-portrait.avif" alt="Caregiver attentively caring for a senior resident" loading="eager" />
+          </div>
           </div>
         </div>
       </section>
@@ -181,7 +186,7 @@ export default function Home() {
             <div className="about-content" data-animate data-delay={150}>
               <span className="eyebrow">Our Mission</span>
               <h2 id="about-heading">Care Built on Compassion, Dignity &amp; Respect</h2>
-              <p>At Adored Living LLC, we operate two licensed residential care homes in Michigan — each designed to feel like exactly that: a home. We believe seniors shouldn't have to choose between independence and the support they need.</p>
+              <p>At Adored Living LLC, we operate <Link to="/locations">two licensed residential care homes in Michigan</Link> — each designed to feel like exactly that: a home. We believe seniors shouldn't have to choose between independence and the support they need.</p>
               <p>Our residents are treated like family, because to us, they are. We love our residents and feel truly blessed to serve them and their families every single day.</p>
 
               <div className="values-list" role="list">
@@ -204,7 +209,7 @@ export default function Home() {
 {/* ===== WHAT'S INCLUDED ===== */}
       <section className="section" aria-labelledby="included-heading">
         <div className="container">
-          <SectionHeader eyebrow="All-Inclusive Care" title="Everything Your Loved One Needs" description="One simple monthly rate — no hidden fees, no surprise add-ons. Every service below is included." center id="included-heading" />
+          <SectionHeader eyebrow="All-Inclusive Care" title="Everything Your Loved One Needs" description="One simple monthly rate — no hidden fees, no surprise add-ons. Every service below is included. Have questions about pricing? Contact us — we're happy to walk you through it." center id="included-heading" />
           <div className="ai-features" style={{ marginTop: 48 }} role="list">
             {INCLUDED_ITEMS.map(({ Icon, label }, i) => (
               <div className="ai-feature" role="listitem" key={label} data-animate data-delay={i * 60}>

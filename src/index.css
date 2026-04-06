@@ -249,14 +249,30 @@ p:last-child { margin-bottom: 0; }
    HERO SECTION
    ============================================================ */
 .hero {
-  display: flex;
-  align-items: center;
-  padding: 180px 0 140px;
+  padding: 120px 0 100px;
   background: linear-gradient(145deg, var(--lavender-bg) 0%, var(--cream) 65%);
 }
 
-.hero-content {
-  max-width: 700px;
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.hero-content {}
+
+.hero-img-wrap {
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(123,111,160,.22);
+  flex-shrink: 0;
+}
+.hero-img-wrap img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  display: block;
 }
 
 .hero-content .eyebrow { color: var(--lavender); }
@@ -374,7 +390,7 @@ p:last-child { margin-bottom: 0; }
   background: var(--white);
   border-radius: var(--radius-md);
   padding: 40px 32px;
-  border: 1px solid var(--cream-dark);
+  box-shadow: var(--shadow-sm);
   transition: all var(--transition);
   position: relative;
   overflow: hidden;
@@ -561,7 +577,7 @@ p:last-child { margin-bottom: 0; }
   background: var(--white);
   border-radius: var(--radius-md);
   padding: 36px 32px;
-  border: 1px solid var(--cream-dark);
+  box-shadow: var(--shadow-sm);
   position: relative;
 }
 
@@ -653,7 +669,6 @@ p:last-child { margin-bottom: 0; }
   background: var(--white);
   border-radius: var(--radius-md);
   overflow: hidden;
-  border: 1px solid var(--cream-dark);
   box-shadow: var(--shadow-sm);
   transition: all var(--transition);
 }
@@ -1163,9 +1178,16 @@ p:last-child { margin-bottom: 0; }
   }
   .nav-links.open a { font-size: 1.2rem; padding: 14px 20px; }
 
+  .hero-inner   { grid-template-columns: 1fr; gap: 40px; }
+  .hero-img-wrap { display: none; }
+  .hero         { padding: 120px 0 80px; }
   .hero-actions { flex-direction: column; align-items: flex-start; }
   .hero-trust   { gap: 24px; }
   .cta-inner    { flex-direction: column; align-items: flex-start; }
+
+  .page-hero         { padding: 130px 0 56px; min-height: 260px; }
+  .page-hero-content { text-align: center; }
+  .page-hero p       { margin-left: auto; margin-right: auto; }
 
   .why-grid,
   .services-grid,
