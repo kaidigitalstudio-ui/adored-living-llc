@@ -42,6 +42,21 @@ const TESTIMONIALS = [
   { quote: '"The all-inclusive pricing was such a relief — no surprises or confusing bills. But more than that, my aunt is thriving. She loves the other residents, enjoys the meals, and sleeps peacefully every night."', name: 'Linda P.', role: 'Niece of Resident', initial: 'L' },
 ]
 
+const IS_RIGHT_ITEMS = [
+  'Needs help with bathing, dressing, grooming, or daily mobility',
+  'Would thrive in a small, home-like setting rather than a large facility',
+  'Benefits from consistent caregivers who truly know them',
+  'Enjoys a warm, social community of fellow residents',
+  'Does not require 24/7 skilled nursing or complex medical procedures',
+  'Family wants open, ongoing communication with care staff',
+]
+
+const HOW_IT_WORKS = [
+  { step: 1, title: 'Reach Out', desc: 'Call, email, or fill out our contact form. We\'ll answer your questions warmly, with no pressure and no commitment required.' },
+  { step: 2, title: 'Tour Our Home', desc: 'Visit either location to meet our team, see the space, and get a genuine feel for what daily life at Adored Living looks like.' },
+  { step: 3, title: 'Welcome Your Loved One', desc: 'We\'ll build a personalized care plan together and guide your family through every step of a smooth, comfortable transition.' },
+]
+
 const LOCATIONS: LocationItem[] = [
   { id: 'rochester-hills', img: '/rochester-hills.jpg', imgAlt: 'Rochester Hills home exterior', badge: 'Rochester Hills', title: 'Rochester Hills Home', address: '185 E South Blvd, Rochester Hills, MI 48307', phone: '(248) 931-9009', phoneHref: 'tel:+12489319009', email: 'adoredlivingllc@gmail.com', feature: 'Comfortable outdoor seating areas' },
   { id: 'clarkston', img: '/clarkston.webp', imgAlt: 'Clarkston home exterior with accessible ramp and flower beds', badge: 'Clarkston', title: 'Clarkston Home', address: '5111 Heath Ave, Clarkston, MI 48346', phone: '(248) 931-9009', phoneHref: 'tel:+12489319009', email: 'adoredlivingllc@gmail.com', feature: 'Peaceful residential neighborhood' },
@@ -67,6 +82,12 @@ export default function Home() {
               <Link to="/services" className="btn btn-primary btn-lg">Explore Our Care</Link>
               <Link to="/contact" className="btn btn-secondary btn-lg">Schedule a Visit</Link>
             </div>
+
+            <p className="hero-phone">
+              <Phone size={15} strokeWidth={2.5} aria-hidden="true" />
+              <a href="tel:+12489319009">(248) 931-9009</a>
+              <span className="hero-phone-sep">— Available 7 days a week</span>
+            </p>
 
             <div className="hero-trust" aria-label="Quick facts">
               {[
@@ -189,6 +210,24 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== IS ADORED LIVING RIGHT ===== */}
+      <section className="section" aria-labelledby="is-right-heading">
+        <div className="container text-center">
+          <SectionHeader eyebrow="Is This the Right Fit?" title="Is Adored Living Right for My Loved One?" description="Our homes are designed for seniors who need personal care support but want to remain in a warm, home-like setting — not an institutional facility." center id="is-right-heading" />
+          <div className="is-right-grid" role="list">
+            {IS_RIGHT_ITEMS.map((item, i) => (
+              <div className="is-right-item" role="listitem" key={item} data-animate data-delay={i * 70}>
+                <CheckCircle size={18} strokeWidth={2} aria-hidden="true" />
+                <span>{item}</span>
+              </div>
+            ))}
+          </div>
+          <p className="is-right-note">
+            We provide non-medical personal care — not skilled nursing or complex medical procedures. If your loved one requires intensive medical care, we'll help connect you with appropriate resources.
+          </p>
+        </div>
+      </section>
+
       {/* ===== WHAT'S INCLUDED ===== */}
       <section className="section" aria-labelledby="included-heading">
         <div className="container">
@@ -203,6 +242,25 @@ export default function Home() {
           </div>
           <div className="text-center" style={{ marginTop: 48 }}>
             <Link to="/services" className="btn btn-primary btn-lg">View All Services</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== HOW IT WORKS ===== */}
+      <section className="section section--alt" aria-labelledby="how-heading">
+        <div className="container">
+          <SectionHeader eyebrow="Getting Started" title="How It Works" description="Taking the first step can feel overwhelming. We've made the process as simple and pressure-free as possible." center id="how-heading" />
+          <div className="steps-grid" role="list">
+            {HOW_IT_WORKS.map(({ step, title, desc }, i) => (
+              <div className="step-card" role="listitem" key={step} data-animate data-delay={i * 120}>
+                <div className="step-number" aria-hidden="true">{step}</div>
+                <h3>{title}</h3>
+                <p>{desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="text-center" style={{ marginTop: 48 }}>
+            <a href="tel:+12489319009" className="btn btn-primary btn-lg">Call (248) 931-9009</a>
           </div>
         </div>
       </section>
