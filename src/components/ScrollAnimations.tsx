@@ -5,6 +5,8 @@ export default function ScrollAnimations() {
   const { pathname } = useLocation()
 
   useEffect(() => {
+    window.scrollTo(0, 0)
+
     // Small delay lets the new page's DOM render before we observe
     const timer = setTimeout(() => {
       const els = document.querySelectorAll('[data-animate]')
