@@ -214,7 +214,6 @@ export default function Home() {
           <div className="testimonials-grid" role="list">
             {TESTIMONIALS.map(({ quote, name, role, initial }, i) => (
               <article className="testimonial-card" role="listitem" key={name} data-animate data-delay={i * 120}>
-                <div className="stars" aria-label="5 out of 5 stars">★★★★★</div>
                 <p className="testimonial-text">{quote}</p>
                 <div className="testimonial-author">
                   <div className="author-avatar" aria-hidden="true">{initial}</div>
