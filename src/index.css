@@ -267,6 +267,7 @@ p:last-child { margin-bottom: 0; }
   overflow: hidden;
   box-shadow: 0 24px 64px rgba(123,111,160,.22);
   flex-shrink: 0;
+  margin-top: 36px;
 }
 .hero-img-wrap img {
   width: 100%;
