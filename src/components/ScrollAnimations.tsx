@@ -1,12 +1,14 @@
-import { useEffect } from 'react'
+import { useEffect, useLayoutEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 
 export default function ScrollAnimations() {
   const { pathname } = useLocation()
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     window.scrollTo(0, 0)
+  }, [pathname])
 
+  useEffect(() => {
     // Small delay lets the new page's DOM render before we observe
     const timer = setTimeout(() => {
       const els = document.querySelectorAll('[data-animate]')
