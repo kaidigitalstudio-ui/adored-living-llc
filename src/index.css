@@ -1344,10 +1344,10 @@ p:last-child { margin-bottom: 0; }
   display: flex;
   align-items: center;
   justify-content: center;
-  line-height: 1;
+  line-height: 54px;
   font-size: 1.25rem;
   font-weight: 700;
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   margin: 0 auto 24px;
   position: relative;
   z-index: 1;
