@@ -24,16 +24,9 @@ export default function FAQ() {
 
   return (
     <>
-      <div className="page-title-band">
-        <div className="container">
-          <span className="eyebrow">FAQ</span>
-          <h1>Your Questions, Answered</h1>
-        </div>
-      </div>
-
       <section className="section" aria-labelledby="faq-heading">
         <div className="container">
-          <SectionHeader eyebrow="Frequently Asked Questions" title="Answers to What Families Ask Most" description="If you don't see your question here, please don't hesitate to reach out — we love talking with families and are always happy to help." center id="faq-heading" />
+          <SectionHeader eyebrow="Frequently Asked Questions" title="Your Questions, Answered" description="If you don't see your question here, please don't hesitate to reach out — we love talking with families and are always happy to help." center id="faq-heading" as="h1" />
 
           <div className="faq-list" role="list">
             {FAQS.map(({ question, answer }, i) => (

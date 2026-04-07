@@ -90,17 +90,10 @@ const INCLUDED_ITEMS: IncludedItem[] = [
 export default function Services() {
   return (
     <>
-      <div className="page-title-band">
-        <div className="container">
-          <span className="eyebrow">Our Services</span>
-          <h1>Everything Your Loved One Needs</h1>
-        </div>
-      </div>
-
       {/* ===== ALL-INCLUSIVE INTRO ===== */}
       <section className="section" aria-labelledby="alinc-heading">
         <div className="container">
-          <SectionHeader eyebrow="All-Inclusive Living" title="One Simple Rate — Everything Covered" description="We understand that families navigating care options often face confusing pricing structures. At Adored Living, we keep it simple: one straightforward, all-inclusive rate covers all basic supplies, foods, and services — so you can focus on what matters most." center id="alinc-heading" />
+          <SectionHeader eyebrow="Our Services" title="One Simple Rate — Everything Covered" description="We understand that families navigating care options often face confusing pricing structures. At Adored Living, we keep it simple: one straightforward, all-inclusive rate covers all basic supplies, foods, and services — so you can focus on what matters most." center id="alinc-heading" as="h1" />
           <div className="ai-features" style={{ marginTop: 48 }} role="list">
             {INCLUDED_ITEMS.map(({ Icon, label }, i) => (
               <div className="ai-feature" role="listitem" key={label} data-animate data-delay={i * 60}>

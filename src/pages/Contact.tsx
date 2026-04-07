@@ -26,16 +26,9 @@ export default function Contact() {
 
   return (
     <>
-      <div className="page-title-band">
-        <div className="container">
-          <span className="eyebrow">Contact Us</span>
-          <h1>We're Here to Help</h1>
-        </div>
-      </div>
-
       <section className="section" aria-labelledby="contact-heading">
         <div className="container">
-          <SectionHeader eyebrow="Get in Touch" title="Let's Start a Conversation" description="Every family's situation is unique. Reach out today and let us help you find the right path forward for your loved one." id="contact-heading" />
+          <SectionHeader eyebrow="Contact Us" title="Let's Start a Conversation" description="Every family's situation is unique. Reach out today and let us help you find the right path forward for your loved one." id="contact-heading" as="h1" />
 
           <div className="contact-grid">
             {/* Info Column */}

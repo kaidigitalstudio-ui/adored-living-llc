@@ -5,6 +5,7 @@ interface SectionHeaderProps {
   center?: boolean
   id?: string
   lightEyebrow?: boolean
+  as?: 'h1' | 'h2'
 }
 
 export default function SectionHeader({
@@ -14,6 +15,7 @@ export default function SectionHeader({
   center = false,
   id,
   lightEyebrow = false,
+  as: Tag = 'h2',
 }: SectionHeaderProps) {
   return (
     <div className={`section-header${center ? ' text-center' : ''}`} data-animate="fade">
@@ -23,7 +25,7 @@ export default function SectionHeader({
       >
         {eyebrow}
       </span>
-      <h2 id={id}>{title}</h2>
+      <Tag id={id}>{title}</Tag>
       {description && <p>{description}</p>}
     </div>
   )

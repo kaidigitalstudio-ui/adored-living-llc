@@ -38,22 +38,13 @@ const TEAM = [
 export default function About() {
   return (
     <>
-      {/* ===== PAGE TITLE BAND ===== */}
-      <div className="page-title-band">
-        <div className="container">
-          <span className="eyebrow">About Us</span>
-          <h1>Built on Love, Rooted in Community</h1>
-          <p className="page-title-desc">We started Adored Living because we believe every senior deserves a home — not just a facility.</p>
-        </div>
-      </div>
-
       {/* ===== FOUNDERS' STORY ===== */}
       <section className="section" aria-labelledby="story-heading">
         <div className="container">
           <div className="grid-2" style={{ alignItems: 'flex-start' }}>
             <div data-animate>
               <span className="eyebrow">How It Began</span>
-              <h2 id="story-heading" style={{ marginBottom: '1.5rem' }}>We Created the Home We Wished Had Existed</h2>
+              <h1 id="story-heading" style={{ marginBottom: '1.5rem' }}>We Created the Home We Wished Had Existed</h1>
               <p>
                 Adored Living was born from a deeply personal experience. When our founders were searching
                 for care for someone they loved, they were struck by how few options truly felt like
