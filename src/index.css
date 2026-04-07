@@ -154,7 +154,7 @@ p:last-child { margin-bottom: 0; }
   top: 0; left: 0; right: 0;
   z-index: 1000;
   padding: 0 24px;
-  background: rgba(250,248,243,.95);
+  background: rgba(255,255,255,.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(92,127,101,.1);
@@ -1287,7 +1287,7 @@ p:last-child { margin-bottom: 0; }
     flex-direction: column;
     position: fixed;
     top: 80px; left: 0; right: 0; bottom: 0;
-    background: rgba(250,248,243,.97);
+    background: rgba(255,255,255,.97);
     backdrop-filter: blur(12px);
     padding: 40px 24px;
     gap: 4px;
