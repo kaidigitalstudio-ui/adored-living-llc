@@ -26,7 +26,7 @@ export default function Contact() {
 
   return (
     <>
-      <section className="section" aria-labelledby="contact-heading">
+      <section className="section section--top" aria-labelledby="contact-heading">
         <div className="container">
           <SectionHeader eyebrow="Contact Us" title="Let's Start a Conversation" description="Every family's situation is unique. Reach out today and let us help you find the right path forward for your loved one." id="contact-heading" as="h1" />
 

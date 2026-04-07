@@ -24,7 +24,7 @@ export default function FAQ() {
 
   return (
     <>
-      <section className="section" aria-labelledby="faq-heading">
+      <section className="section section--top" aria-labelledby="faq-heading">
         <div className="container">
           <SectionHeader eyebrow="Frequently Asked Questions" title="Your Questions, Answered" description="If you don't see your question here, please don't hesitate to reach out — we love talking with families and are always happy to help." center id="faq-heading" as="h1" />
 

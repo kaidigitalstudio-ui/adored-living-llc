@@ -91,7 +91,7 @@ export default function Services() {
   return (
     <>
       {/* ===== ALL-INCLUSIVE INTRO ===== */}
-      <section className="section" aria-labelledby="alinc-heading">
+      <section className="section section--top" aria-labelledby="alinc-heading">
         <div className="container">
           <SectionHeader eyebrow="Our Services" title="One Simple Rate — Everything Covered" description="We understand that families navigating care options often face confusing pricing structures. At Adored Living, we keep it simple: one straightforward, all-inclusive rate covers all basic supplies, foods, and services — so you can focus on what matters most." center id="alinc-heading" as="h1" />
           <div className="ai-features" style={{ marginTop: 48 }} role="list">

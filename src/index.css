@@ -83,6 +83,7 @@ p:last-child { margin-bottom: 0; }
 
 .section { padding: 100px 0; }
 .section--alt { background: var(--lavender-bg); }
+.section--top { padding-top: 160px; }
 
 .text-center { text-align: center; }
 .text-center p { max-width: 640px; margin-left: auto; margin-right: auto; }

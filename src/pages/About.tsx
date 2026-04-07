@@ -39,7 +39,7 @@ export default function About() {
   return (
     <>
       {/* ===== FOUNDERS' STORY ===== */}
-      <section className="section" aria-labelledby="story-heading">
+      <section className="section section--top" aria-labelledby="story-heading">
         <div className="container">
           <div className="grid-2" style={{ alignItems: 'flex-start' }}>
             <div data-animate>

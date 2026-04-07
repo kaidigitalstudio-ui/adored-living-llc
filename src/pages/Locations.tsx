@@ -61,7 +61,7 @@ export default function Locations() {
   return (
     <>
       {/* ===== INTRO ===== */}
-      <section className="section" aria-labelledby="loc-intro">
+      <section className="section section--top" aria-labelledby="loc-intro">
         <div className="container">
           <SectionHeader eyebrow="Our Locations" title="Serving Rochester Hills & Clarkston" description="Our two licensed care homes in Oakland County, Michigan are both nestled in quiet residential neighborhoods — giving residents the peace of a real home with the security of professional care." center id="loc-intro" as="h1" />
         </div>
