@@ -18,8 +18,8 @@ interface ServiceDetail {
 const SERVICES: ServiceDetail[] = [
   {
     id: 'meals',
-    img: 'https://images.unsplash.com/photo-1547592180-85f173990554?w=800&q=80',
-    imgAlt: 'Beautifully prepared, nutritious home-cooked meal',
+    img: '/meal-chicken-rice.png',
+    imgAlt: 'Home-cooked meal of chicken, rice, and fresh salad served at Adored Living',
     Icon: UtensilsCrossed,
     title: 'Meals & Nutrition',
     description: 'Good food is good care. Our residents enjoy three fresh, home-cooked meals every day — prepared with nutrition, flavor, and love. We accommodate dietary restrictions and preferences, and snacks and beverages are available throughout the day.',
