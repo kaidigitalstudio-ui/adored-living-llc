@@ -39,10 +39,11 @@ export default function About() {
   return (
     <>
       {/* ===== PAGE TITLE BAND ===== */}
-      <div className="page-title-band">
+      <div className="page-title-band page-title-band--center">
         <div className="container">
           <span className="eyebrow">About Us</span>
-          <h1>Our Story &amp; Our Team</h1>
+          <h1>Built on Love, Rooted in Community</h1>
+          <p className="page-title-desc">We started Adored Living because we believe every senior deserves a home — not just a facility.</p>
         </div>
       </div>
 
