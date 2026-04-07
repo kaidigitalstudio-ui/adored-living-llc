@@ -26,8 +26,8 @@ export default function FAQ() {
   return (
     <>
       <PageHero
-        eyebrow="Common Questions"
-        title="We're Here to Help You Understand"
+        eyebrow="Have Questions?"
+        title="Your Questions, Answered"
         description="Choosing care for a loved one brings up many questions. We've answered the most common ones here — and we're always just a phone call away."
         bgImage="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1600&q=80"
         bgAlt="Caregiver and senior resident sharing a warm moment"

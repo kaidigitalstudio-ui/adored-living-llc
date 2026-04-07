@@ -62,8 +62,8 @@ export default function Locations() {
   return (
     <>
       <PageHero
-        eyebrow="Our Homes"
-        title="Two Warm Michigan Locations"
+        eyebrow="Come Visit Us"
+        title="Our Two Michigan Homes"
         description="Both of our homes offer the same intimate, compassionate care in beautiful residential settings — each a true home for every resident."
         bgImage="/rochester-hills.jpg"
         bgAlt="Rochester Hills home exterior surrounded by mature trees"
