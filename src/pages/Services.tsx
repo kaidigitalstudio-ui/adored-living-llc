@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { UtensilsCrossed, Heart, Pill, Home, Laugh, Music, Shirt, Tv, Bath, Droplets, type LucideIcon } from 'lucide-react'
+import { UtensilsCrossed, Heart, Pill, Home, Laugh, Music, type LucideIcon } from 'lucide-react'
 import SectionHeader from '../components/ui/SectionHeader'
 import CTABanner from '../components/ui/CTABanner'
 
@@ -14,7 +14,6 @@ interface ServiceDetail {
   reverse?: boolean
 }
 
-interface IncludedItem { Icon: LucideIcon; label: string }
 
 const SERVICES: ServiceDetail[] = [
   {
@@ -76,39 +75,14 @@ const SERVICES: ServiceDetail[] = [
   },
 ]
 
-const INCLUDED_ITEMS: IncludedItem[] = [
-  { Icon: UtensilsCrossed, label: 'Meals & Snacks' },
-  { Icon: Home,            label: 'Housekeeping' },
-  { Icon: Shirt,           label: 'Laundry & Linens' },
-  { Icon: Pill,            label: 'Medications' },
-  { Icon: Bath,            label: 'Personal Care' },
-  { Icon: Droplets,        label: 'Toiletries' },
-  { Icon: Music,           label: 'Activities' },
-  { Icon: Tv,              label: 'Common Areas' },
-]
 
 export default function Services() {
   return (
     <>
-      {/* ===== ALL-INCLUSIVE INTRO ===== */}
-      <section className="section section--top" aria-labelledby="alinc-heading">
-        <div className="container">
-          <SectionHeader eyebrow="Our Services" title="One Simple Rate — Everything Covered" description="We understand that families navigating care options often face confusing pricing structures. At Adored Living, we keep it simple: one straightforward, all-inclusive rate covers all basic supplies, foods, and services — so you can focus on what matters most." center id="alinc-heading" as="h1" />
-          <div className="ai-features" style={{ marginTop: 48 }} role="list">
-            {INCLUDED_ITEMS.map(({ Icon, label }, i) => (
-              <div className="ai-feature" role="listitem" key={label} data-animate data-delay={i * 60}>
-                <div className="feat-icon" aria-hidden="true"><Icon size={26} strokeWidth={1.5} /></div>
-                {label}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ===== SERVICES DETAIL ===== */}
-      <section className="section section--alt" aria-labelledby="detail-heading">
+      <section className="section section--top" aria-labelledby="detail-heading">
         <div className="container">
-          <SectionHeader eyebrow="Our Care Services" title="What We Provide Each Day" center id="detail-heading" />
+          <SectionHeader eyebrow="Our Services" title="What We Provide Each Day" description="Everything your loved one needs, covered under one simple all-inclusive rate." center id="detail-heading" as="h1" />
 
           <div className="services-detail">
             {SERVICES.map(({ id, img, imgAlt, Icon, title, description, includes, reverse }, i) => (
@@ -117,7 +91,6 @@ export default function Services() {
                   <img src={img} alt={imgAlt} loading="lazy" />
                 </div>
                 <div className="service-row-content">
-                  <div className="service-icon" aria-hidden="true"><Icon size={24} strokeWidth={1.5} /></div>
                   <h3 id={`svc-${id}`}>{title}</h3>
                   <p>{description}</p>
                   <div className="service-includes" role="list">
