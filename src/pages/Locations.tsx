@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { Phone, Mail, MapPin, Users, Home, MessageCircle, ClipboardList, HelpCircle, Coffee, Heart, type LucideIcon } from 'lucide-react'
-import PageHero from '../components/ui/PageHero'
 import SectionHeader from '../components/ui/SectionHeader'
 import CTABanner from '../components/ui/CTABanner'
 
@@ -61,13 +60,12 @@ const EXPECT_ITEMS: ExpectItem[] = [
 export default function Locations() {
   return (
     <>
-      <PageHero
-        eyebrow="Come Visit Us"
-        title="Our Two Michigan Homes"
-        description="Both of our homes offer the same intimate, compassionate care in beautiful residential settings — each a true home for every resident."
-        bgImage="/rochester-hills.jpg"
-        bgAlt="Rochester Hills home exterior surrounded by mature trees"
-      />
+      <div className="page-title-band">
+        <div className="container">
+          <span className="eyebrow">Our Locations</span>
+          <h1>Our Two Michigan Homes</h1>
+        </div>
+      </div>
 
       {/* ===== INTRO ===== */}
       <section className="section" aria-labelledby="loc-intro">

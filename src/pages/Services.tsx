@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { UtensilsCrossed, Heart, Pill, Home, Laugh, Music, Shirt, Tv, Bath, Droplets, type LucideIcon } from 'lucide-react'
-import PageHero from '../components/ui/PageHero'
 import SectionHeader from '../components/ui/SectionHeader'
 import CTABanner from '../components/ui/CTABanner'
 
@@ -91,13 +90,12 @@ const INCLUDED_ITEMS: IncludedItem[] = [
 export default function Services() {
   return (
     <>
-      <PageHero
-        eyebrow="All-Inclusive Care"
-        title="Everything Your Loved One Needs"
-        description="One all-inclusive rate. No hidden fees. Every service your loved one needs, delivered with skill and warmth every single day."
-        bgImage="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1600&q=80"
-        bgAlt="Caregiver helping senior with daily activities"
-      />
+      <div className="page-title-band">
+        <div className="container">
+          <span className="eyebrow">Our Services</span>
+          <h1>Everything Your Loved One Needs</h1>
+        </div>
+      </div>
 
       {/* ===== ALL-INCLUSIVE INTRO ===== */}
       <section className="section" aria-labelledby="alinc-heading">

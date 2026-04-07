@@ -1,6 +1,5 @@
 import { useState, type FormEvent } from 'react'
 import { Phone, Mail, MapPin, Home } from 'lucide-react'
-import PageHero from '../components/ui/PageHero'
 import SectionHeader from '../components/ui/SectionHeader'
 
 interface FormState {
@@ -27,13 +26,12 @@ export default function Contact() {
 
   return (
     <>
-      <PageHero
-        eyebrow="Reach Out"
-        title="We're Here to Help"
-        description="Whether you have questions, want to schedule a tour, or simply need someone to talk to — we're here with open arms and no pressure."
-        bgImage="https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=1600&q=80"
-        bgAlt="Warm, welcoming home interior"
-      />
+      <div className="page-title-band">
+        <div className="container">
+          <span className="eyebrow">Contact Us</span>
+          <h1>We're Here to Help</h1>
+        </div>
+      </div>
 
       <section className="section" aria-labelledby="contact-heading">
         <div className="container">
