@@ -1082,7 +1082,7 @@ p:last-child { margin-bottom: 0; }
 .services-detail {
   display: flex;
   flex-direction: column;
-  gap: 72px;
+  gap: 100px;
   margin-top: 60px;
 }
 
