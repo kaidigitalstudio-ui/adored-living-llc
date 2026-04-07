@@ -628,6 +628,42 @@ p:last-child { margin-bottom: 0; }
 .team-info p { font-size: .95rem; color: var(--text-mid); line-height: 1.7; margin: 0; }
 
 /* ============================================================
+   PROMISE GRID
+   ============================================================ */
+.promise-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.promise-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 32px 36px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.promise-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--lavender-bg);
+  color: var(--lavender);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-bottom: 4px;
+}
+
+.promise-card strong { font-size: 1rem; color: var(--text); }
+.promise-card p { font-size: .95rem; color: var(--text-mid); line-height: 1.7; margin: 0; }
+
+/* ============================================================
    VALUES STRIP
    ============================================================ */
 .values-strip {
@@ -1312,7 +1348,8 @@ p:last-child { margin-bottom: 0; }
   .why-grid,
   .services-grid,
   .testimonials-grid,
-  .team-grid { grid-template-columns: 1fr; }
+  .team-grid,
+  .promise-grid { grid-template-columns: 1fr; }
 
   .values-strip { grid-template-columns: repeat(2, 1fr); }
   .values-strip-item:nth-child(3) { border-right: 1px solid var(--lavender-pale); }

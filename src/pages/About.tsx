@@ -109,34 +109,18 @@ export default function About() {
       {/* ===== OUR PROMISE ===== */}
       <section className="section section--alt" aria-labelledby="promise-heading">
         <div className="container">
-          <div className="grid-2">
-            <div className="about-image" data-animate>
-              <img src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=900&q=80" alt="Two seniors laughing together over a cup of tea" loading="lazy" />
-              <div className="about-badge">
-                <div className="badge-icon" aria-hidden="true"><Heart size={24} strokeWidth={1.5} color="white" /></div>
-                <div className="badge-text">
-                  <strong>Family-First Always</strong>
-                  <span>You are never alone in this journey</span>
-                </div>
+          <SectionHeader eyebrow="Our Promise" title="What You Can Always Expect From Us" description="When you choose Adored Living, you are choosing a partner." center id="promise-heading" />
+          <div className="promise-grid" role="list">
+            {PROMISE_ITEMS.map(({ title, desc }, i) => (
+              <div className="promise-card" role="listitem" key={title} data-animate data-delay={i * 80}>
+                <div className="promise-icon" aria-hidden="true"><Check size={20} strokeWidth={2.5} /></div>
+                <strong>{title}</strong>
+                <p>{desc}</p>
               </div>
-            </div>
-
-            <div className="about-content" data-animate data-delay={150}>
-              <span className="eyebrow">Our Promise</span>
-              <h2 id="promise-heading">What You Can Always Expect From Us</h2>
-              <p>When you choose Adored Living, you are choosing a partner. We promise:</p>
-
-              <div className="values-list" role="list">
-                {PROMISE_ITEMS.map(({ title, desc }) => (
-                  <div className="value-item" role="listitem" key={title}>
-                    <div className="value-icon" aria-hidden="true"><Check size={20} strokeWidth={2.5} /></div>
-                    <p><strong>{title}</strong> {desc}</p>
-                  </div>
-                ))}
-              </div>
-
-              <Link to="/contact" className="btn btn-primary" style={{ marginTop: 8 }}>Schedule a Visit</Link>
-            </div>
+            ))}
+          </div>
+          <div className="text-center" style={{ marginTop: 48 }}>
+            <Link to="/contact" className="btn btn-primary">Schedule a Visit</Link>
           </div>
         </div>
       </section>
