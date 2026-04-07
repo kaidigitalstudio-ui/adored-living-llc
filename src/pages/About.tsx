@@ -68,7 +68,7 @@ export default function About() {
               </p>
             </div>
             <div className="about-image" data-animate data-delay={150} style={{ marginTop: 36 }}>
-              <img src="/caregiver-walk.png" alt="Caregiver walking alongside a senior resident outdoors" loading="lazy" />
+              <img src="/caregiver-walker.png" alt="Caregiver gently holding the hand of a senior using a walker" loading="lazy" />
             </div>
           </div>
         </div>
