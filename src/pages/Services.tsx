@@ -85,7 +85,7 @@ export default function Services() {
           <SectionHeader eyebrow="Our Services" title="What We Provide Each Day" description="Everything your loved one needs, covered under one simple all-inclusive rate." center id="detail-heading" as="h1" />
 
           <div className="services-detail">
-            {SERVICES.map(({ id, img, imgAlt, Icon, title, description, includes, reverse }, i) => (
+            {SERVICES.map(({ id, img, imgAlt, title, description, includes, reverse }, i) => (
               <article key={id} id={id} className={`service-row${reverse ? ' reverse' : ''}`} aria-labelledby={`svc-${id}`} data-animate data-delay={i * 60}>
                 <div className="service-row-img">
                   <img src={img} alt={imgAlt} loading="lazy" />
