@@ -41,7 +41,7 @@ export default function About() {
       {/* ===== FOUNDERS' STORY ===== */}
       <section className="section section--top" aria-labelledby="story-heading" style={{ background: 'var(--white)' }}>
         <div className="container">
-          <div className="grid-2" style={{ alignItems: 'flex-start' }}>
+          <div className="grid-2" style={{ alignItems: 'flex-start', gap: 80 }}>
             <div data-animate>
               <span className="eyebrow">How It Began</span>
               <h1 id="story-heading" style={{ marginBottom: '1.5rem' }}>We Created the Home We Wished Had Existed</h1>
@@ -54,17 +54,9 @@ export default function About() {
               <p>
                 So they decided to build something different. Something smaller, more personal, and rooted
                 in the belief that the later years of life should be filled with dignity, connection, and joy
-                — not just medical management.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                labore et dolore magna aliqua — a personal detail about the founders' background or
-                motivation goes here. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
-              </p>
-              <p>
-                Today, Adored Living operates two licensed homes in Rochester Hills and Clarkston — and
-                every decision we make still flows from that original intention: to love our residents the
-                way we'd want our own family loved.
+                — not just medical management. Today, Adored Living operates two licensed homes in Rochester
+                Hills and Clarkston, and every decision still flows from that original intention: to love our
+                residents the way we'd want our own family loved.
               </p>
             </div>
             <div className="about-image" data-animate data-delay={150} style={{ marginTop: 36 }}>
