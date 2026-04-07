@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { Heart, Star, Users, Home, ClipboardList, Check, type LucideIcon } from 'lucide-react'
-import PageHero from '../components/ui/PageHero'
 import SectionHeader from '../components/ui/SectionHeader'
 import CTABanner from '../components/ui/CTABanner'
 
@@ -39,14 +38,6 @@ const TEAM = [
 export default function About() {
   return (
     <>
-      <PageHero
-        eyebrow="Our Story"
-        title="Built on Love, Rooted in Community"
-        description="We started Adored Living because we believe every senior deserves a home — not just a facility. Discover the heart behind our care."
-        bgImage=""
-        bgAlt=""
-      />
-
       {/* ===== FOUNDERS' STORY ===== */}
       <section className="section" aria-labelledby="story-heading">
         <div className="container">
