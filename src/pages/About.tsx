@@ -38,6 +38,14 @@ const TEAM = [
 export default function About() {
   return (
     <>
+      {/* ===== PAGE TITLE BAND ===== */}
+      <div className="page-title-band">
+        <div className="container">
+          <span className="eyebrow">About Us</span>
+          <h1>Our Story &amp; Our Team</h1>
+        </div>
+      </div>
+
       {/* ===== FOUNDERS' STORY ===== */}
       <section className="section" aria-labelledby="story-heading">
         <div className="container">
