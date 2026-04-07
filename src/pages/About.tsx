@@ -39,7 +39,7 @@ export default function About() {
   return (
     <>
       {/* ===== PAGE TITLE BAND ===== */}
-      <div className="page-title-band page-title-band--center">
+      <div className="page-title-band">
         <div className="container">
           <span className="eyebrow">About Us</span>
           <h1>Built on Love, Rooted in Community</h1>
