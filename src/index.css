@@ -32,7 +32,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html {
-  font-size: 20px;
+  font-size: 18px;
   scroll-behavior: smooth;
 }
 
@@ -1260,7 +1260,7 @@ p:last-child { margin-bottom: 0; }
 }
 
 @media (max-width: 768px) {
-  html { font-size: 18px; }
+  html { font-size: 17px; }
   .section { padding: 72px 0; }
   .testimonials-section { padding: 72px 0; }
 
