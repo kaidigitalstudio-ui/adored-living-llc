@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import { ChevronDown } from 'lucide-react'
 
@@ -16,6 +16,8 @@ const LOCATION_ITEMS = [
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [dropdownOpen, setDropdownOpen] = useState(false)
+  const dropdownRef = useRef<HTMLLIElement>(null)
   const { pathname } = useLocation()
   const onLocations = pathname.startsWith('/locations')
 
@@ -30,7 +32,24 @@ export default function Header() {
     return () => { document.body.style.overflow = '' }
   }, [menuOpen])
 
-  const closeMenu = () => setMenuOpen(false)
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setDropdownOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handler)
+    return () => document.removeEventListener('mousedown', handler)
+  }, [])
+
+  // Close dropdown on route change
+  useEffect(() => { setDropdownOpen(false) }, [pathname])
+
+  const closeMenu = () => {
+    setMenuOpen(false)
+    setDropdownOpen(false)
+  }
 
   return (
     <header className={`site-header${scrolled ? ' scrolled' : ''}`} role="banner">
@@ -55,27 +74,34 @@ export default function Header() {
           ))}
 
           {/* Locations dropdown */}
-          <li className="nav-dropdown">
+          <li className="nav-dropdown" ref={dropdownRef}>
             <button
               className={`nav-dropdown-trigger${onLocations ? ' active' : ''}`}
               aria-haspopup="true"
+              aria-expanded={dropdownOpen}
+              onClick={() => setDropdownOpen(prev => !prev)}
             >
-              Locations <ChevronDown size={13} strokeWidth={2.5} />
+              Locations <ChevronDown size={13} strokeWidth={2.5} className={dropdownOpen ? 'rotated' : ''} />
             </button>
-            <ul className="nav-dropdown-menu" role="list">
-              {LOCATION_ITEMS.map(({ to, label }) => (
-                <li key={to}>
-                  <NavLink
-                    to={to}
-                    className={({ isActive }) => isActive ? 'active' : ''}
-                    onClick={closeMenu}
-                  >
-                    {label}
-                  </NavLink>
-                </li>
-              ))}
-            </ul>
-            {/* Mobile sub-links (shown inline when menu is open) */}
+
+            {/* Desktop dropdown */}
+            {dropdownOpen && (
+              <ul className="nav-dropdown-menu" role="list">
+                {LOCATION_ITEMS.map(({ to, label }) => (
+                  <li key={to}>
+                    <NavLink
+                      to={to}
+                      className={({ isActive }) => isActive ? 'active' : ''}
+                      onClick={closeMenu}
+                    >
+                      {label}
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            {/* Mobile sub-links (always visible when mobile menu is open) */}
             <div className="nav-dropdown-mobile">
               {LOCATION_ITEMS.map(({ to, label }) => (
                 <NavLink
