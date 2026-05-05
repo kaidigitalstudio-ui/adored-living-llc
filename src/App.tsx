@@ -8,6 +8,7 @@ import Services from './pages/Services'
 import Locations from './pages/Locations'
 import FAQ from './pages/FAQ'
 import Contact from './pages/Contact'
+import Rochester from './pages/Rochester'
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/locations" element={<Locations />} />
+          <Route path="/locations/rochester-hills" element={<Rochester />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>

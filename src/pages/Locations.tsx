@@ -84,7 +84,7 @@ export default function Locations() {
                       </div>
                     </div>
                   </div>
-                  <LocationContent id={id} title={title} address={address} mapUrl={mapUrl} phone={phone} phoneHref={phoneHref} email={email} features={features} delay={150} />
+                  <LocationContent id={id} title={title} address={address} mapUrl={mapUrl} phone={phone} phoneHref={phoneHref} email={email} features={features} delay={150} galleryTo={id === 'rochester-hills' ? '/locations/rochester-hills' : undefined} />
                 </>
               ) : (
                 <>
@@ -138,10 +138,10 @@ export default function Locations() {
 interface LocationContentProps {
   id: string; title: string; address: string; mapUrl: string
   phone: string; phoneHref: string; email: string; features: string[]
-  delay?: number
+  delay?: number; galleryTo?: string
 }
 
-function LocationContent({ id, title, address, mapUrl, phone, phoneHref, email, features, delay }: LocationContentProps) {
+function LocationContent({ id, title, address, mapUrl, phone, phoneHref, email, features, delay, galleryTo }: LocationContentProps) {
   return (
     <div className="about-content" data-animate data-delay={delay ?? 0}>
       <span className="eyebrow">Our Home</span>
@@ -175,6 +175,7 @@ function LocationContent({ id, title, address, mapUrl, phone, phoneHref, email, 
       <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
         <Link to="/contact" className="btn btn-primary">Schedule a Visit</Link>
         <a href={mapUrl} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">Get Directions</a>
+        {galleryTo && <Link to={galleryTo} className="btn btn-outline">View Photo Gallery</Link>}
       </div>
     </div>
   )
