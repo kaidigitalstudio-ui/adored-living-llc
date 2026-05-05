@@ -68,39 +68,14 @@ export default function Locations() {
       </section>
 
       {/* ===== LOCATION CARDS ===== */}
-      {LOCATIONS.map(({ id, badge, title, address, mapUrl, phone, phoneHref, email, img, imgAlt, features }, idx) => (
+      {LOCATIONS.map(({ id, title, address, mapUrl, phone, phoneHref, email, img, imgAlt, features }, idx) => (
         <section key={id} id={id} className={`section${idx % 2 === 1 ? ' section--alt' : ''}`} aria-labelledby={`loc-${id}`}>
           <div className="container">
-            <div className="grid-2" style={{ gap: 60 }}>
-              {idx % 2 === 0 ? (
-                <>
-                  <div className="about-image" data-animate>
-                    <img src={img} alt={imgAlt} loading="lazy" />
-                    <div className="about-badge">
-                      <div className="badge-icon" aria-hidden="true"><MapPin size={22} strokeWidth={1.5} color="white" /></div>
-                      <div className="badge-text">
-                        <strong>{badge}</strong>
-                        <span>Michigan</span>
-                      </div>
-                    </div>
-                  </div>
-                  <LocationContent id={id} title={title} address={address} mapUrl={mapUrl} phone={phone} phoneHref={phoneHref} email={email} features={features} delay={150} galleryTo={id === 'rochester-hills' ? '/locations/rochester-hills' : undefined} />
-                </>
-              ) : (
-                <>
-                  <LocationContent id={id} title={title} address={address} mapUrl={mapUrl} phone={phone} phoneHref={phoneHref} email={email} features={features} />
-                  <div className="about-image" data-animate data-delay={150}>
-                    <img src={img} alt={imgAlt} loading="lazy" />
-                    <div className="about-badge">
-                      <div className="badge-icon" aria-hidden="true"><MapPin size={22} strokeWidth={1.5} color="white" /></div>
-                      <div className="badge-text">
-                        <strong>{badge}</strong>
-                        <span>Michigan</span>
-                      </div>
-                    </div>
-                  </div>
-                </>
-              )}
+            <div className="location-stacked" data-animate>
+              <div className="location-stacked-img">
+                <img src={img} alt={imgAlt} loading="lazy" />
+              </div>
+              <LocationContent id={id} title={title} address={address} mapUrl={mapUrl} phone={phone} phoneHref={phoneHref} email={email} features={features} galleryTo={id === 'rochester-hills' ? '/locations/rochester-hills' : undefined} />
             </div>
           </div>
         </section>
@@ -138,12 +113,12 @@ export default function Locations() {
 interface LocationContentProps {
   id: string; title: string; address: string; mapUrl: string
   phone: string; phoneHref: string; email: string; features: string[]
-  delay?: number; galleryTo?: string
+  galleryTo?: string
 }
 
-function LocationContent({ id, title, address, mapUrl, phone, phoneHref, email, features, delay, galleryTo }: LocationContentProps) {
+function LocationContent({ id, title, address, mapUrl, phone, phoneHref, email, features, galleryTo }: LocationContentProps) {
   return (
-    <div className="about-content" data-animate data-delay={delay ?? 0}>
+    <div className="about-content">
       <span className="eyebrow">Our Home</span>
       <h2 id={`loc-${id}`}>{title}</h2>
       <div className="location-address" style={{ marginBottom: 24 }}>
