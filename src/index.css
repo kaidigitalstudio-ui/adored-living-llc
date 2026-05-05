@@ -122,12 +122,12 @@ p:last-child { margin-bottom: 0; }
 
 .btn-outline {
   background: transparent;
-  color: var(--white);
-  border-color: var(--white);
+  color: var(--lavender);
+  border-color: var(--lavender);
 }
 .btn-outline:hover {
-  background: var(--white);
-  color: var(--lavender);
+  background: var(--lavender);
+  color: var(--white);
   transform: translateY(-2px);
 }
 

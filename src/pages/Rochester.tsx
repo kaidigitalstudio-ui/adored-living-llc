@@ -7,17 +7,14 @@ import SectionHeader from '../components/ui/SectionHeader'
 const GALLERY_PHOTOS = [
   { src: '/rochester/IMG_0087.jpeg', alt: 'Birthday celebration with residents and family' },
   { src: '/rochester/IMG_2960.jpeg', alt: 'Residents enjoying a meal together in the dining room' },
-  { src: '/rochester/IMG_3545.jpeg', alt: 'Caregiver assisting resident with mobility' },
   { src: '/rochester/IMG_3551.jpeg', alt: 'Resident working on a jigsaw puzzle' },
   { src: '/rochester/IMG_5974.jpeg', alt: 'Summer patio gathering with residents and families' },
-  { src: '/rochester/IMG_6342.jpeg', alt: 'Resident exercising in the common area' },
   { src: '/rochester/IMG_7029.jpeg', alt: 'Halloween pumpkin painting activity' },
   { src: '/rochester/IMG_7418.jpeg', alt: 'Cozy evening by the fireplace at Christmas' },
   { src: '/rochester/IMG_8204.jpeg', alt: 'Live guitar music performance for residents' },
   { src: '/rochester/IMG_8788.jpeg', alt: 'Outdoor birthday party on the deck' },
   { src: '/rochester/IMG_9289.jpeg', alt: '100th birthday celebration with family' },
   { src: '/rochester/IMG_9295.jpeg', alt: '100th birthday celebration — a century of life' },
-  { src: '/rochester/IMG_9307.jpeg', alt: '100th birthday cake and festivities' },
   { src: '/rochester/IMG_9870.jpeg', alt: 'Large outdoor birthday party gathering' },
 ]
 
