@@ -1,17 +1,23 @@
 import { useState, useEffect } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
+import { ChevronDown } from 'lucide-react'
 
 const NAV_ITEMS = [
-  { to: '/',          label: 'Home' },
-  { to: '/about',     label: 'About Us' },
-  { to: '/services',  label: 'Services' },
-  { to: '/locations', label: 'Locations' },
-  { to: '/faq',       label: 'FAQs' },
+  { to: '/',         label: 'Home' },
+  { to: '/about',    label: 'About Us' },
+  { to: '/services', label: 'Services' },
+]
+
+const LOCATION_ITEMS = [
+  { to: '/locations/rochester-hills', label: 'Rochester Hills' },
+  { to: '/locations/clarkston',       label: 'Clarkston' },
 ]
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const { pathname } = useLocation()
+  const onLocations = pathname.startsWith('/locations')
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -47,6 +53,52 @@ export default function Header() {
               </NavLink>
             </li>
           ))}
+
+          {/* Locations dropdown */}
+          <li className="nav-dropdown">
+            <button
+              className={`nav-dropdown-trigger${onLocations ? ' active' : ''}`}
+              aria-haspopup="true"
+            >
+              Locations <ChevronDown size={13} strokeWidth={2.5} />
+            </button>
+            <ul className="nav-dropdown-menu" role="list">
+              {LOCATION_ITEMS.map(({ to, label }) => (
+                <li key={to}>
+                  <NavLink
+                    to={to}
+                    className={({ isActive }) => isActive ? 'active' : ''}
+                    onClick={closeMenu}
+                  >
+                    {label}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+            {/* Mobile sub-links (shown inline when menu is open) */}
+            <div className="nav-dropdown-mobile">
+              {LOCATION_ITEMS.map(({ to, label }) => (
+                <NavLink
+                  key={to}
+                  to={to}
+                  className={({ isActive }) => `nav-dropdown-mobile-link${isActive ? ' active' : ''}`}
+                  onClick={closeMenu}
+                >
+                  {label}
+                </NavLink>
+              ))}
+            </div>
+          </li>
+
+          <li>
+            <NavLink
+              to="/faq"
+              className={({ isActive }) => isActive ? 'active' : ''}
+              onClick={closeMenu}
+            >
+              FAQs
+            </NavLink>
+          </li>
           <li>
             <NavLink to="/contact" className="nav-cta" onClick={closeMenu}>
               Contact Us
@@ -60,13 +112,9 @@ export default function Header() {
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen(prev => !prev)}
         >
-          <span
-            style={menuOpen ? { transform: 'rotate(45deg) translate(5px, 5px)' } : undefined}
-          />
+          <span style={menuOpen ? { transform: 'rotate(45deg) translate(5px, 5px)' } : undefined} />
           <span style={menuOpen ? { opacity: 0 } : undefined} />
-          <span
-            style={menuOpen ? { transform: 'rotate(-45deg) translate(5px, -5px)' } : undefined}
-          />
+          <span style={menuOpen ? { transform: 'rotate(-45deg) translate(5px, -5px)' } : undefined} />
         </button>
       </nav>
     </header>

@@ -250,6 +250,80 @@ p:last-child { margin-bottom: 0; }
   transition: all var(--transition);
 }
 
+/* --- Locations dropdown --- */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-trigger {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: .95rem;
+  font-weight: 600;
+  color: var(--text-mid);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition);
+  font-family: var(--font-sans);
+}
+
+.nav-dropdown-trigger:hover,
+.nav-dropdown:hover .nav-dropdown-trigger {
+  color: var(--lavender);
+  background: var(--lavender-bg);
+}
+
+.nav-dropdown-trigger.active {
+  color: var(--white);
+  background: var(--lavender);
+}
+
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: 8px;
+  min-width: 180px;
+  list-style: none;
+  z-index: 100;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu {
+  display: block;
+}
+
+.nav-dropdown-menu a {
+  display: block;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--text-mid);
+  white-space: nowrap;
+  transition: all var(--transition);
+}
+
+.nav-dropdown-menu a:hover {
+  color: var(--lavender);
+  background: var(--lavender-bg);
+}
+
+.nav-dropdown-menu a.active {
+  color: var(--white);
+  background: var(--lavender);
+}
+
+/* Mobile: hide the hover dropdown, show inline links instead */
+.nav-dropdown-mobile { display: none; }
+
 /* ============================================================
    HERO SECTION
    ============================================================ */
@@ -1350,6 +1424,25 @@ p:last-child { margin-bottom: 0; }
     overflow-y: auto;
   }
   .nav-links.open a { font-size: 1.25rem; padding: 18px 20px; }
+
+  .nav-dropdown-trigger { font-size: 1.25rem; padding: 18px 20px; width: 100%; justify-content: flex-start; }
+  .nav-dropdown-menu { display: none !important; }
+  .nav-dropdown-mobile {
+    display: flex;
+    flex-direction: column;
+    padding-left: 24px;
+  }
+  .nav-dropdown-mobile-link {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-light);
+    padding: 12px 20px;
+    border-radius: 8px;
+    display: block;
+    transition: all var(--transition);
+  }
+  .nav-dropdown-mobile-link:hover,
+  .nav-dropdown-mobile-link.active { color: var(--lavender); background: var(--lavender-bg); }
 
   .hero-inner   { grid-template-columns: 1fr; gap: 40px; }
   .hero-img-wrap { display: none; }

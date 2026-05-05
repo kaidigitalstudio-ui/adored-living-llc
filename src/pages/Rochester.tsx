@@ -116,13 +116,6 @@ export default function Rochester() {
 
             <div className="about-image" data-animate data-delay={150}>
               <img src="/rochester-hills.jpg" alt="Rochester Hills home exterior" loading="lazy" />
-              <div className="about-badge">
-                <div className="badge-icon" aria-hidden="true"><MapPin size={22} strokeWidth={1.5} color="white" /></div>
-                <div className="badge-text">
-                  <strong>Rochester Hills</strong>
-                  <span>Michigan</span>
-                </div>
-              </div>
             </div>
           </div>
         </div>
