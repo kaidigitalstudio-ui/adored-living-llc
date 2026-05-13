@@ -68,9 +68,9 @@ const SERVICES: ServiceDetail[] = [
     img: '/holding-hands.jpg',
     imgAlt: 'A young person gently holding the hand of an elderly resident',
     Icon: HeartHandshake,
-    title: 'Hospice & End-of-Life Support',
-    description: 'Many of our residents are in the final chapter of their lives, and we consider it a privilege to walk alongside them and their families during this time. We work closely with hospice teams to ensure care is coordinated, comfortable, and dignified — so residents can spend their remaining time in a true home, not a facility.',
-    includes: ['Coordination with hospice and palliative care teams', 'Comfort-focused care prioritizing dignity and peace', 'Support for families through visits and open communication', 'Attentive monitoring of comfort and changing needs', 'Gentle engagement — music, conversation, and presence', 'A calm, homelike environment throughout end of life'],
+    title: 'Compassionate Care for Every Stage',
+    description: 'As needs evolve, our care evolves with them. We are committed to walking alongside each resident — and their family — through every chapter, ensuring that comfort, dignity, and genuine human connection remain constant no matter what stage of life they are in. We coordinate closely with outside medical teams so that nothing falls through the cracks.',
+    includes: ['Coordination with hospice and palliative care teams', 'Comfort-focused care that adapts as needs change', 'Open, ongoing communication with families', 'Attentive monitoring of comfort and wellbeing', 'Gentle engagement — music, conversation, and presence', 'A calm, homelike environment at every stage'],
     reverse: true,
   },
 ]
