@@ -65,8 +65,8 @@ const SERVICES: ServiceDetail[] = [
   },
   {
     id: 'hospice',
-    img: '/rochester/IMG_7418.jpeg',
-    imgAlt: 'Resident resting peacefully by the fireplace at Adored Living',
+    img: '/holding-hands.jpg',
+    imgAlt: 'A young person gently holding the hand of an elderly resident',
     Icon: HeartHandshake,
     title: 'Hospice & End-of-Life Support',
     description: 'Many of our residents are in the final chapter of their lives, and we consider it a privilege to walk alongside them and their families during this time. We work closely with hospice teams to ensure care is coordinated, comfortable, and dignified — so residents can spend their remaining time in a true home, not a facility.',
