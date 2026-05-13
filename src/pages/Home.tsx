@@ -129,9 +129,7 @@ export default function Home() {
           <div className="locations-grid" role="list">
             {LOCATIONS.map(({ id, img, imgAlt, badge, title, address, phone, phoneHref, email, feature }, i) => (
               <article className="location-card" role="listitem" key={id} data-animate data-delay={i * 120}>
-                <div className="location-img" style={{ backgroundImage: `url('${img}')` }} role="img" aria-label={imgAlt}>
-                  <span className="location-badge">{badge}</span>
-                </div>
+                <div className="location-img" style={{ backgroundImage: `url('${img}')` }} role="img" aria-label={imgAlt} />
                 <div className="location-body">
                   <h3>{title}</h3>
                   <div className="location-address">
