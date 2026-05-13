@@ -127,7 +127,7 @@ export default function Home() {
         <div className="container">
           <SectionHeader eyebrow="Our Homes" title="Two Beautiful Michigan Locations" description="Serving the Rochester Hills and Clarkston communities with the same warm, personalized care at each home." center id="locations-heading" />
           <div className="locations-grid" role="list">
-            {LOCATIONS.map(({ id, img, imgAlt, badge, title, address, phone, phoneHref, email, feature }, i) => (
+            {LOCATIONS.map(({ id, img, imgAlt, title, address, phone, phoneHref, email, feature }, i) => (
               <article className="location-card" role="listitem" key={id} data-animate data-delay={i * 120}>
                 <div className="location-img" style={{ backgroundImage: `url('${img}')` }} role="img" aria-label={imgAlt} />
                 <div className="location-body">
