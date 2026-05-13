@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { UtensilsCrossed, Heart, Pill, Home, Laugh, Music, type LucideIcon } from 'lucide-react'
+import { UtensilsCrossed, Heart, Pill, Home, Laugh, HeartHandshake, type LucideIcon } from 'lucide-react'
 import SectionHeader from '../components/ui/SectionHeader'
 import CTABanner from '../components/ui/CTABanner'
 
@@ -64,13 +64,13 @@ const SERVICES: ServiceDetail[] = [
     includes: ['Daily meaningful social interaction and engagement', 'Recreational and leisure activities', 'Emotional support and active listening', 'Close-knit community of fellow residents', 'Encouragement of personal interests and hobbies'],
   },
   {
-    id: 'activities',
-    img: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&q=80',
-    imgAlt: 'Seniors enjoying recreational activities and social time together',
-    Icon: Music,
-    title: 'Activities & Recreation',
-    description: 'A fulfilling daily life goes far beyond physical care. We prioritize meaningful engagement, social connection, and joy — offering a variety of activities and recreational opportunities that keep residents active, stimulated, and happily connected to those around them.',
-    includes: ['Engaging daily activities tailored to residents\' interests', 'Music, games, and creative pursuits', 'Social outings and community events', 'Comfortable shared spaces for gathering', 'Outdoor seating areas and walking paths', 'Encouragement of personal hobbies'],
+    id: 'hospice',
+    img: '/rochester/IMG_7418.jpeg',
+    imgAlt: 'Resident resting peacefully by the fireplace at Adored Living',
+    Icon: HeartHandshake,
+    title: 'Hospice & End-of-Life Support',
+    description: 'Many of our residents are in the final chapter of their lives, and we consider it a privilege to walk alongside them and their families during this time. We work closely with hospice teams to ensure care is coordinated, comfortable, and dignified — so residents can spend their remaining time in a true home, not a facility.',
+    includes: ['Coordination with hospice and palliative care teams', 'Comfort-focused care prioritizing dignity and peace', 'Support for families through visits and open communication', 'Attentive monitoring of comfort and changing needs', 'Gentle engagement — music, conversation, and presence', 'A calm, homelike environment throughout end of life'],
     reverse: true,
   },
 ]
