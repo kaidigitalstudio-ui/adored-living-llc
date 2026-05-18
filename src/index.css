@@ -960,6 +960,24 @@ p:last-child { margin-bottom: 0; }
   margin: 0 auto;
 }
 
+.loc-details-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.loc-details-right {
+  padding-top: 8px;
+}
+
+@media (max-width: 640px) {
+  .loc-details-row {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
 .location-stacked-img {
   width: 100%;
   border-radius: var(--radius-md);

@@ -31,43 +31,47 @@ export default function Clarkston() {
             <img src="/clarkston.webp" alt="Clarkston home exterior" loading="lazy" />
           </div>
 
-          <div className="location-stacked" data-animate data-delay={100}>
-            <span className="eyebrow" id="clark-details">Location Details</span>
-            <h2>5111 Heath Ave</h2>
-            <p>Clarkston, MI 48346</p>
+          <div className="loc-details-row" data-animate data-delay={100}>
+            <div className="loc-details-left">
+              <span className="eyebrow" id="clark-details">Location Details</span>
+              <h2>5111 Heath Ave</h2>
+              <p style={{ marginBottom: 0 }}>Clarkston, MI 48346</p>
 
-            <div className="location-details" style={{ marginTop: 28, marginBottom: 32 }}>
-              <div className="loc-detail">
-                <div className="detail-icon" aria-hidden="true"><MapPin size={14} strokeWidth={2} /></div>
-                <span>5111 Heath Ave, Clarkston, MI 48346</span>
-              </div>
-              <div className="loc-detail">
-                <div className="detail-icon" aria-hidden="true"><Phone size={14} strokeWidth={2} /></div>
-                <a href="tel:+12489319009">(248) 931-9009</a>
-              </div>
-              <div className="loc-detail">
-                <div className="detail-icon" aria-hidden="true"><Mail size={14} strokeWidth={2} /></div>
-                <a href="mailto:adoredlivingllc@gmail.com">adoredlivingllc@gmail.com</a>
-              </div>
-              <div className="loc-detail">
-                <div className="detail-icon" aria-hidden="true"><Users size={14} strokeWidth={2} /></div>
-                <span>Maximum 6 residents — intimate, family-style care</span>
+              <div className="location-details" style={{ marginTop: 28 }}>
+                <div className="loc-detail">
+                  <div className="detail-icon" aria-hidden="true"><MapPin size={14} strokeWidth={2} /></div>
+                  <span>5111 Heath Ave, Clarkston, MI 48346</span>
+                </div>
+                <div className="loc-detail">
+                  <div className="detail-icon" aria-hidden="true"><Phone size={14} strokeWidth={2} /></div>
+                  <a href="tel:+12489319009">(248) 931-9009</a>
+                </div>
+                <div className="loc-detail">
+                  <div className="detail-icon" aria-hidden="true"><Mail size={14} strokeWidth={2} /></div>
+                  <a href="mailto:adoredlivingllc@gmail.com">adoredlivingllc@gmail.com</a>
+                </div>
+                <div className="loc-detail">
+                  <div className="detail-icon" aria-hidden="true"><Users size={14} strokeWidth={2} /></div>
+                  <span>Maximum 6 residents — intimate, family-style care</span>
+                </div>
               </div>
             </div>
 
-            <div className="service-includes" role="list">
-              {[
-                'Private furnished bedrooms',
-                'Shared living room with television',
-                'Peaceful residential neighborhood',
-                'Outdoor patio and seating',
-                'Close to local amenities',
-                'State-licensed facility',
-                'Personalized care plans',
-                'Family visits always welcome',
-              ].map(f => (
-                <div className="include-item" role="listitem" key={f}>{f}</div>
-              ))}
+            <div className="loc-details-right">
+              <div className="service-includes" role="list">
+                {[
+                  'Private furnished bedrooms',
+                  'Shared living room with television',
+                  'Peaceful residential neighborhood',
+                  'Outdoor patio and seating',
+                  'Close to local amenities',
+                  'State-licensed facility',
+                  'Personalized care plans',
+                  'Family visits always welcome',
+                ].map(f => (
+                  <div className="include-item" role="listitem" key={f}>{f}</div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
