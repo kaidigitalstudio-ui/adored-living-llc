@@ -1082,46 +1082,86 @@ p:last-child { margin-bottom: 0; }
   align-items: start;
 }
 
-.contact-hero {
-  text-align: center;
-  margin-top: 56px;
-  padding: 56px 40px;
-  background: var(--lavender-bg);
-  border-radius: var(--radius-lg);
+.contact-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
 }
 
-.contact-phone-number {
+.contact-split-left h1 { margin-top: 16px; margin-bottom: 20px; }
+.contact-split-left p  { color: var(--text-mid); line-height: 1.8; margin-bottom: 16px; }
+
+.contact-split-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+
+.contact-split-right {
+  position: sticky;
+  top: 100px;
+}
+
+.contact-info-block {
+  background: var(--lavender-bg);
+  border-radius: var(--radius-lg);
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.contact-info-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--white);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--lavender);
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-info-label {
   display: block;
-  font-size: clamp(2.4rem, 6vw, 3.8rem);
+  font-size: .78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--text-light);
+  margin-bottom: 3px;
+}
+
+.contact-info-value {
+  display: block;
+  font-size: 1rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.contact-info-phone {
+  font-size: 1.35rem;
   font-family: var(--font-serif);
   font-weight: 700;
   color: var(--lavender);
-  letter-spacing: -0.01em;
-  line-height: 1.1;
-  text-decoration: none;
-  transition: color 0.2s;
 }
 
-.contact-phone-number:hover { color: var(--lavender-light); }
+.contact-info-value:is(a):hover { color: var(--lavender); }
 
-.contact-availability {
-  margin-top: 16px;
-  color: var(--text-light);
-  font-size: .95rem;
+@media (max-width: 768px) {
+  .contact-split { grid-template-columns: 1fr; gap: 48px; }
+  .contact-split-right { position: static; }
 }
-
-.contact-secondary {
-  margin-top: 28px;
-  padding-top: 28px;
-  border-top: 1px solid var(--cream-dark);
-}
-
-.contact-secondary a {
-  font-size: 1rem;
-  color: var(--text-mid);
-}
-
-.contact-secondary a:hover { color: var(--lavender); }
 
 .contact-info h3 { margin-bottom: 1rem; }
 
