@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import {
   Users, MessageCircle, Pill, Home as HomeIcon, UtensilsCrossed, ShieldCheck,
-  Heart, Music, Phone, Mail, MapPin,
+  Heart, Phone, Mail, MapPin,
   Shirt, Bath, Droplets, Tv,
   type LucideIcon,
 } from 'lucide-react'
@@ -32,7 +32,7 @@ const INCLUDED_ITEMS: IncludedItem[] = [
   { Icon: Pill,            label: 'Medications' },
   { Icon: Bath,            label: 'Personal Care' },
   { Icon: Droplets,        label: 'Toiletries' },
-  { Icon: Music,           label: 'Activities' },
+  { Icon: Heart,           label: 'Companionship' },
   { Icon: Tv,              label: 'Common Areas' },
 ]
 
