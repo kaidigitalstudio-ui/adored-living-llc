@@ -1,4 +1,4 @@
-import { Mail, MapPin } from 'lucide-react'
+import { MapPin } from 'lucide-react'
 import SectionHeader from '../components/ui/SectionHeader'
 
 export default function Contact() {
