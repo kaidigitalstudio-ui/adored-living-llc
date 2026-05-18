@@ -56,8 +56,8 @@ const SERVICES: ServiceDetail[] = [
   },
   {
     id: 'companionship',
-    img: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80',
-    imgAlt: 'Seniors enjoying warm social time together',
+    img: 'https://images.unsplash.com/photo-1516307365426-bea591f05011?w=800&q=80',
+    imgAlt: 'Elderly residents sharing a warm moment together',
     Icon: Laugh,
     title: 'Companionship & Social Engagement',
     description: 'Loneliness is one of the greatest challenges seniors face — and one families worry about most. At Adored Living, your loved one is never just a room number. With a small, intimate community, genuine connection happens naturally, and our staff make it their mission to bring warmth into every interaction.',
