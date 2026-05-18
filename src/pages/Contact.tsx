@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, Clock } from 'lucide-react'
+import { Mail, MapPin } from 'lucide-react'
 import SectionHeader from '../components/ui/SectionHeader'
 
 export default function Contact() {
@@ -15,37 +15,11 @@ export default function Contact() {
             as="h1"
           />
 
-          {/* Primary call CTA */}
-          <div style={{ textAlign: 'center', margin: '48px 0' }} data-animate>
-            <a href="tel:+12489319009" className="btn btn-primary btn-lg" style={{ fontSize: '1.2rem', padding: '18px 48px', gap: 12, display: 'inline-flex', alignItems: 'center' }}>
-              <Phone size={20} strokeWidth={2} aria-hidden="true" />
-              (248) 931-9009
-            </a>
-            <p style={{ marginTop: 16, color: 'var(--text-light)', fontSize: '.95rem' }}>Available Monday – Sunday · No pressure, just a warm conversation</p>
-          </div>
-
-          {/* Contact info cards */}
-          <div className="contact-cards" data-animate data-delay={100}>
-            <div className="contact-card">
-              <div className="contact-icon" aria-hidden="true"><Phone size={22} strokeWidth={1.75} /></div>
-              <div className="contact-item-text">
-                <strong>Phone</strong>
-                <a href="tel:+12489319009">(248) 931-9009</a>
-              </div>
-            </div>
-            <div className="contact-card">
-              <div className="contact-icon" aria-hidden="true"><Mail size={22} strokeWidth={1.75} /></div>
-              <div className="contact-item-text">
-                <strong>Email</strong>
-                <a href="mailto:adoredlivingllc@gmail.com">adoredlivingllc@gmail.com</a>
-              </div>
-            </div>
-            <div className="contact-card">
-              <div className="contact-icon" aria-hidden="true"><Clock size={22} strokeWidth={1.75} /></div>
-              <div className="contact-item-text">
-                <strong>Availability</strong>
-                <span>Monday – Sunday, 7 days a week</span>
-              </div>
+          <div className="contact-hero" data-animate>
+            <a href="tel:+12489319009" className="contact-phone-number">(248) 931-9009</a>
+            <p className="contact-availability">Available Monday – Sunday · No pressure, just a warm conversation</p>
+            <div className="contact-secondary">
+              <a href="mailto:adoredlivingllc@gmail.com">adoredlivingllc@gmail.com</a>
             </div>
           </div>
         </div>
