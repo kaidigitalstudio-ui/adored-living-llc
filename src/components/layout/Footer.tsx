@@ -21,7 +21,8 @@ export default function Footer() {
               <li><Link to="/">Home</Link></li>
               <li><Link to="/about">About Us</Link></li>
               <li><Link to="/services">Our Services</Link></li>
-              <li><Link to="/locations">Locations</Link></li>
+              <li><Link to="/locations/rochester-hills">Rochester Hills</Link></li>
+              <li><Link to="/locations/clarkston">Clarkston</Link></li>
               <li><Link to="/faq">FAQs</Link></li>
               <li><Link to="/contact">Contact</Link></li>
             </ul>
@@ -35,7 +36,7 @@ export default function Footer() {
               <li><Link to="/services">Medication Management</Link></li>
               <li><Link to="/services">Housekeeping</Link></li>
               <li><Link to="/services">Companionship</Link></li>
-              <li><Link to="/services">Activities &amp; Recreation</Link></li>
+              <li><Link to="/services">Care for Every Stage</Link></li>
             </ul>
           </div>
 

@@ -150,7 +150,7 @@ export default function Home() {
                       <span>{feature}</span>
                     </div>
                   </div>
-                  <Link to={`/locations#${id}`} className="btn btn-primary">Learn More</Link>
+                  <Link to={`/locations/${id}`} className="btn btn-primary">Learn More</Link>
                 </div>
               </article>
             ))}

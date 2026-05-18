@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
-import { ChevronDown } from 'lucide-react'
+import { ChevronDown, Phone } from 'lucide-react'
 
 const NAV_ITEMS = [
   { to: '/',         label: 'Home' },
@@ -124,6 +124,12 @@ export default function Header() {
             >
               FAQs
             </NavLink>
+          </li>
+          <li>
+            <a href="tel:+12489319009" className="nav-phone" aria-label="Call (248) 931-9009">
+              <Phone size={14} strokeWidth={2.5} aria-hidden="true" />
+              (248) 931-9009
+            </a>
           </li>
           <li>
             <NavLink to="/contact" className="nav-cta" onClick={closeMenu}>
