@@ -18,8 +18,8 @@ interface ServiceDetail {
 const SERVICES: ServiceDetail[] = [
   {
     id: 'meals',
-    img: '/meal-chicken-rice.png',
-    imgAlt: 'Home-cooked meal of chicken, rice, and fresh salad served at Adored Living',
+    img: 'https://images.unsplash.com/photo-1547592180-85f173990554?w=800&q=80',
+    imgAlt: 'Fresh, home-cooked meal served at the dining table',
     Icon: UtensilsCrossed,
     title: 'Meals & Nutrition',
     description: 'Good food is good care. Your loved one will enjoy three fresh, home-cooked meals every day — prepared with nutrition, flavor, and love. We accommodate dietary restrictions and health-related needs, and snacks and beverages are always available throughout the day.',
@@ -27,8 +27,8 @@ const SERVICES: ServiceDetail[] = [
   },
   {
     id: 'personal-care',
-    img: '/rochester/IMG_3545.jpeg',
-    imgAlt: 'Caregiver gently assisting a resident with mobility at Adored Living',
+    img: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80',
+    imgAlt: 'Caregiver providing gentle, attentive assistance to an elderly resident',
     Icon: Heart,
     title: 'Personal Care Assistance',
     description: 'Your loved one receives compassionate, dignified personal care that respects their privacy and individuality at every level of ability. Our caregivers are present around the clock — so whether it\'s 2pm or 2am, someone is always there.',
@@ -37,8 +37,8 @@ const SERVICES: ServiceDetail[] = [
   },
   {
     id: 'medication',
-    img: '/caregiver-assist.png',
-    imgAlt: 'Caregiver providing attentive assistance to a resident',
+    img: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&q=80',
+    imgAlt: 'Organized medication management with careful record-keeping',
     Icon: Pill,
     title: 'Medication Management',
     description: 'Keeping track of medications, dosages, and schedules is one of the heaviest burdens families carry. We take that completely off your plate — following physician instructions precisely, maintaining accurate records, and flagging any concerns so you never have to wonder if something was missed.',
@@ -46,8 +46,8 @@ const SERVICES: ServiceDetail[] = [
   },
   {
     id: 'housekeeping',
-    img: '/rochester/IMG_2960.jpeg',
-    imgAlt: 'Warm and welcoming common living area at Adored Living',
+    img: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80',
+    imgAlt: 'Warm and comfortable residential living room',
     Icon: Home,
     title: 'Housing & Housekeeping',
     description: 'Your loved one will have a beautifully maintained, clean, and comfortable place to truly call home. Each resident has a furnished private room and access to warm shared living spaces — and all housekeeping and laundry are handled, so they can simply rest and be.',
@@ -56,8 +56,8 @@ const SERVICES: ServiceDetail[] = [
   },
   {
     id: 'companionship',
-    img: '/rochester/IMG_8204.jpeg',
-    imgAlt: 'Residents enjoying live guitar music together at Adored Living',
+    img: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80',
+    imgAlt: 'Seniors enjoying warm social time together',
     Icon: Laugh,
     title: 'Companionship & Social Engagement',
     description: 'Loneliness is one of the greatest challenges seniors face — and one families worry about most. At Adored Living, your loved one is never just a room number. With a small, intimate community, genuine connection happens naturally, and our staff make it their mission to bring warmth into every interaction.',
@@ -65,8 +65,8 @@ const SERVICES: ServiceDetail[] = [
   },
   {
     id: 'hospice',
-    img: '/holding-hands.jpg',
-    imgAlt: 'A young person gently holding the hand of an elderly resident',
+    img: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&q=80',
+    imgAlt: 'A caregiver gently holding the hand of an elderly person',
     Icon: HeartHandshake,
     title: 'Compassionate Care for Every Stage',
     description: 'As needs evolve, our care evolves with them. We are committed to walking alongside each resident — and their family — through every chapter, ensuring that comfort, dignity, and genuine human connection remain constant no matter what stage of life they are in. We coordinate closely with outside medical teams so that nothing falls through the cracks.',
