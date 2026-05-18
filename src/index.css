@@ -9,9 +9,6 @@
   --lavender-light:    #A480C8;
   --lavender-pale:     #D4C8E8;
   --lavender-bg:       #F2EEFA;
-  --gold:              #C4954A;
-  --gold-light:        #D4A85C;
-  --gold-bg:           #FBF6EE;
   --cream:             #FDFBFF;
   --cream-dark:        #EAE4F5;
   --text:              #261F35;
@@ -109,16 +106,16 @@ p:last-child { margin-bottom: 0; }
 }
 
 .btn-primary {
-  background: var(--gold);
+  background: var(--lavender);
   color: var(--white);
-  border-color: var(--gold);
+  border-color: var(--lavender);
 }
 .btn-primary:hover {
-  background: var(--gold-light);
-  border-color: var(--gold-light);
+  background: var(--lavender-light);
+  border-color: var(--lavender-light);
   color: var(--white);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(196,149,74,.35);
+  box-shadow: 0 8px 24px rgba(138,107,173,.35);
 }
 
 .btn-outline {
@@ -134,13 +131,13 @@ p:last-child { margin-bottom: 0; }
 
 .btn-white {
   background: var(--white);
-  color: var(--gold);
+  color: var(--lavender);
   border-color: var(--white);
 }
 .btn-white:hover {
-  background: var(--gold-bg);
-  border-color: var(--gold-bg);
-  color: var(--gold);
+  background: var(--lavender-pale);
+  border-color: var(--lavender-pale);
+  color: var(--lavender);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(255,255,255,.25);
 }
@@ -231,16 +228,16 @@ p:last-child { margin-bottom: 0; }
 .nav-phone:hover { color: var(--lavender-light) !important; }
 
 .nav-cta {
-  background: var(--gold) !important;
+  background: var(--lavender) !important;
   color: var(--white) !important;
   border-radius: 50px !important;
   padding: 10px 22px !important;
 }
 .nav-cta:hover {
-  background: var(--gold-light) !important;
+  background: var(--lavender-light) !important;
   color: var(--white) !important;
   transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(196,149,74,.3);
+  box-shadow: 0 4px 16px rgba(138,107,173,.3);
 }
 
 .nav-toggle {
