@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { UtensilsCrossed, Heart, Pill, Home, Laugh, HeartHandshake, type LucideIcon } from 'lucide-react'
 import SectionHeader from '../components/ui/SectionHeader'
 import CTABanner from '../components/ui/CTABanner'
@@ -89,22 +88,7 @@ export default function Services() {
         </div>
       </section>
 
-      {/* ===== ALL-INCLUSIVE BOX ===== */}
-      <section className="section" aria-labelledby="alinc2-heading">
-        <div className="container">
-          <div className="all-inclusive">
-            <span className="eyebrow">Transparent Pricing</span>
-            <h2 id="alinc2-heading">All-Inclusive, All the Time</h2>
-            <p>We believe care should never come with a confusing bill. Our all-inclusive rate covers everything described on this page — from meals and medications to housekeeping and around-the-clock care. Contact us to learn more about our rates and what makes Adored Living the right fit for your family.</p>
-            <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap', marginTop: 8 }}>
-              <Link to="/contact" className="btn btn-primary btn-lg">Ask About Rates</Link>
-              <Link to="/contact" className="btn btn-secondary btn-lg">Schedule a Tour</Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <CTABanner
+<CTABanner
         title="Have Questions About Our Services?"
         description="Our team is happy to walk you through every detail of our care, answer your questions, and help you determine the best fit for your loved one."
         primaryLabel="Get in Touch"
