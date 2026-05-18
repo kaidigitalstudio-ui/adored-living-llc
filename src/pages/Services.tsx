@@ -22,35 +22,35 @@ const SERVICES: ServiceDetail[] = [
     imgAlt: 'Home-cooked meal of chicken, rice, and fresh salad served at Adored Living',
     Icon: UtensilsCrossed,
     title: 'Meals & Nutrition',
-    description: 'Good food is good care. Our residents enjoy three fresh, home-cooked meals every day — prepared with nutrition, flavor, and love. We accommodate dietary restrictions and preferences, and snacks and beverages are available throughout the day.',
+    description: 'Good food is good care. Your loved one will enjoy three fresh, home-cooked meals every day — prepared with nutrition, flavor, and love. We accommodate dietary restrictions and health-related needs, and snacks and beverages are always available throughout the day.',
     includes: ['Three nutritious, home-cooked meals daily', 'Snacks and beverages included throughout the day', 'Dietary accommodations for health conditions', 'Meal assistance provided as needed', 'Hydration monitoring for resident health'],
   },
   {
     id: 'personal-care',
-    img: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80',
-    imgAlt: 'Caregiver assisting an elderly resident with gentle, dignified support',
+    img: '/rochester/IMG_3545.jpeg',
+    imgAlt: 'Caregiver gently assisting a resident with mobility at Adored Living',
     Icon: Heart,
     title: 'Personal Care Assistance',
-    description: 'We provide compassionate, dignified personal care that respects each resident\'s privacy and independence. Our caregivers are trained to assist in ways that empower — never diminish — the people in their care.',
-    includes: ['Bathing and personal hygiene assistance', 'Grooming, dressing, and appearance support', 'Mobility assistance to meals and activities', 'Monitoring of behavioral and appetite changes', 'Individualized care plans for each resident'],
+    description: 'Your loved one receives compassionate, dignified personal care that respects their privacy and individuality at every level of ability. Our caregivers are present around the clock — so whether it\'s 2pm or 2am, someone is always there.',
+    includes: ['Bathing and personal hygiene assistance', 'Grooming, dressing, and appearance support', 'Mobility assistance as needed throughout the day', 'Monitoring of behavioral and appetite changes', 'Individualized care plans for each resident', 'Around-the-clock staff presence, including overnight care', 'Regular updates so families always know how their loved one is doing'],
     reverse: true,
   },
   {
     id: 'medication',
-    img: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&q=80',
-    imgAlt: 'Organized medication management with careful record-keeping',
+    img: '/caregiver-assist.png',
+    imgAlt: 'Caregiver providing attentive assistance to a resident',
     Icon: Pill,
     title: 'Medication Management',
-    description: 'Medication management is one of the most critical aspects of senior care. Our staff follow physician recommendations precisely, maintain secure and accurate records, and take the worry of medication schedules completely off families\' shoulders.',
+    description: 'Keeping track of medications, dosages, and schedules is one of the heaviest burdens families carry. We take that completely off your plate — following physician instructions precisely, maintaining accurate records, and flagging any concerns so you never have to wonder if something was missed.',
     includes: ['Medication administered per physician instructions', 'Secure medication inventory and storage', 'Accurate administration records maintained', 'Assistance with prescription refill coordination', 'Side effect and reaction monitoring'],
   },
   {
     id: 'housekeeping',
-    img: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80',
-    imgAlt: 'Clean, bright, warmly decorated residential bedroom',
+    img: '/rochester/IMG_2960.jpeg',
+    imgAlt: 'Warm and welcoming common living area at Adored Living',
     Icon: Home,
     title: 'Housing & Housekeeping',
-    description: 'Our homes are beautifully maintained, clean, and comfortable. Each resident has a furnished private room and access to warm, welcoming shared living spaces. Routine housekeeping and laundry are handled so residents can simply enjoy their home.',
+    description: 'Your loved one will have a beautifully maintained, clean, and comfortable place to truly call home. Each resident has a furnished private room and access to warm shared living spaces — and all housekeeping and laundry are handled, so they can simply rest and be.',
     includes: ['Furnished private room (bed, chair, dresser, closet, side table)', 'Shared living areas with television', 'Routine cleaning and housekeeping services', 'In-house laundry management', 'Linens, pillows, sheets, and blankets provided', 'Basic toiletry and hygiene supplies included'],
     reverse: true,
   },
@@ -60,8 +60,8 @@ const SERVICES: ServiceDetail[] = [
     imgAlt: 'Residents enjoying live guitar music together at Adored Living',
     Icon: Laugh,
     title: 'Companionship & Social Engagement',
-    description: 'Loneliness is one of the greatest challenges seniors face. At Adored Living, meaningful connection is built into every day. With a small, intimate community of residents, genuine friendships naturally form — and our staff make it their mission to bring joy into each interaction.',
-    includes: ['Daily meaningful social interaction and engagement', 'Recreational and leisure activities', 'Emotional support and active listening', 'Close-knit community of fellow residents', 'Encouragement of personal interests and hobbies'],
+    description: 'Loneliness is one of the greatest challenges seniors face — and one families worry about most. At Adored Living, your loved one is never just a room number. With a small, intimate community, genuine connection happens naturally, and our staff make it their mission to bring warmth into every interaction.',
+    includes: ['Daily social interaction and meaningful engagement', 'Live music, games, and celebrations', 'Emotional support and compassionate presence', 'Close-knit community of fellow residents', 'Honoring each person\'s personality, history, and preferences'],
   },
   {
     id: 'hospice',
@@ -111,7 +111,7 @@ export default function Services() {
           <div className="all-inclusive">
             <span className="eyebrow">Transparent Pricing</span>
             <h2 id="alinc2-heading">All-Inclusive, All the Time</h2>
-            <p>We believe care should never come with a confusing bill. Our all-inclusive rate covers everything described on this page — from meals and medications to housekeeping and activities. Contact us to learn more about our rates and what makes Adored Living the right fit for your family.</p>
+            <p>We believe care should never come with a confusing bill. Our all-inclusive rate covers everything described on this page — from meals and medications to housekeeping and around-the-clock care. Contact us to learn more about our rates and what makes Adored Living the right fit for your family.</p>
             <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap', marginTop: 8 }}>
               <Link to="/contact" className="btn btn-primary btn-lg">Ask About Rates</Link>
               <Link to="/contact" className="btn btn-secondary btn-lg">Schedule a Tour</Link>
