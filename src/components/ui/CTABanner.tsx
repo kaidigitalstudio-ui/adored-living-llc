@@ -1,44 +1,18 @@
 import { Link } from 'react-router-dom'
 
-interface CTABannerProps {
-  eyebrow?: string
-  title: string
-  description: string
-  primaryLabel: string
-  primaryTo: string
-  secondaryLabel: string
-  secondaryHref?: string
-  secondaryTo?: string
-}
+const PHONE = '(248) 931-9009'
+const PHONE_HREF = 'tel:+12489319009'
 
-export default function CTABanner({
-  eyebrow,
-  title,
-  description,
-  primaryLabel,
-  primaryTo,
-  secondaryLabel,
-  secondaryHref,
-  secondaryTo,
-}: CTABannerProps) {
+export default function CTABand() {
   return (
-    <section className="cta-banner" aria-label={title}>
-      <div className="container">
-        <div className="cta-inner" data-animate="fade">
-          <div className="cta-text">
-            {eyebrow && (
-              <span className="eyebrow" style={{ color: 'var(--lavender-pale)' }}>{eyebrow}</span>
-            )}
-            <h2>{title}</h2>
-            <p>{description}</p>
-          </div>
-          <div className="cta-actions">
-            <Link to={primaryTo} className="btn btn-white btn-lg">{primaryLabel}</Link>
-            {secondaryHref ? (
-              <a href={secondaryHref} className="btn btn-outline btn-lg">{secondaryLabel}</a>
-            ) : secondaryTo ? (
-              <Link to={secondaryTo} className="btn btn-outline btn-lg">{secondaryLabel}</Link>
-            ) : null}
+    <section className="section" id="tour">
+      <div className="wrap">
+        <div className="cta-band reveal">
+          <h2>Come see it for yourself.</h2>
+          <p>Schedule a private tour and meet the team. We'll walk you through daily life, answer every question, and help you picture home.</p>
+          <div className="hero-cta">
+            <Link to="/contact" className="btn btn-light">Schedule a Tour</Link>
+            <a href={PHONE_HREF} className="btn btn-ghost">Call {PHONE}</a>
           </div>
         </div>
       </div>

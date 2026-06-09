@@ -4,9 +4,9 @@ import Footer from './components/layout/Footer'
 import ScrollAnimations from './components/ScrollAnimations'
 import Home from './pages/Home'
 import About from './pages/About'
-import Services from './pages/Services'
-import Rochester from './pages/Rochester'
-import Clarkston from './pages/Clarkston'
+import Care from './pages/Care'
+import Homes from './pages/Homes'
+import Locations from './pages/Locations'
 import FAQ from './pages/FAQ'
 import Contact from './pages/Contact'
 
@@ -20,11 +20,14 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/locations/rochester-hills" element={<Rochester />} />
-          <Route path="/locations/clarkston" element={<Clarkston />} />
+          <Route path="/care" element={<Care />} />
+          <Route path="/homes" element={<Homes />} />
+          <Route path="/locations" element={<Locations />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/services" element={<Care />} />
+          <Route path="/locations/rochester-hills" element={<Locations />} />
+          <Route path="/locations/clarkston" element={<Locations />} />
         </Routes>
       </main>
       <Footer />

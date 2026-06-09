@@ -1,25 +1,20 @@
-import { useState, useEffect, useRef } from 'react'
-import { NavLink, useLocation } from 'react-router-dom'
-import { ChevronDown } from 'lucide-react'
+import { useState, useEffect } from 'react'
+import { NavLink, Link } from 'react-router-dom'
 
-const NAV_ITEMS = [
-  { to: '/',         label: 'Home' },
-  { to: '/about',    label: 'About Us' },
-  { to: '/services', label: 'Services' },
-]
+const PHONE = '(248) 931-9009'
+const PHONE_HREF = 'tel:+12489319009'
 
-const LOCATION_ITEMS = [
-  { to: '/locations/rochester-hills', label: 'Rochester Hills' },
-  { to: '/locations/clarkston',       label: 'Clarkston' },
+const NAV_LINKS = [
+  { to: '/about', label: 'Our Approach' },
+  { to: '/homes', label: 'The Homes' },
+  { to: '/care', label: 'Care' },
+  { to: '/locations', label: 'Locations' },
+  { to: '/faq', label: 'FAQ' },
 ]
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
-  const [menuOpen, setMenuOpen] = useState(false)
-  const [dropdownOpen, setDropdownOpen] = useState(false)
-  const dropdownRef = useRef<HTMLLIElement>(null)
-  const { pathname } = useLocation()
-  const onLocations = pathname.startsWith('/locations')
+  const [mobileOpen, setMobileOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -28,125 +23,65 @@ export default function Header() {
   }, [])
 
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : ''
+    document.body.style.overflow = mobileOpen ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
-  }, [menuOpen])
+  }, [mobileOpen])
 
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handler = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setDropdownOpen(false)
-      }
-    }
-    document.addEventListener('mousedown', handler)
-    return () => document.removeEventListener('mousedown', handler)
-  }, [])
-
-  // Close dropdown on route change
-  useEffect(() => { setDropdownOpen(false) }, [pathname])
-
-  const closeMenu = () => {
-    setMenuOpen(false)
-    setDropdownOpen(false)
-  }
+  const close = () => setMobileOpen(false)
 
   return (
-    <header className={`site-header${scrolled ? ' scrolled' : ''}`} role="banner">
-      <nav className="nav-inner" aria-label="Main navigation">
-        <NavLink to="/" className="nav-logo" aria-label="Adored Living LLC — Home" onClick={closeMenu}>
-          <span className="logo-primary">Adored Living</span>
-          <span className="logo-sub">LLC · Residential Care</span>
-        </NavLink>
+    <header className={`nav${scrolled ? ' scrolled' : ''}`} role="banner">
+      <div className="wrap nav-inner">
+        <Link to="/" className="brand" aria-label="Adored Living — Home" onClick={close}>
+          <span className="mark"><span /></span>
+          <span>
+            <b>Adored Living</b>
+            <small>Assisted Living</small>
+          </span>
+        </Link>
 
-        <ul className={`nav-links${menuOpen ? ' open' : ''}`} role="list">
-          {NAV_ITEMS.map(({ to, label }) => (
-            <li key={to}>
-              <NavLink
-                to={to}
-                end={to === '/'}
-                className={({ isActive }) => isActive ? 'active' : ''}
-                onClick={closeMenu}
-              >
-                {label}
-              </NavLink>
-            </li>
-          ))}
-
-          {/* Locations dropdown */}
-          <li className="nav-dropdown" ref={dropdownRef}>
-            <button
-              className={`nav-dropdown-trigger${onLocations ? ' active' : ''}`}
-              aria-haspopup="true"
-              aria-expanded={dropdownOpen}
-              onClick={() => setDropdownOpen(prev => !prev)}
-            >
-              Locations <ChevronDown size={13} strokeWidth={2.5} className={dropdownOpen ? 'rotated' : ''} />
-            </button>
-
-            {/* Desktop dropdown */}
-            {dropdownOpen && (
-              <ul className="nav-dropdown-menu" role="list">
-                {LOCATION_ITEMS.map(({ to, label }) => (
-                  <li key={to}>
-                    <NavLink
-                      to={to}
-                      className={({ isActive }) => isActive ? 'active' : ''}
-                      onClick={closeMenu}
-                    >
-                      {label}
-                    </NavLink>
-                  </li>
-                ))}
-              </ul>
-            )}
-
-            {/* Mobile sub-links (always visible when mobile menu is open) */}
-            <div className="nav-dropdown-mobile">
-              {LOCATION_ITEMS.map(({ to, label }) => (
-                <NavLink
-                  key={to}
-                  to={to}
-                  className={({ isActive }) => `nav-dropdown-mobile-link${isActive ? ' active' : ''}`}
-                  onClick={closeMenu}
-                >
-                  {label}
-                </NavLink>
-              ))}
-            </div>
-          </li>
-
-          <li>
+        <nav className="links" aria-label="Main navigation">
+          {NAV_LINKS.map(({ to, label }) => (
             <NavLink
-              to="/faq"
+              key={to}
+              to={to}
               className={({ isActive }) => isActive ? 'active' : ''}
-              onClick={closeMenu}
             >
-              FAQs
+              {label}
             </NavLink>
-          </li>
-          <li>
-            <a href="tel:+12489319009" className="nav-phone" aria-label="Call (248) 931-9009">
-              (248) 931-9009
-            </a>
-          </li>
-          <li>
-            <NavLink to="/contact" className="nav-cta" onClick={closeMenu}>
-              Contact Us
-            </NavLink>
-          </li>
-        </ul>
+          ))}
+        </nav>
+
+        <div className="nav-right">
+          <a href={PHONE_HREF} className="nav-phone">{PHONE}</a>
+          <Link to="/contact" className="btn btn-primary">Schedule a Tour</Link>
+        </div>
 
         <button
-          className="nav-toggle"
-          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-          aria-expanded={menuOpen}
-          onClick={() => setMenuOpen(prev => !prev)}
+          className="nav-hamburger"
+          aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={mobileOpen}
+          onClick={() => setMobileOpen(prev => !prev)}
         >
-          <span style={menuOpen ? { transform: 'rotate(45deg) translate(5px, 5px)' } : undefined} />
-          <span style={menuOpen ? { opacity: 0 } : undefined} />
-          <span style={menuOpen ? { transform: 'rotate(-45deg) translate(5px, -5px)' } : undefined} />
+          <span />
+          <span />
+          <span />
         </button>
+      </div>
+
+      <nav className={`mobile-nav${mobileOpen ? ' open' : ''}`} aria-label="Mobile navigation">
+        {NAV_LINKS.map(({ to, label }) => (
+          <NavLink
+            key={to}
+            to={to}
+            className={({ isActive }) => isActive ? 'active' : ''}
+            onClick={close}
+          >
+            {label}
+          </NavLink>
+        ))}
+        <Link to="/contact" className="btn btn-primary mobile-nav-cta" onClick={close}>Schedule a Tour</Link>
+        <a href={PHONE_HREF} className="mobile-nav-phone" onClick={close}>{PHONE}</a>
       </nav>
     </header>
   )

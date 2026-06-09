@@ -1,77 +1,99 @@
 import { useState } from 'react'
-import { ChevronDown } from 'lucide-react'
-import SectionHeader from '../components/ui/SectionHeader'
-import CTABanner from '../components/ui/CTABanner'
+import CTABand from '../components/ui/CTABanner'
+import PageHero from '../components/ui/PageHero'
 
 interface FAQItem { question: string; answer: string }
+interface FAQGroup { cat: string; items: FAQItem[] }
 
-const FAQS: FAQItem[] = [
-  { question: 'What is an adult foster care home?', answer: 'An adult foster care (AFC) home is a small, licensed residence that provides room, meals, personal care, and supervision for seniors who need additional support but do not require skilled nursing care. Sometimes called a "board and care home," it offers a true home environment rather than an institutional setting. Our homes in Michigan are licensed and regulated by the State of Michigan.' },
-  { question: 'How many residents live in each home?', answer: 'Each of our homes is licensed for a maximum of 6 residents. This small, intimate setting is intentional — it allows our caregivers to provide deeply personalized attention, build genuine relationships with each resident, and create a true home environment rather than an institutional one.' },
-  { question: 'What is included in the monthly rate?', answer: 'Our pricing is all-inclusive, meaning there are no surprise add-ons or hidden fees. The monthly rate covers room and board, all three meals plus snacks and beverages, housekeeping and laundry, personal care assistance, medication management, basic toiletries and hygiene supplies, and access to all common areas.' },
-  { question: 'What level of care do you provide?', answer: 'We provide non-medical personal care and daily living assistance. This includes help with bathing, grooming, dressing, medication management, mobility support, and meal assistance. We do not provide skilled nursing or medical procedures. Residents may continue to see their own physicians and receive home health visits as needed.' },
-  { question: 'Can my loved one bring their own furniture and personal items?', answer: 'Absolutely. While each room comes fully furnished, we encourage residents to personalize their space with their own belongings — photos, a favorite chair, cherished keepsakes, or decorative items. Making the space feel familiar and personal is important to us.' },
-  { question: 'How are medications managed?', answer: 'Our trained staff administer all medications according to each resident\'s physician-prescribed schedule. We maintain secure, organized records of all medications, monitor for any side effects or changes, and assist with prescription refills and coordination with healthcare providers.' },
-  { question: 'Can family members visit whenever they like?', answer: 'Yes. We warmly welcome family visits. We believe open family involvement is essential to a resident\'s wellbeing and happiness. Families are encouraged to visit, share meals, and stay connected with their loved ones in whatever way feels natural.' },
-  { question: 'What happens if my loved one\'s care needs increase over time?', answer: 'We evaluate each resident\'s needs on an ongoing basis. If care needs evolve, we work closely with families and healthcare providers to adjust care plans accordingly. We will always communicate openly about what we can support and will help families find additional resources if more intensive medical care becomes necessary.' },
-  { question: 'Are your homes licensed and regulated?', answer: 'Yes. Both of our homes are fully licensed by the State of Michigan and comply with all applicable health, safety, and regulatory standards. We are committed to maintaining the highest standards of care and transparency.' },
-  { question: 'How do I get started or schedule a tour?', answer: 'Simply reach out to us by phone at (248) 931-9009 or by email at adoredlivingllc@gmail.com. You can also fill out the contact form on our website. We\'d love to invite you for a personal tour of either location — no pressure, just a warm conversation about what\'s best for your loved one.' },
+const FAQ_GROUPS: FAQGroup[] = [
+  {
+    cat: 'Getting started',
+    items: [
+      { question: 'How do I know if assisted living is the right fit?', answer: 'If everyday tasks — bathing, dressing, medications, meals, or mobility — have become difficult or unsafe to manage alone, assisted living can help. The best first step is a visit and a care assessment; we\'ll talk honestly about needs and whether our homes are the right match.' },
+      { question: 'How do I schedule a tour?', answer: 'Call either home and we\'ll arrange a private tour at a time that suits you — including evenings and weekends. We\'ll walk you through the home, introduce the care team, and answer every question, with no pressure.' },
+      { question: 'Is there a waitlist?', answer: 'Because our homes are intentionally small, availability is limited and can change quickly. We\'ll always tell you exactly what\'s open today, and we keep a gentle waitlist so we can reach out the moment a suite becomes available.' },
+    ],
+  },
+  {
+    cat: 'Care & daily life',
+    items: [
+      { question: 'What level of care do you provide?', answer: 'We support everything from light daily assistance to full personal care — help with bathing, dressing, grooming, mobility, and medication management, plus memory and companion care. Care is assessed individually and adjusts gently as needs change.' },
+      { question: 'What is the caregiver-to-resident ratio?', answer: 'We maintain a 1:4 caregiver-to-resident ratio so no one waits to be cared for. Trained staff are on site 24 hours a day, every day.' },
+      { question: 'Can care change as my loved one\'s needs change?', answer: 'Yes. We review and adjust care plans continuously, so residents can stay in the home they know rather than moving somewhere new as needs evolve.' },
+      { question: 'What do meals look like?', answer: 'Three home-style meals plus snacks are served daily and shared at one table. We accommodate dietary needs and the dishes residents love most.' },
+    ],
+  },
+  {
+    cat: 'Logistics & cost',
+    items: [
+      { question: 'What\'s included in the monthly cost?', answer: 'Personal care, meals, housekeeping and laundry, activities, and 24/7 staffing are included. Because needs vary, we provide a clear, personalized quote after a care assessment — with no hidden fees.' },
+      { question: 'Do you accept long-term care insurance?', answer: 'Many families use long-term care insurance, VA benefits, or private funds. Coverage varies by plan and program — we\'re happy to walk through your specific situation and what documentation is typically needed.' },
+      { question: 'Can residents bring their own furniture?', answer: 'Absolutely. Familiar furnishings and treasured belongings are welcome and encouraged — they\'re a big part of what makes a suite feel like home.' },
+      { question: 'Are there visiting hours?', answer: 'Family is welcome anytime. We do ask for a quick hello to staff on arrival so we can support a great visit, but there are no fixed visiting hours.' },
+    ],
+  },
 ]
 
+function FAQItemRow({ question, answer, open, onToggle, id }: {
+  question: string; answer: string; open: boolean; onToggle: () => void; id: string
+}) {
+  return (
+    <div className={`faq-item${open ? ' open' : ''}`}>
+      <button
+        className="faq-q"
+        onClick={onToggle}
+        aria-expanded={open}
+        aria-controls={`${id}-answer`}
+        id={`${id}-btn`}
+      >
+        <span>{question}</span>
+        <span className="faq-icon" aria-hidden="true" />
+      </button>
+      <div className="faq-a" id={`${id}-answer`} role="region" aria-labelledby={`${id}-btn`}>
+        <div className="faq-a-inner"><p>{answer}</p></div>
+      </div>
+    </div>
+  )
+}
+
 export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null)
-  const toggle = (i: number) => setOpenIndex(prev => (prev === i ? null : i))
+  const [openKey, setOpenKey] = useState<string>('0-0')
 
   return (
     <>
-      <section className="section section--top" aria-labelledby="faq-heading">
-        <div className="container">
-          <SectionHeader eyebrow="Frequently Asked Questions" title="Your Questions, Answered" description="If you don't see your question here, please don't hesitate to reach out — we love talking with families and are always happy to help." center id="faq-heading" as="h1" />
+      <PageHero
+        crumb="FAQ"
+        eyebrow="Questions & answers"
+        title="The questions families <em>ask us most.</em>"
+        lede="Choosing care for someone you love is a big decision. Here are honest answers to the things families ask — and we're always a phone call away for the rest."
+      />
 
-          <div className="faq-list" role="list">
-            {FAQS.map(({ question, answer }, i) => (
-              <div key={i} className={`faq-item${openIndex === i ? ' open' : ''}`} role="listitem">
-                <button
-                  className="faq-question"
-                  aria-expanded={openIndex === i}
-                  aria-controls={`faq-answer-${i}`}
-                  id={`faq-question-${i}`}
-                  onClick={() => toggle(i)}
-                >
-                  {question}
-                  <span className="faq-chevron" aria-hidden="true">
-                    <ChevronDown size={16} strokeWidth={2.5} />
-                  </span>
-                </button>
-                <div className="faq-answer" id={`faq-answer-${i}`} role="region" aria-labelledby={`faq-question-${i}`}>
-                  <div className="faq-answer-inner">{answer}</div>
-                </div>
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="wrap">
+          <div className="faq">
+            {FAQ_GROUPS.map((group, gi) => (
+              <div className="faq-cat" key={gi}>
+                <span className="eyebrow">{group.cat}</span>
+                {group.items.map((item, ii) => {
+                  const key = `${gi}-${ii}`
+                  return (
+                    <FAQItemRow
+                      key={key}
+                      id={`faq-${key}`}
+                      question={item.question}
+                      answer={item.answer}
+                      open={openKey === key}
+                      onToggle={() => setOpenKey(openKey === key ? '' : key)}
+                    />
+                  )
+                })}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section section--alt" aria-labelledby="still-q-heading">
-        <div className="container text-center">
-          <span className="eyebrow">Still Have Questions?</span>
-          <h2 id="still-q-heading">We'd Love to Talk</h2>
-          <p>No question is too small. Whether you're just beginning to explore care options or ready to make a decision, our team is here to guide you with patience and warmth.</p>
-          <div style={{ display: 'flex', gap: 16, justifyContent: 'center', marginTop: 36, flexWrap: 'wrap' }}>
-            <a href="tel:+12489319009" className="btn btn-primary btn-lg">Call (248) 931-9009</a>
-            <a href="mailto:adoredlivingllc@gmail.com" className="btn btn-secondary btn-lg">Send an Email</a>
-          </div>
-        </div>
-      </section>
-
-      <CTABanner
-        title="See Our Home For Yourself"
-        description="The best way to understand what makes Adored Living special is to walk through our doors. Schedule a personal tour at either location."
-        primaryLabel="Schedule a Tour"
-        primaryTo="/contact"
-        secondaryLabel="View Our Services"
-        secondaryTo="/services"
-      />
+      <CTABand />
     </>
   )
 }
