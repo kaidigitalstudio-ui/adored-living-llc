@@ -17,6 +17,7 @@ interface HomeData {
   gallery: string[]
   events: { cap: string; tall?: boolean; wide?: boolean }[]
   video?: string
+  photos?: string[]
 }
 
 const HOMES: HomeData[] = [
@@ -28,6 +29,15 @@ const HOMES: HomeData[] = [
     landmarks: 'Near Rochester Municipal Park · 10 min to Ascension Providence Rochester',
     amenities: ['Private & companion suites', 'Chef-prepared meals', 'Sunroom & reading lounge', 'Landscaped, secure garden', '24/7 personal care', 'Salon & grooming visits'],
     gallery: ['exterior — front', 'great room', 'bedroom suite', 'garden'],
+    photos: [
+      '/rochester/IMG_5184.jpg', '/rochester/IMG_5186.jpg', '/rochester/IMG_5189.jpg',
+      '/rochester/IMG_5195.jpg', '/rochester/IMG_5198.jpg', '/rochester/IMG_5200.jpg',
+      '/rochester/IMG_5203.jpg', '/rochester/IMG_5204.jpg', '/rochester/IMG_5205.jpg',
+      '/rochester/IMG_5207.jpg', '/rochester/IMG_5211.jpg', '/rochester/IMG_5212.jpg',
+      '/rochester/IMG_5214.jpg', '/rochester/IMG_5219.jpg', '/rochester/IMG_5220.jpg',
+      '/rochester/IMG_5225.jpg', '/rochester/IMG_5227.jpg', '/rochester/IMG_5228.jpg',
+      '/rochester/IMG_5240.jpg', '/rochester/IMG_5243.jpg',
+    ],
     events: [
       { cap: 'summer cookout', tall: true }, { cap: 'birthday celebration' },
       { cap: 'garden afternoon' }, { cap: 'live music day', wide: true },
@@ -64,12 +74,31 @@ function LocationBlock({ h }: { h: HomeData }) {
           <Link to="/contact" className="btn btn-primary">Schedule a tour</Link>
         </div>
 
-        <div className="gallery reveal" style={{ gridAutoRows: '190px', marginBottom: 28 }}>
-          <Placeholder className="g-wide g-tall" label={h.gallery[0]} />
-          <Placeholder label={h.gallery[1]} />
-          <Placeholder label={h.gallery[2]} />
-          <Placeholder className="g-wide" label={h.gallery[3]} />
-        </div>
+        {h.photos ? (
+          <div className="reveal" style={{ columns: '3 280px', columnGap: 10, marginBottom: 28 }}>
+            {h.photos.map((src, i) => (
+              <img
+                key={i}
+                src={src}
+                alt={`${h.city} home interior`}
+                style={{
+                  display: 'block',
+                  width: '100%',
+                  marginBottom: 10,
+                  borderRadius: 3,
+                  imageOrientation: 'from-image',
+                }}
+              />
+            ))}
+          </div>
+        ) : (
+          <div className="gallery reveal" style={{ gridAutoRows: '190px', marginBottom: 28 }}>
+            <Placeholder className="g-wide g-tall" label={h.gallery[0]} />
+            <Placeholder label={h.gallery[1]} />
+            <Placeholder label={h.gallery[2]} />
+            <Placeholder className="g-wide" label={h.gallery[3]} />
+          </div>
+        )}
 
         {h.video && (
           <div className="reveal" style={{ marginBottom: 48 }}>
