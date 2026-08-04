@@ -62,7 +62,7 @@ const HOMES: HomeData[] = [
   },
 ]
 
-const PHOTOS_PREVIEW = 6
+const PHOTOS_PREVIEW = 3
 
 function PhotoGallery({ photos, city }: { photos: string[]; city: string }) {
   const [expanded, setExpanded] = useState(false)
