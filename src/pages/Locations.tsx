@@ -62,15 +62,17 @@ const HOMES: HomeData[] = [
   },
 ]
 
-const PHOTOS_PREVIEW = 3
+const PHOTOS_PREVIEW = 6
 
 function PhotoGallery({ photos, city }: { photos: string[]; city: string }) {
   const [expanded, setExpanded] = useState(false)
-  const visible = expanded ? photos : photos.slice(0, PHOTOS_PREVIEW)
+  const preview = photos.slice(0, PHOTOS_PREVIEW)
+  const rest = photos.slice(PHOTOS_PREVIEW)
   return (
     <div className="reveal" style={{ marginBottom: 28 }}>
-      <div style={{ columns: '3 280px', columnGap: 10 }}>
-        {visible.map((src, i) => (
+      {/* Fixed-height grid for preview — always even */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10, marginBottom: expanded ? 10 : 0 }}>
+        {preview.map((src, i) => (
           <img
             key={i}
             src={src}
@@ -78,13 +80,33 @@ function PhotoGallery({ photos, city }: { photos: string[]; city: string }) {
             style={{
               display: 'block',
               width: '100%',
-              marginBottom: 10,
+              height: 280,
+              objectFit: 'cover',
               borderRadius: 3,
               imageOrientation: 'from-image',
             }}
           />
         ))}
       </div>
+      {/* Masonry columns for expanded overflow photos */}
+      {expanded && rest.length > 0 && (
+        <div style={{ columns: '3 280px', columnGap: 10 }}>
+          {rest.map((src, i) => (
+            <img
+              key={i}
+              src={src}
+              alt={`${city} home interior`}
+              style={{
+                display: 'block',
+                width: '100%',
+                marginBottom: 10,
+                borderRadius: 3,
+                imageOrientation: 'from-image',
+              }}
+            />
+          ))}
+        </div>
+      )}
       {photos.length > PHOTOS_PREVIEW && (
         <button
           onClick={() => setExpanded(e => !e)}
