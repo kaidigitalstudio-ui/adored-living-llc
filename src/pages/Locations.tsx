@@ -16,6 +16,7 @@ interface HomeData {
   amenities: string[]
   gallery: string[]
   events: { cap: string; tall?: boolean; wide?: boolean }[]
+  video?: string
 }
 
 const HOMES: HomeData[] = [
@@ -41,6 +42,7 @@ const HOMES: HomeData[] = [
     landmarks: 'Near Deer Lake · 12 min to McLaren Clarkston',
     amenities: ['Private & companion suites', 'Chef-prepared meals', 'Wooded patio & walking paths', 'Cozy fireside common room', '24/7 personal care', 'Memory & companion care'],
     gallery: ['exterior — front', 'living room', 'dining table', 'patio'],
+    video: '/clarkston-home.mov',
     events: [
       { cap: 'lakeside picnic', tall: true }, { cap: 'craft afternoon' },
       { cap: 'movie night' }, { cap: 'autumn walk', wide: true },
@@ -68,6 +70,22 @@ function LocationBlock({ h }: { h: HomeData }) {
           <Placeholder label={h.gallery[2]} />
           <Placeholder className="g-wide" label={h.gallery[3]} />
         </div>
+
+        {h.video && (
+          <div className="reveal" style={{ marginBottom: 48 }}>
+            <video
+              src={h.video}
+              controls
+              playsInline
+              style={{
+                width: '100%',
+                borderRadius: 4,
+                display: 'block',
+                background: '#000',
+              }}
+            />
+          </div>
+        )}
 
         <div className="loc-2col">
           <div className="reveal">
