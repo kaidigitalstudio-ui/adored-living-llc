@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 import CTABand from '../components/ui/CTABanner'
 import PageHero from '../components/ui/PageHero'
 import Placeholder from '../components/ui/Placeholder'
@@ -61,6 +62,42 @@ const HOMES: HomeData[] = [
   },
 ]
 
+const PHOTOS_PREVIEW = 6
+
+function PhotoGallery({ photos, city }: { photos: string[]; city: string }) {
+  const [expanded, setExpanded] = useState(false)
+  const visible = expanded ? photos : photos.slice(0, PHOTOS_PREVIEW)
+  return (
+    <div className="reveal" style={{ marginBottom: 28 }}>
+      <div style={{ columns: '3 280px', columnGap: 10 }}>
+        {visible.map((src, i) => (
+          <img
+            key={i}
+            src={src}
+            alt={`${city} home interior`}
+            style={{
+              display: 'block',
+              width: '100%',
+              marginBottom: 10,
+              borderRadius: 3,
+              imageOrientation: 'from-image',
+            }}
+          />
+        ))}
+      </div>
+      {photos.length > PHOTOS_PREVIEW && (
+        <button
+          onClick={() => setExpanded(e => !e)}
+          className="btn btn-ghost"
+          style={{ marginTop: 8 }}
+        >
+          {expanded ? 'Show fewer photos' : `See all ${photos.length} photos`}
+        </button>
+      )}
+    </div>
+  )
+}
+
 function LocationBlock({ h }: { h: HomeData }) {
   return (
     <section className="loc-detail">
@@ -75,22 +112,7 @@ function LocationBlock({ h }: { h: HomeData }) {
         </div>
 
         {h.photos ? (
-          <div className="reveal" style={{ columns: '3 280px', columnGap: 10, marginBottom: 28 }}>
-            {h.photos.map((src, i) => (
-              <img
-                key={i}
-                src={src}
-                alt={`${h.city} home interior`}
-                style={{
-                  display: 'block',
-                  width: '100%',
-                  marginBottom: 10,
-                  borderRadius: 3,
-                  imageOrientation: 'from-image',
-                }}
-              />
-            ))}
-          </div>
+          <PhotoGallery photos={h.photos} city={h.city} />
         ) : (
           <div className="gallery reveal" style={{ gridAutoRows: '190px', marginBottom: 28 }}>
             <Placeholder className="g-wide g-tall" label={h.gallery[0]} />
@@ -106,6 +128,7 @@ function LocationBlock({ h }: { h: HomeData }) {
               src={h.video}
               controls
               playsInline
+              poster={h.video.replace('.mov', '-poster.jpg')}
               style={{
                 width: '100%',
                 borderRadius: 4,
