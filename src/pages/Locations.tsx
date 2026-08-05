@@ -16,7 +16,7 @@ interface HomeData {
   landmarks: string
   amenities: string[]
   gallery: string[]
-  events: { cap: string; tall?: boolean; wide?: boolean }[]
+  events: { cap: string; tall?: boolean; wide?: boolean; src?: string }[]
   video?: string
   photos?: string[]
 }
@@ -40,9 +40,9 @@ const HOMES: HomeData[] = [
       '/rochester/IMG_5240.jpg', '/rochester/IMG_5243.jpg',
     ],
     events: [
-      { cap: 'summer cookout', tall: true }, { cap: 'birthday celebration' },
+      { cap: 'summer cookout', tall: true }, { cap: '100th birthday celebration', src: '/rochester/birthday-100.jpg' },
       { cap: 'garden afternoon' }, { cap: 'live music day', wide: true },
-      { cap: 'family visit' }, { cap: 'holiday dinner' },
+      { cap: 'family visit' }, { cap: 'Halloween craft afternoon', src: '/rochester/halloween-craft.jpg' },
     ],
   },
   {
@@ -201,14 +201,31 @@ function LocationBlock({ h }: { h: HomeData }) {
           </div>
           <div className="events-grid reveal">
             {h.events.map((e, i) => (
-              <Placeholder
-                key={i}
-                label={e.cap}
-                style={{
-                  gridColumn: e.wide ? 'span 2' : undefined,
-                  gridRow: e.tall ? 'span 2' : undefined,
-                }}
-              />
+              e.src ? (
+                <img
+                  key={i}
+                  src={e.src}
+                  alt={e.cap}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    borderRadius: 3,
+                    display: 'block',
+                    gridColumn: e.wide ? 'span 2' : undefined,
+                    gridRow: e.tall ? 'span 2' : undefined,
+                  }}
+                />
+              ) : (
+                <Placeholder
+                  key={i}
+                  label={e.cap}
+                  style={{
+                    gridColumn: e.wide ? 'span 2' : undefined,
+                    gridRow: e.tall ? 'span 2' : undefined,
+                  }}
+                />
+              )
             ))}
           </div>
         </div>
