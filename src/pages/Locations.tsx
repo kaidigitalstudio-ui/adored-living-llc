@@ -4,16 +4,33 @@ import CTABand from '../components/ui/CTABanner'
 import PageHero from '../components/ui/PageHero'
 import Placeholder from '../components/ui/Placeholder'
 
-function Lightbox({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) {
+function Lightbox({ photos, startIndex, onClose }: { photos: string[]; startIndex: number; onClose: () => void }) {
+  const [idx, setIdx] = useState(startIndex)
+  const prev = useCallback(() => setIdx(i => (i - 1 + photos.length) % photos.length), [photos.length])
+  const next = useCallback(() => setIdx(i => (i + 1) % photos.length), [photos.length])
+
   useEffect(() => {
-    const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose() }
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose()
+      if (e.key === 'ArrowLeft') prev()
+      if (e.key === 'ArrowRight') next()
+    }
     document.addEventListener('keydown', handler)
     document.body.style.overflow = 'hidden'
     return () => {
       document.removeEventListener('keydown', handler)
       document.body.style.overflow = ''
     }
-  }, [onClose])
+  }, [onClose, prev, next])
+
+  const btnStyle = (side: 'left' | 'right'): React.CSSProperties => ({
+    position: 'fixed', top: '50%', transform: 'translateY(-50%)',
+    [side]: 16,
+    background: 'rgba(255,255,255,0.12)', border: 'none', color: '#fff',
+    fontSize: 28, width: 48, height: 48, borderRadius: '50%',
+    cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',
+    backdropFilter: 'blur(4px)',
+  })
 
   return (
     <div
@@ -25,18 +42,20 @@ function Lightbox({ src, alt, onClose }: { src: string; alt: string; onClose: ()
         padding: 24,
       }}
     >
-      <button
-        onClick={onClose}
-        aria-label="Close"
-        style={{
-          position: 'fixed', top: 20, right: 24,
-          background: 'none', border: 'none', color: '#fff',
-          fontSize: 32, lineHeight: 1, cursor: 'pointer', opacity: 0.8,
-        }}
-      >×</button>
+      <button onClick={onClose} aria-label="Close" style={{
+        position: 'fixed', top: 20, right: 24,
+        background: 'none', border: 'none', color: '#fff',
+        fontSize: 32, lineHeight: 1, cursor: 'pointer', opacity: 0.8,
+      }}>×</button>
+
+      {photos.length > 1 && <>
+        <button aria-label="Previous" onClick={e => { e.stopPropagation(); prev() }} style={btnStyle('left')}>‹</button>
+        <button aria-label="Next" onClick={e => { e.stopPropagation(); next() }} style={btnStyle('right')}>›</button>
+      </>}
+
       <img
-        src={src}
-        alt={alt}
+        src={photos[idx]}
+        alt=""
         onClick={e => e.stopPropagation()}
         style={{
           maxWidth: '90vw', maxHeight: '90vh',
@@ -44,6 +63,15 @@ function Lightbox({ src, alt, onClose }: { src: string; alt: string; onClose: ()
           boxShadow: '0 8px 48px rgba(0,0,0,0.6)',
         }}
       />
+
+      {photos.length > 1 && (
+        <div onClick={e => e.stopPropagation()} style={{
+          position: 'fixed', bottom: 20, left: '50%', transform: 'translateX(-50%)',
+          color: 'rgba(255,255,255,0.5)', fontSize: 13, letterSpacing: '0.05em',
+        }}>
+          {idx + 1} / {photos.length}
+        </div>
+      )}
     </div>
   )
 }
@@ -108,7 +136,7 @@ const HOMES: HomeData[] = [
 
 const PHOTOS_PREVIEW = 6
 
-function PhotoGallery({ photos, city, onPhoto }: { photos: string[]; city: string; onPhoto: (src: string) => void }) {
+function PhotoGallery({ photos, city, onPhoto }: { photos: string[]; city: string; onPhoto: (photos: string[], index: number) => void }) {
   const [expanded, setExpanded] = useState(false)
   const preview = photos.slice(0, PHOTOS_PREVIEW)
   const rest = photos.slice(PHOTOS_PREVIEW)
@@ -122,7 +150,7 @@ function PhotoGallery({ photos, city, onPhoto }: { photos: string[]; city: strin
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10, marginBottom: expanded ? 10 : 0 }}>
         {preview.map((src, i) => (
           <img key={i} src={src} alt={`${city} home interior`}
-            onClick={() => onPhoto(src)}
+            onClick={() => onPhoto(photos, i)}
             style={imgStyle({ height: 280, objectFit: 'cover' })}
           />
         ))}
@@ -131,7 +159,7 @@ function PhotoGallery({ photos, city, onPhoto }: { photos: string[]; city: strin
         <div style={{ columns: '3 280px', columnGap: 10 }}>
           {rest.map((src, i) => (
             <img key={i} src={src} alt={`${city} home interior`}
-              onClick={() => onPhoto(src)}
+              onClick={() => onPhoto(photos, PHOTOS_PREVIEW + i)}
               style={imgStyle({ marginBottom: 10 })}
             />
           ))}
@@ -146,7 +174,7 @@ function PhotoGallery({ photos, city, onPhoto }: { photos: string[]; city: strin
   )
 }
 
-function LocationBlock({ h, onPhoto }: { h: HomeData; onPhoto: (src: string) => void }) {
+function LocationBlock({ h, onPhoto }: { h: HomeData; onPhoto: (photos: string[], index: number) => void }) {
   return (
     <section className="loc-detail">
       <div className="wrap">
@@ -226,13 +254,18 @@ function LocationBlock({ h, onPhoto }: { h: HomeData; onPhoto: (src: string) => 
             <p>Cookouts, birthdays, music afternoons, family visits — a glimpse of everyday joy.</p>
           </div>
           <div className="events-grid reveal">
-            {h.events.map((e, i) => (
-              e.src ? (
+            {(() => {
+              const eventPhotos = h.events.filter(e => e.src).map(e => e.src!)
+              let photoIdx = -1
+              return h.events.map((e, i) => {
+                if (e.src) photoIdx++
+                const idx = photoIdx
+                return e.src ? (
                 <img
                   key={i}
                   src={e.src}
                   alt={e.cap}
-                  onClick={() => onPhoto(e.src!)}
+                  onClick={() => onPhoto(eventPhotos, idx)}
                   style={{
                     width: '100%',
                     height: '100%',
@@ -254,7 +287,8 @@ function LocationBlock({ h, onPhoto }: { h: HomeData; onPhoto: (src: string) => 
                   }}
                 />
               )
-            ))}
+            })
+            })()}
           </div>
         </div>
       </div>
@@ -263,8 +297,8 @@ function LocationBlock({ h, onPhoto }: { h: HomeData; onPhoto: (src: string) => 
 }
 
 export default function Locations() {
-  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null)
-  const openPhoto = useCallback((src: string, alt = '') => setLightbox({ src, alt }), [])
+  const [lightbox, setLightbox] = useState<{ photos: string[]; index: number } | null>(null)
+  const openPhoto = useCallback((photos: string[], index: number) => setLightbox({ photos, index }), [])
   const closePhoto = useCallback(() => setLightbox(null), [])
 
   return (
@@ -279,7 +313,7 @@ export default function Locations() {
         <LocationBlock h={h} key={i} onPhoto={openPhoto} />
       ))}
       <CTABand />
-      {lightbox && <Lightbox src={lightbox.src} alt={lightbox.alt} onClose={closePhoto} />}
+      {lightbox && <Lightbox photos={lightbox.photos} startIndex={lightbox.index} onClose={closePhoto} />}
     </>
   )
 }
