@@ -1,8 +1,52 @@
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import CTABand from '../components/ui/CTABanner'
 import PageHero from '../components/ui/PageHero'
 import Placeholder from '../components/ui/Placeholder'
+
+function Lightbox({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) {
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose() }
+    document.addEventListener('keydown', handler)
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.removeEventListener('keydown', handler)
+      document.body.style.overflow = ''
+    }
+  }, [onClose])
+
+  return (
+    <div
+      onClick={onClose}
+      style={{
+        position: 'fixed', inset: 0, zIndex: 1000,
+        background: 'rgba(0,0,0,0.82)',
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        padding: 24,
+      }}
+    >
+      <button
+        onClick={onClose}
+        aria-label="Close"
+        style={{
+          position: 'fixed', top: 20, right: 24,
+          background: 'none', border: 'none', color: '#fff',
+          fontSize: 32, lineHeight: 1, cursor: 'pointer', opacity: 0.8,
+        }}
+      >×</button>
+      <img
+        src={src}
+        alt={alt}
+        onClick={e => e.stopPropagation()}
+        style={{
+          maxWidth: '90vw', maxHeight: '90vh',
+          objectFit: 'contain', borderRadius: 4,
+          boxShadow: '0 8px 48px rgba(0,0,0,0.6)',
+        }}
+      />
+    </div>
+  )
+}
 
 const PHONE = '(248) 931-9009'
 const PHONE_HREF = 'tel:+12489319009'
@@ -64,55 +108,37 @@ const HOMES: HomeData[] = [
 
 const PHOTOS_PREVIEW = 6
 
-function PhotoGallery({ photos, city }: { photos: string[]; city: string }) {
+function PhotoGallery({ photos, city, onPhoto }: { photos: string[]; city: string; onPhoto: (src: string) => void }) {
   const [expanded, setExpanded] = useState(false)
   const preview = photos.slice(0, PHOTOS_PREVIEW)
   const rest = photos.slice(PHOTOS_PREVIEW)
+  const imgStyle = (extra?: object) => ({
+    display: 'block', width: '100%', borderRadius: 3,
+    imageOrientation: 'from-image' as const, cursor: 'zoom-in',
+    ...extra,
+  })
   return (
     <div className="reveal" style={{ marginBottom: 28 }}>
-      {/* Fixed-height grid for preview — always even */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10, marginBottom: expanded ? 10 : 0 }}>
         {preview.map((src, i) => (
-          <img
-            key={i}
-            src={src}
-            alt={`${city} home interior`}
-            style={{
-              display: 'block',
-              width: '100%',
-              height: 280,
-              objectFit: 'cover',
-              borderRadius: 3,
-              imageOrientation: 'from-image',
-            }}
+          <img key={i} src={src} alt={`${city} home interior`}
+            onClick={() => onPhoto(src)}
+            style={imgStyle({ height: 280, objectFit: 'cover' })}
           />
         ))}
       </div>
-      {/* Masonry columns for expanded overflow photos */}
       {expanded && rest.length > 0 && (
         <div style={{ columns: '3 280px', columnGap: 10 }}>
           {rest.map((src, i) => (
-            <img
-              key={i}
-              src={src}
-              alt={`${city} home interior`}
-              style={{
-                display: 'block',
-                width: '100%',
-                marginBottom: 10,
-                borderRadius: 3,
-                imageOrientation: 'from-image',
-              }}
+            <img key={i} src={src} alt={`${city} home interior`}
+              onClick={() => onPhoto(src)}
+              style={imgStyle({ marginBottom: 10 })}
             />
           ))}
         </div>
       )}
       {photos.length > PHOTOS_PREVIEW && (
-        <button
-          onClick={() => setExpanded(e => !e)}
-          className="btn btn-ghost"
-          style={{ marginTop: 8 }}
-        >
+        <button onClick={() => setExpanded(e => !e)} className="btn btn-ghost" style={{ marginTop: 8 }}>
           {expanded ? 'Show fewer photos' : `See all ${photos.length} photos`}
         </button>
       )}
@@ -120,7 +146,7 @@ function PhotoGallery({ photos, city }: { photos: string[]; city: string }) {
   )
 }
 
-function LocationBlock({ h }: { h: HomeData }) {
+function LocationBlock({ h, onPhoto }: { h: HomeData; onPhoto: (src: string) => void }) {
   return (
     <section className="loc-detail">
       <div className="wrap">
@@ -134,7 +160,7 @@ function LocationBlock({ h }: { h: HomeData }) {
         </div>
 
         {h.photos ? (
-          <PhotoGallery photos={h.photos} city={h.city} />
+          <PhotoGallery photos={h.photos} city={h.city} onPhoto={onPhoto} />
         ) : (
           <div className="gallery reveal" style={{ gridAutoRows: '190px', marginBottom: 28 }}>
             <Placeholder className="g-wide g-tall" label={h.gallery[0]} />
@@ -206,12 +232,14 @@ function LocationBlock({ h }: { h: HomeData }) {
                   key={i}
                   src={e.src}
                   alt={e.cap}
+                  onClick={() => onPhoto(e.src!)}
                   style={{
                     width: '100%',
                     height: '100%',
                     objectFit: 'cover',
                     borderRadius: 3,
                     display: 'block',
+                    cursor: 'zoom-in',
                     gridColumn: e.wide ? 'span 2' : undefined,
                     gridRow: e.tall ? 'span 2' : undefined,
                   }}
@@ -235,6 +263,10 @@ function LocationBlock({ h }: { h: HomeData }) {
 }
 
 export default function Locations() {
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null)
+  const openPhoto = useCallback((src: string, alt = '') => setLightbox({ src, alt }), [])
+  const closePhoto = useCallback(() => setLightbox(null), [])
+
   return (
     <>
       <PageHero
@@ -244,9 +276,10 @@ export default function Locations() {
         lede="Both residences share the same standard of care and the same family ethos. Choose the location most convenient for visits — or tour both."
       />
       {HOMES.map((h, i) => (
-        <LocationBlock h={h} key={i} />
+        <LocationBlock h={h} key={i} onPhoto={openPhoto} />
       ))}
       <CTABand />
+      {lightbox && <Lightbox src={lightbox.src} alt={lightbox.alt} onClose={closePhoto} />}
     </>
   )
 }
