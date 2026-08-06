@@ -38,13 +38,15 @@ export default function Homes() {
             <div className="reveal"><Placeholder label="interior — shared dining" /></div>
             <div className="reveal">
               <span className="eyebrow">A real home</span>
-              <h2>Designed to feel like family.</h2>
-              <p>Our residences are actual houses — warm, residential, and small. Meals are shared at one table. Common rooms invite gathering. Residents are welcome to bring familiar furnishings that make a space their own.</p>
+              <h2>More home than facility — by design.</h2>
+              <p>When you walk through our doors, you'll notice something different. It's not just the warmth of a beautiful home — it's the feeling of being truly known. As a small residential care home, our residents are never one of many. Consistent caregivers, meaningful relationships, and personalized support create an environment where comfort, dignity, and belonging come naturally. Here, every person is treated like family.</p>
               <ul>
-                <li>Private &amp; companion suites, personalized to each resident</li>
-                <li>Bright common rooms, sunrooms, and quiet corners</li>
-                <li>Secure, landscaped grounds and patios</li>
-                <li>Safe, accessible bathrooms and walkways throughout</li>
+                <li>Private rooms in a peaceful, home-like setting</li>
+                <li>Consistent caregivers who build lasting relationships</li>
+                <li>Personalized care tailored to each resident's unique needs</li>
+                <li>Home-cooked meals shared around the table</li>
+                <li>Beautiful outdoor spaces for family visits and quiet moments</li>
+                <li>Compassionate support that honors dignity, independence, and choice</li>
               </ul>
             </div>
           </div>

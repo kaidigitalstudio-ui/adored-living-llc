@@ -6,9 +6,9 @@ const PHONE = '(248) 931-9009'
 const PHONE_HREF = 'tel:+12489319009'
 
 const CARE_CARDS = [
-  { ic: 's1', h: 'Care plans, personally tailored', p: 'We learn each resident\'s history, preferences, and routines — then build daily care around the person they\'ve always been.' },
-  { ic: 's2', h: 'A real home, beautifully kept', p: 'Private and shared suites, shared meals at one table, and warm common rooms designed to feel like family — never a facility.' },
-  { ic: 's3', h: 'Trained caregivers, around the clock', p: 'Medication management, mobility support, and gentle companionship from a team that\'s there every hour of every day.' },
+  { ic: 's1', h: 'Consistent caregivers, meaningful relationships', p: 'Our residents are never one of many. The same familiar faces provide care every day — building the trust that makes everything else possible.' },
+  { ic: 's2', h: 'A 1:3 caregiver-to-resident ratio', p: 'Our intentionally small homes mean caregivers truly know each resident. Personalized attention isn\'t a promise — it\'s built into how we operate.' },
+  { ic: 's3', h: 'Compassion that honors dignity and independence', p: 'Every interaction is guided by kindness and respect. We support each resident\'s independence while providing the care they need, at the pace they need it.' },
 ]
 
 const LOCATIONS = [
@@ -80,16 +80,18 @@ export default function Home() {
               <span className="eyebrow">The homes</span>
               <h2>More home than facility — by design.</h2>
               <p>
-                Step inside and you'll notice what's missing: the long corridors, the
-                fluorescent hum, the feeling of being one of many. Our residences are
-                actual homes in quiet neighborhoods, thoughtfully appointed for comfort,
-                safety, and belonging.
+                When you walk through our doors, you'll notice something different. It's not
+                just the warmth of a beautiful home — it's the feeling of being truly known.
+                Our residents are never one of many. Consistent caregivers, meaningful
+                relationships, and personalized support create an environment where comfort,
+                dignity, and belonging come naturally.
               </p>
               <ul>
-                <li>Chef-prepared, home-style meals shared together each day</li>
-                <li>Private &amp; companion suites with familiar furnishings welcome</li>
-                <li>Landscaped grounds, sunrooms, and quiet places to gather</li>
-                <li>Housekeeping, laundry, and transportation handled with care</li>
+                <li>Private rooms in a peaceful, home-like setting</li>
+                <li>Consistent caregivers who build lasting relationships</li>
+                <li>Home-cooked meals shared around the table</li>
+                <li>Beautiful outdoor spaces for family visits and quiet moments</li>
+                <li>Compassionate support that honors dignity, independence, and choice</li>
               </ul>
               <Link to="/homes" className="btn btn-primary">Explore the homes</Link>
             </div>

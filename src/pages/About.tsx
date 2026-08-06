@@ -3,17 +3,17 @@ import PageHero from '../components/ui/PageHero'
 import Placeholder from '../components/ui/Placeholder'
 
 const STATS = [
-  { n: '1:4', l: 'Caregiver-to-resident ratio' },
+  { n: '1:3', l: 'Caregiver-to-resident ratio' },
   { n: '2', l: 'Intimate Michigan homes' },
   { n: '24/7', l: 'On-site personal care' },
   { n: '100%', l: 'Person-first care plans' },
 ]
 
 const VALUES = [
-  { ic: 's1', h: 'Dignity, always', p: 'Every resident is met as the whole person they\'ve always been — their stories, their preferences, their pace.' },
-  { ic: 's2', h: 'Small by design', p: 'We keep our homes intentionally small so caregivers truly know each resident, and no one is ever just a room number.' },
-  { ic: 's3', h: 'Family partnership', p: 'We treat families as partners — open communication, regular updates, and a door that\'s always open.' },
-  { ic: 's4', h: 'A genuine home', p: 'Warm rooms, shared meals, familiar comforts. Care delivered in a place that actually feels like home.' },
+  { ic: 's1', h: 'Consistent caregivers', p: 'The same familiar faces, every day. Consistency in caregivers builds the trust that makes residents feel safe, known, and genuinely cared for.' },
+  { ic: 's2', h: 'Personalized care', p: 'Every resident\'s care plan is shaped around their unique needs, life story, preferences, and independence — not a one-size-fits-all routine.' },
+  { ic: 's3', h: 'Dignity and independence', p: 'We support each person\'s autonomy and honor their choices. Compassionate care never means losing control of your own life.' },
+  { ic: 's4', h: 'Peace of mind for families', p: 'Open communication, familiar staff, and a home you can visit anytime. Families are partners here — never visitors at a distance.' },
 ]
 
 export default function About() {
@@ -31,10 +31,10 @@ export default function About() {
           <div className="feature-grid">
             <div className="reveal"><Placeholder label="interior — sitting room with family" /></div>
             <div className="reveal prose">
-              <span className="eyebrow">Our story</span>
-              <h2 style={{ fontSize: 'clamp(28px,3.4vw,42px)', marginBottom: 22 }}>A different idea of assisted living.</h2>
-              <p>We started Adored Living because we saw too many older adults cared for in places that felt like institutions — large, impersonal, and rushed. We knew aging could be met with something gentler.</p>
-              <p>So we built small residential homes in <strong>Rochester Hills</strong> and <strong>Clarkston</strong>, where a familiar team knows every resident by name, meals are shared at one table, and care is shaped around the person — never the schedule.</p>
+              <span className="eyebrow">Our approach</span>
+              <h2 style={{ fontSize: 'clamp(28px,3.4vw,42px)', marginBottom: 22 }}>Exceptional care begins with meaningful relationships.</h2>
+              <p>At Adored Living Senior Care Homes, we believe exceptional care begins with meaningful relationships. By maintaining consistency in our caregivers and a low caregiver-to-resident ratio, we create an environment where residents feel known, safe, and genuinely cared for.</p>
+              <p>We honor each person's life story, preferences, and independence while providing compassionate support tailored to their changing needs. Every interaction is guided by dignity, kindness, and the belief that <strong>treating the human soul allows the body to heal.</strong></p>
             </div>
           </div>
         </div>
@@ -70,6 +70,20 @@ export default function About() {
                 <p>{v.p}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="wrap">
+          <div className="feature-grid">
+            <div className="reveal prose">
+              <span className="eyebrow">Our name</span>
+              <h2 style={{ fontSize: 'clamp(28px,3.4vw,42px)', marginBottom: 22 }}>The story behind our name.</h2>
+              <p>The name Adored Living was inspired by a simple phrase spoken often by our beloved Grandma Sally. Instead of saying "I love you," she would smile and say, <strong>"I adore you."</strong> Those words carried warmth, acceptance, and a deep sense of belonging.</p>
+              <p>That simple expression became the heart of our mission. We believe every person deserves to feel cherished, respected, and genuinely cared for. At Adored Living, our goal is for every resident and family to experience the same feeling Grandma Sally shared so effortlessly — to know they are valued, cared for, and truly adored.</p>
+            </div>
+            <div className="reveal"><Placeholder label="family moment — Grandma Sally" /></div>
           </div>
         </div>
       </section>
