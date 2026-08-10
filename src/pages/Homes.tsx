@@ -48,8 +48,6 @@ export default function Homes() {
                 <li>Beautiful outdoor spaces for family visits and quiet moments</li>
                 <li>Compassionate support that honors dignity, independence, and choice</li>
               </ul>
-              <p style={{ marginTop: 28, fontStyle: 'italic', color: 'var(--accent-deep)', fontWeight: 600, fontSize: 18 }}>Where Every Resident Is Truly Adored.</p>
-              <p style={{ marginTop: 10, color: 'var(--ink-soft)' }}>At Adored Living, we believe treating the human soul allows the body to heal. Every day, we strive to create a home where compassion, consistency, and meaningful relationships help our residents feel safe, valued, and truly adored.</p>
             </div>
           </div>
         </div>
@@ -72,6 +70,17 @@ export default function Homes() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="section" style={{ textAlign: 'center' }}>
+        <div className="wrap reveal">
+          <p style={{ fontFamily: 'var(--font-head)', fontSize: 'clamp(26px,3.2vw,42px)', fontWeight: 600, color: 'var(--accent-deep)', fontStyle: 'italic', letterSpacing: '-0.01em', marginBottom: 20 }}>
+            Where Every Resident Is Truly Adored.
+          </p>
+          <p style={{ color: 'var(--ink-soft)', fontSize: 18, maxWidth: '52ch', margin: '0 auto' }}>
+            At Adored Living, we believe treating the human soul allows the body to heal. Every day, we strive to create a home where compassion, consistency, and meaningful relationships help our residents feel safe, valued, and truly adored.
+          </p>
         </div>
       </section>
 
