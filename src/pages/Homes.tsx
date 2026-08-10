@@ -73,7 +73,7 @@ export default function Homes() {
         </div>
       </section>
 
-      <section className="section" style={{ textAlign: 'center' }}>
+      <section className="section" style={{ textAlign: 'center', paddingBottom: 0 }}>
         <div className="wrap reveal">
           <p style={{ fontFamily: 'var(--font-head)', fontSize: 'clamp(26px,3.2vw,42px)', fontWeight: 600, color: 'var(--accent-deep)', fontStyle: 'italic', letterSpacing: '-0.01em', marginBottom: 20 }}>
             Where Every Resident Is Truly Adored.
