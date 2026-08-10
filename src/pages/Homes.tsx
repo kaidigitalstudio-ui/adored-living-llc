@@ -38,8 +38,8 @@ export default function Homes() {
             <div className="reveal"><Placeholder label="interior — shared dining" /></div>
             <div className="reveal">
               <span className="eyebrow">A real home</span>
-              <h2>More home than facility — by design.</h2>
-              <p>When you walk through our doors, you'll notice something different. It's not just the warmth of a beautiful home — it's the feeling of being truly known. As a small residential care home, our residents are never one of many. Consistent caregivers, meaningful relationships, and personalized support create an environment where comfort, dignity, and belonging come naturally. Here, every person is treated like family.</p>
+              <h2>More Home Than a Facility—By Design.</h2>
+              <p>When you walk through our doors, you'll notice something different. It's not just the warmth of a beautiful home—it's the feeling of being truly known. As a small residential care home, our residents are never one of many. Consistent caregivers, meaningful relationships, and personalized support create an environment where comfort, dignity, and belonging come naturally. Here, every person is treated like family because we believe treating the human soul allows the body to heal.</p>
               <ul>
                 <li>Private rooms in a peaceful, home-like setting</li>
                 <li>Consistent caregivers who build lasting relationships</li>
@@ -48,6 +48,8 @@ export default function Homes() {
                 <li>Beautiful outdoor spaces for family visits and quiet moments</li>
                 <li>Compassionate support that honors dignity, independence, and choice</li>
               </ul>
+              <p style={{ marginTop: 28, fontStyle: 'italic', color: 'var(--accent-deep)', fontWeight: 600, fontSize: 18 }}>Where Every Resident Is Truly Adored.</p>
+              <p style={{ marginTop: 10, color: 'var(--ink-soft)' }}>At Adored Living, we believe treating the human soul allows the body to heal. Every day, we strive to create a home where compassion, consistency, and meaningful relationships help our residents feel safe, valued, and truly adored.</p>
             </div>
           </div>
         </div>

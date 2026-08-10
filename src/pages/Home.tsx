@@ -5,10 +5,13 @@ import Placeholder from '../components/ui/Placeholder'
 const PHONE = '(248) 931-9009'
 const PHONE_HREF = 'tel:+12489319009'
 
-const CARE_CARDS = [
-  { ic: 's1', h: 'Consistent caregivers, meaningful relationships', p: 'Our residents are never one of many. The same familiar faces provide care every day — building the trust that makes everything else possible.' },
-  { ic: 's2', h: 'A 1:3 caregiver-to-resident ratio', p: 'Our intentionally small homes mean caregivers truly know each resident. Personalized attention isn\'t a promise — it\'s built into how we operate.' },
-  { ic: 's3', h: 'Compassion that honors dignity and independence', p: 'Every interaction is guided by kindness and respect. We support each resident\'s independence while providing the care they need, at the pace they need it.' },
+const DIFFERENCE_ITEMS = [
+  'Consistent caregivers who build meaningful relationships',
+  'Personalized care tailored to each resident',
+  'Small home setting with a 1:3 caregiver-to-resident ratio',
+  'Compassionate support focused on dignity and independence',
+  'Peace of mind for residents and families',
+  'A place where everyone is known, valued, and truly adored',
 ]
 
 const LOCATIONS = [
@@ -50,23 +53,18 @@ export default function Home() {
         <div className="wrap">
           <div className="care-head reveal">
             <div>
-              <span className="eyebrow">Our approach</span>
-              <h2>Compassion you can feel the moment you walk in.</h2>
+              <span className="eyebrow">Why families choose us</span>
+              <h2>The Adored Living Difference</h2>
             </div>
-            <p>
-              Adored Living was founded on a simple belief: aging deserves dignity, warmth,
-              and genuine attention. Our homes are small on purpose — so care stays personal.
-            </p>
           </div>
-          <div className="cards">
-            {CARE_CARDS.map((c, i) => (
-              <div className="card reveal" key={i} style={{ transitionDelay: `${i * 90}ms` }}>
-                <div className={`ic ${c.ic}`}><span /></div>
-                <h3>{c.h}</h3>
-                <p>{c.p}</p>
-              </div>
+          <ul className="reveal" style={{ listStyle: 'none', display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '14px 40px', marginTop: 8 }}>
+            {DIFFERENCE_ITEMS.map((item, i) => (
+              <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 13, fontSize: 17, color: 'var(--ink)' }}>
+                <span style={{ flexShrink: 0, width: 22, height: 22, marginTop: 2, borderRadius: '50%', background: 'var(--accent-tint)', backgroundImage: 'radial-gradient(circle at center, var(--accent-deep) 3.5px, transparent 4px)', display: 'inline-block' }} />
+                {item}
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
@@ -78,22 +76,19 @@ export default function Home() {
             </div>
             <div className="reveal">
               <span className="eyebrow">The homes</span>
-              <h2>More home than facility — by design.</h2>
-              <p>
-                When you walk through our doors, you'll notice something different. It's not
-                just the warmth of a beautiful home — it's the feeling of being truly known.
-                Our residents are never one of many. Consistent caregivers, meaningful
-                relationships, and personalized support create an environment where comfort,
-                dignity, and belonging come naturally.
-              </p>
+              <h2>More Home Than a Facility—By Design.</h2>
+              <p>When you walk through our doors, you'll notice something different. It's not just the warmth of a beautiful home—it's the feeling of being truly known. As a small residential care home, our residents are never one of many. Consistent caregivers, meaningful relationships, and personalized support create an environment where comfort, dignity, and belonging come naturally. Here, every person is treated like family because we believe treating the human soul allows the body to heal.</p>
               <ul>
                 <li>Private rooms in a peaceful, home-like setting</li>
                 <li>Consistent caregivers who build lasting relationships</li>
+                <li>Personalized care tailored to each resident's unique needs</li>
                 <li>Home-cooked meals shared around the table</li>
                 <li>Beautiful outdoor spaces for family visits and quiet moments</li>
                 <li>Compassionate support that honors dignity, independence, and choice</li>
               </ul>
-              <Link to="/homes" className="btn btn-primary">Explore the homes</Link>
+              <p style={{ marginTop: 28, fontStyle: 'italic', color: 'var(--accent-deep)', fontWeight: 600, fontSize: 18 }}>Where Every Resident Is Truly Adored.</p>
+              <p style={{ marginTop: 10, color: 'var(--ink-soft)' }}>At Adored Living, we believe treating the human soul allows the body to heal. Every day, we strive to create a home where compassion, consistency, and meaningful relationships help our residents feel safe, valued, and truly adored.</p>
+              <Link to="/homes" className="btn btn-primary" style={{ marginTop: 28 }}>Explore the homes</Link>
             </div>
           </div>
         </div>

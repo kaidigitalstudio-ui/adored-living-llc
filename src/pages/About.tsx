@@ -9,11 +9,13 @@ const STATS = [
   { n: '100%', l: 'Person-first care plans' },
 ]
 
-const VALUES = [
-  { ic: 's1', h: 'Consistent caregivers', p: 'The same familiar faces, every day. Consistency in caregivers builds the trust that makes residents feel safe, known, and genuinely cared for.' },
-  { ic: 's2', h: 'Personalized care', p: 'Every resident\'s care plan is shaped around their unique needs, life story, preferences, and independence — not a one-size-fits-all routine.' },
-  { ic: 's3', h: 'Dignity and independence', p: 'We support each person\'s autonomy and honor their choices. Compassionate care never means losing control of your own life.' },
-  { ic: 's4', h: 'Peace of mind for families', p: 'Open communication, familiar staff, and a home you can visit anytime. Families are partners here — never visitors at a distance.' },
+const DIFFERENCE_ITEMS = [
+  'Consistent caregivers who build meaningful relationships',
+  'Personalized care tailored to each resident',
+  'Small home setting with a 1:3 caregiver-to-resident ratio',
+  'Compassionate support focused on dignity and independence',
+  'Peace of mind for residents and families',
+  'A place where everyone is known, valued, and truly adored',
 ]
 
 export default function About() {
@@ -57,20 +59,18 @@ export default function About() {
         <div className="wrap">
           <div className="care-head reveal">
             <div>
-              <span className="eyebrow">What guides us</span>
-              <h2>The values behind every day here.</h2>
+              <span className="eyebrow">What sets us apart</span>
+              <h2>The Adored Living Difference</h2>
             </div>
-            <p>These aren't words on a wall — they're the standard we hold ourselves to in every interaction, every shift, every meal.</p>
           </div>
-          <div className="cards" style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
-            {VALUES.map((v, i) => (
-              <div className="card reveal" key={i} style={{ transitionDelay: `${i * 80}ms` }}>
-                <div className={`ic ${v.ic}`}><span /></div>
-                <h3>{v.h}</h3>
-                <p>{v.p}</p>
-              </div>
+          <ul className="reveal" style={{ listStyle: 'none', display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '18px 56px', marginTop: 8 }}>
+            {DIFFERENCE_ITEMS.map((item, i) => (
+              <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 14, fontSize: 17, color: 'var(--ink)' }}>
+                <span style={{ flexShrink: 0, width: 22, height: 22, marginTop: 2, borderRadius: '50%', background: 'var(--accent-tint)', backgroundImage: 'radial-gradient(circle at center, var(--accent-deep) 3.5px, transparent 4px)', display: 'inline-block' }} />
+                {item}
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
