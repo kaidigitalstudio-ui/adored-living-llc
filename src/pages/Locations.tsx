@@ -88,7 +88,7 @@ interface HomeData {
   landmarks: string
   amenities: string[]
   gallery: string[]
-  events: { cap: string; tall?: boolean; wide?: boolean; src?: string }[]
+  events: { cap: string; tall?: boolean; wide?: boolean; src?: string; pos?: string }[]
   video?: string
   photos?: string[]
 }
@@ -127,9 +127,12 @@ const HOMES: HomeData[] = [
     gallery: ['exterior — front', 'living room', 'dining table', 'patio'],
     video: '/clarkston-home.mov',
     events: [
-      { cap: 'lakeside picnic', tall: true }, { cap: 'craft afternoon' },
-      { cap: 'movie night' }, { cap: 'autumn walk', wide: true },
-      { cap: 'game day' }, { cap: 'celebration' },
+      { cap: 'Afternoon with a puppy visitor', tall: true, src: '/clarkston/puppy-visit.jpg' },
+      { cap: 'Piano practice', src: '/clarkston/piano.jpg' },
+      { cap: 'Live music afternoon', src: '/clarkston/live-music.jpg', pos: 'center 20%' },
+      { cap: 'Western theme night', src: '/clarkston/western-night.jpg' },
+      { cap: 'Group chair exercise class', wide: true, src: '/clarkston/movement-class.jpg' },
+      { cap: 'Stretching together', src: '/clarkston/chair-exercise.jpg' },
     ],
   },
 ]
@@ -270,6 +273,7 @@ function LocationBlock({ h, onPhoto }: { h: HomeData; onPhoto: (photos: string[]
                     width: '100%',
                     height: '100%',
                     objectFit: 'cover',
+                    objectPosition: e.pos,
                     borderRadius: 3,
                     display: 'block',
                     cursor: 'zoom-in',
