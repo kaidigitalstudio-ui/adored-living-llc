@@ -18,7 +18,8 @@ export const LETTERS: Letter[] = [
   {
     body: [
       'How can I ever thank you for restoring me to good health? It\'s hard to find the words. I thought I was near the end when entering your special "home." But after 2 months I walked out of there to go home. At home I have been taking care of myself.',
-      'Take care of yourselves. You all are a blessing. P.S. Many thanks to all you caring, sweet ladies.',
+      'Take care of yourselves. You all are a blessing.',
+      'P.S. Many thanks to all you caring, sweet ladies.',
     ],
     by: 'Dorothy W.',
     role: 'former resident',

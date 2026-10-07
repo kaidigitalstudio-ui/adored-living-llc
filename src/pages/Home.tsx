@@ -16,8 +16,8 @@ const DIFFERENCE_ITEMS = [
 ]
 
 const LOCATIONS = [
-  { place: 'Location One', city: 'Rochester Hills', addr: 'Oakland County, Michigan', img: '/rochester-hills.jpg', imgAlt: 'Rochester Hills home exterior', p: 'A serene residence near Rochester\'s parks and medical corridor — minutes from family, calm and close to everything.' },
-  { place: 'Location Two', city: 'Clarkston', addr: 'Oakland County, Michigan', img: '/clarkston.webp', imgAlt: 'Clarkston home exterior', p: 'Nestled among Clarkston\'s lakes and woods, a warm home offering the same attentive, personal care in a peaceful setting.' },
+  { city: 'Rochester Hills', addr: 'Oakland County, Michigan', img: '/rochester-hills.jpg', imgAlt: 'Rochester Hills home exterior', p: 'A serene residence near Rochester\'s parks and medical corridor — minutes from family, calm and close to everything.' },
+  { city: 'Clarkston', addr: 'Oakland County, Michigan', img: '/clarkston.webp', imgAlt: 'Clarkston home exterior', p: 'Nestled among Clarkston\'s lakes and woods, a warm home offering the same attentive, personal care in a peaceful setting.' },
 ]
 
 export default function Home() {
@@ -109,7 +109,6 @@ export default function Home() {
                   <img src={l.img} alt={l.imgAlt} loading="lazy" />
                 </div>
                 <div className="loc-body">
-                  <span className="place">{l.place}</span>
                   <h3>{l.city}</h3>
                   <div className="addr">{l.addr}</div>
                   <p>{l.p}</p>
