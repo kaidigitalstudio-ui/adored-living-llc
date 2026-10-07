@@ -68,43 +68,50 @@ export default function Locations() {
       </section>
 
       {/* ===== LOCATION CARDS ===== */}
-      {LOCATIONS.map(({ id, badge, title, address, mapUrl, phone, phoneHref, email, img, imgAlt, features }, idx) => (
-        <section key={id} id={id} className={`section${idx % 2 === 1 ? ' section--alt' : ''}`} aria-labelledby={`loc-${id}`}>
-          <div className="container">
-            <div className="grid-2" style={{ gap: 60 }}>
-              {idx % 2 === 0 ? (
-                <>
-                  <div className="about-image" data-animate>
-                    <img src={img} alt={imgAlt} loading="lazy" />
-                    <div className="about-badge">
-                      <div className="badge-icon" aria-hidden="true"><MapPin size={22} strokeWidth={1.5} color="white" /></div>
-                      <div className="badge-text">
-                        <strong>{badge}</strong>
-                        <span>Michigan</span>
-                      </div>
-                    </div>
+      <section className="section section--alt" aria-labelledby="loc-cards-heading">
+        <div className="container">
+          <div className="location-cards-grid">
+            {LOCATIONS.map(({ id, title, address, mapUrl, img, imgAlt, features }, i) => (
+              <div key={id} id={id} className="location-card" data-animate data-delay={i * 120}>
+                <div className="location-card-img">
+                  <img src={img} alt={imgAlt} loading="lazy" />
+                </div>
+                <div className="location-card-body">
+                  <h2 id={`loc-${id}`}>{title}</h2>
+                  <div className="location-address">
+                    <MapPin size={14} strokeWidth={2} aria-hidden="true" />
+                    <span>{address}</span>
                   </div>
-                  <LocationContent id={id} title={title} address={address} mapUrl={mapUrl} phone={phone} phoneHref={phoneHref} email={email} features={features} delay={150} />
-                </>
-              ) : (
-                <>
-                  <LocationContent id={id} title={title} address={address} mapUrl={mapUrl} phone={phone} phoneHref={phoneHref} email={email} features={features} />
-                  <div className="about-image" data-animate data-delay={150}>
-                    <img src={img} alt={imgAlt} loading="lazy" />
-                    <div className="about-badge">
-                      <div className="badge-icon" aria-hidden="true"><MapPin size={22} strokeWidth={1.5} color="white" /></div>
-                      <div className="badge-text">
-                        <strong>{badge}</strong>
-                        <span>Michigan</span>
-                      </div>
-                    </div>
+                  <div className="loc-detail" style={{ marginTop: 8 }}>
+                    <div className="detail-icon" aria-hidden="true"><Users size={14} strokeWidth={2} /></div>
+                    <span>Maximum 6 residents — intimate, family-style care</span>
                   </div>
-                </>
-              )}
-            </div>
+                  <div className="service-includes" style={{ margin: '24px 0' }} role="list">
+                    {features.map((f) => (
+                      <div className="include-item" role="listitem" key={f}>{f}</div>
+                    ))}
+                  </div>
+                  <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 'auto' }}>
+                    <Link to="/contact" className="btn btn-primary">Schedule a Visit</Link>
+                    <a href={mapUrl} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">Get Directions</a>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
-        </section>
-      ))}
+
+          <div className="location-shared-contact">
+            <a href="tel:+12489319009" className="loc-contact-item">
+              <Phone size={16} strokeWidth={2} aria-hidden="true" />
+              (248) 931-9009
+            </a>
+            <a href="mailto:adoredlivingllc@gmail.com" className="loc-contact-item">
+              <Mail size={16} strokeWidth={2} aria-hidden="true" />
+              adoredlivingllc@gmail.com
+            </a>
+          </div>
+        </div>
+      </section>
 
       {/* ===== WHAT TO EXPECT ===== */}
       <section className="section" aria-labelledby="expect-heading">
@@ -135,47 +142,3 @@ export default function Locations() {
   )
 }
 
-interface LocationContentProps {
-  id: string; title: string; address: string; mapUrl: string
-  phone: string; phoneHref: string; email: string; features: string[]
-  delay?: number
-}
-
-function LocationContent({ id, title, address, mapUrl, phone, phoneHref, email, features, delay }: LocationContentProps) {
-  return (
-    <div className="about-content" data-animate data-delay={delay ?? 0}>
-      <span className="eyebrow">Our Home</span>
-      <h2 id={`loc-${id}`}>{title}</h2>
-      <div className="location-address" style={{ marginBottom: 24 }}>
-        <MapPin size={15} strokeWidth={2} aria-hidden="true" />
-        <span>{address}</span>
-      </div>
-
-      <div className="location-details" style={{ marginBottom: 28 }}>
-        <div className="loc-detail">
-          <div className="detail-icon" aria-hidden="true"><Phone size={14} strokeWidth={2} /></div>
-          <a href={phoneHref}>{phone}</a>
-        </div>
-        <div className="loc-detail">
-          <div className="detail-icon" aria-hidden="true"><Mail size={14} strokeWidth={2} /></div>
-          <a href={`mailto:${email}`}>{email}</a>
-        </div>
-        <div className="loc-detail">
-          <div className="detail-icon" aria-hidden="true"><Users size={14} strokeWidth={2} /></div>
-          <span>Maximum 6 residents — intimate, family-style care</span>
-        </div>
-      </div>
-
-      <div className="service-includes" style={{ marginBottom: 32 }} role="list">
-        {features.map((f) => (
-          <div className="include-item" role="listitem" key={f}>{f}</div>
-        ))}
-      </div>
-
-      <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-        <Link to="/contact" className="btn btn-primary">Schedule a Visit</Link>
-        <a href={mapUrl} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">Get Directions</a>
-      </div>
-    </div>
-  )
-}

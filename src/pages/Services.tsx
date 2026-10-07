@@ -22,17 +22,17 @@ const SERVICES: ServiceDetail[] = [
     imgAlt: 'Home-cooked meal of chicken, rice, and fresh salad served at Adored Living',
     Icon: UtensilsCrossed,
     title: 'Meals & Nutrition',
-    description: 'Good food is good care. Our residents enjoy three fresh, home-cooked meals every day — prepared with nutrition, flavor, and love. We accommodate dietary restrictions and preferences, and snacks and beverages are available throughout the day.',
-    includes: ['Three nutritious, home-cooked meals daily', 'Snacks and beverages included throughout the day', 'Dietary accommodations for health conditions', 'Meal assistance provided as needed', 'Hydration monitoring for resident health'],
+    description: 'Good food is good care. Our residents enjoy three fresh, home-cooked meals every day — prepared with nutrition, flavor, and love. We accommodate a wide range of dietary needs and medical conditions, and snacks and beverages are available throughout the day to keep residents comfortable and well-nourished.',
+    includes: ['Three nutritious, home-cooked meals daily', 'Snacks and beverages available throughout the day', 'Dietary accommodations for medical conditions and preferences', 'Full meal assistance and feeding support as needed', 'Texture-modified and soft food options available', 'Hydration monitoring for resident health and comfort'],
   },
   {
     id: 'personal-care',
-    img: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80',
-    imgAlt: 'Caregiver assisting an elderly resident with gentle, dignified support',
+    img: '/personal-care.png',
+    imgAlt: 'Caregiver smiling warmly with a senior resident',
     Icon: Heart,
     title: 'Personal Care Assistance',
-    description: 'We provide compassionate, dignified personal care that respects each resident\'s privacy and independence. Our caregivers are trained to assist in ways that empower — never diminish — the people in their care.',
-    includes: ['Bathing and personal hygiene assistance', 'Grooming, dressing, and appearance support', 'Mobility assistance to meals and activities', 'Monitoring of behavioral and appetite changes', 'Individualized care plans for each resident'],
+    description: 'We provide hands-on, compassionate personal care for residents who need significant daily assistance. Our caregivers approach every task — no matter how intimate — with patience, gentleness, and deep respect for each person\'s dignity. For residents with dementia or cognitive decline, we are trained to offer calm, consistent, reassuring care.',
+    includes: ['Bathing, showering, and full personal hygiene assistance', 'Grooming, dressing, and appearance support', 'Mobility and transfer assistance', 'Incontinence care and toileting support', 'Dementia and memory care support', 'Close monitoring of behavioral and physical changes', 'Individualized care plans developed with families'],
     reverse: true,
   },
   {
@@ -41,36 +41,36 @@ const SERVICES: ServiceDetail[] = [
     imgAlt: 'Organized medication management with careful record-keeping',
     Icon: Pill,
     title: 'Medication Management',
-    description: 'Medication management is one of the most critical aspects of senior care. Our staff follow physician recommendations precisely, maintain secure and accurate records, and take the worry of medication schedules completely off families\' shoulders.',
-    includes: ['Medication administered per physician instructions', 'Secure medication inventory and storage', 'Accurate administration records maintained', 'Assistance with prescription refill coordination', 'Side effect and reaction monitoring'],
+    description: 'For residents with complex medication needs, consistency and accuracy are essential. Our staff administer all medications precisely as prescribed, maintain thorough records, and monitor residents carefully for any changes in condition or response. Families can rest knowing this critical responsibility is handled with care.',
+    includes: ['Medication administered per physician instructions', 'Secure medication storage and inventory management', 'Accurate administration records maintained', 'Coordination with physicians and pharmacies', 'Monitoring for side effects and changes in condition', 'Hospice medication support in coordination with care teams'],
   },
   {
     id: 'housekeeping',
-    img: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80',
-    imgAlt: 'Clean, bright, warmly decorated residential bedroom',
+    img: '/housekeeping.png',
+    imgAlt: 'Caregiver folding fresh laundry in front of a washing machine',
     Icon: Home,
     title: 'Housing & Housekeeping',
-    description: 'Our homes are beautifully maintained, clean, and comfortable. Each resident has a furnished private room and access to warm, welcoming shared living spaces. Routine housekeeping and laundry are handled so residents can simply enjoy their home.',
-    includes: ['Furnished private room (bed, chair, dresser, closet, side table)', 'Shared living areas with television', 'Routine cleaning and housekeeping services', 'In-house laundry management', 'Linens, pillows, sheets, and blankets provided', 'Basic toiletry and hygiene supplies included'],
+    description: 'Our homes are warm, calm, and immaculately maintained. Each resident has their own furnished private room — a peaceful retreat they can personalize with cherished belongings. Our comfortable shared living spaces are designed for relaxation, where residents can watch television, rest, and spend time together throughout the day.',
+    includes: ['Furnished private room (bed, chair, dresser, closet, side table)', 'Warm shared living areas with television', 'Routine room cleaning and full housekeeping', 'In-house laundry management', 'Linens, pillows, sheets, and blankets provided', 'Basic toiletry and hygiene supplies included'],
     reverse: true,
   },
   {
     id: 'companionship',
-    img: 'https://images.unsplash.com/photo-1609220136736-443140cfeaa8?w=800&q=80',
-    imgAlt: 'Seniors laughing together and enjoying social activities',
+    img: '/companionship.png',
+    imgAlt: 'Caregiver holding the hand of an elderly resident in a wheelchair outdoors',
     Icon: Laugh,
-    title: 'Companionship & Social Engagement',
-    description: 'Loneliness is one of the greatest challenges seniors face. At Adored Living, meaningful connection is built into every day. With a small, intimate community of residents, genuine friendships naturally form — and our staff make it their mission to bring joy into each interaction.',
-    includes: ['Daily meaningful social interaction and engagement', 'Recreational and leisure activities', 'Emotional support and active listening', 'Close-knit community of fellow residents', 'Encouragement of personal interests and hobbies'],
+    title: 'Companionship & Presence',
+    description: 'For many of our residents — especially those with dementia — simply not being alone is the most important thing we can offer. Our caregivers are present, attentive, and genuinely connected to the people they care for. We sit with residents, watch television together, hold a hand, and offer a calm, familiar face throughout the day.',
+    includes: ['Consistent caregiver presence throughout the day and night', 'Shared television time in comfortable living areas', 'Gentle conversation, comfort, and emotional reassurance', 'Patient, specialized support for residents with dementia', 'Small resident community for a quiet, home-like atmosphere', 'Compassionate end-of-life presence and support'],
   },
   {
-    id: 'activities',
-    img: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&q=80',
-    imgAlt: 'Seniors enjoying recreational activities and social time together',
+    id: 'enrichment',
+    img: '/enrichment.png',
+    imgAlt: 'Elderly resident playing piano alongside a young musician during a music session',
     Icon: Music,
-    title: 'Activities & Recreation',
-    description: 'A fulfilling daily life goes far beyond physical care. We prioritize meaningful engagement, social connection, and joy — offering a variety of activities and recreational opportunities that keep residents active, stimulated, and happily connected to those around them.',
-    includes: ['Engaging daily activities tailored to residents\' interests', 'Music, games, and creative pursuits', 'Social outings and community events', 'Comfortable shared spaces for gathering', 'Outdoor seating areas and walking paths', 'Encouragement of personal hobbies'],
+    title: 'Enrichment & Spiritual Care',
+    description: 'Even in the later stages of life, moments of beauty, comfort, and meaning matter deeply. We welcome live musicians who play for residents on holidays and special occasions, offer music therapy for memory and mood support, and coordinate visits from pastors, priests, and chaplains for residents and families who wish it.',
+    includes: ['Live music performances on holidays and special occasions', 'Music therapy for comfort, memory, and emotional well-being', 'Pastoral and spiritual care visits (pastors, priests, chaplains)', 'Gentle sensory engagement suited to each resident\'s abilities', 'Holiday traditions and seasonal celebrations', 'Quiet, peaceful environment that supports rest and comfort'],
     reverse: true,
   },
 ]
@@ -82,7 +82,7 @@ export default function Services() {
       {/* ===== SERVICES DETAIL ===== */}
       <section className="section section--top" aria-labelledby="detail-heading">
         <div className="container">
-          <SectionHeader eyebrow="Our Services" title="What We Provide Each Day" description="Everything your loved one needs, covered under one simple all-inclusive rate." center id="detail-heading" as="h1" />
+          <SectionHeader eyebrow="Our Services" title="What We Provide Each Day" description="Comprehensive, compassionate care for seniors who need significant daily support — all covered under one simple all-inclusive rate." center id="detail-heading" as="h1" />
 
           <div className="services-detail">
             {SERVICES.map(({ id, img, imgAlt, title, description, includes, reverse }, i) => (
@@ -111,7 +111,7 @@ export default function Services() {
           <div className="all-inclusive">
             <span className="eyebrow">Transparent Pricing</span>
             <h2 id="alinc2-heading">All-Inclusive, All the Time</h2>
-            <p>We believe care should never come with a confusing bill. Our all-inclusive rate covers everything described on this page — from meals and medications to housekeeping and activities. Contact us to learn more about our rates and what makes Adored Living the right fit for your family.</p>
+            <p>We believe families navigating this season of life shouldn't have to worry about complicated billing. Our all-inclusive rate covers everything described on this page — meals, medication management, personal care, housekeeping, and enrichment. Contact us to learn more about our rates and whether Adored Living is the right fit for your loved one.</p>
             <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap', marginTop: 8 }}>
               <Link to="/contact" className="btn btn-primary btn-lg">Ask About Rates</Link>
               <Link to="/contact" className="btn btn-secondary btn-lg">Schedule a Tour</Link>

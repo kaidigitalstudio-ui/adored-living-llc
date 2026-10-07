@@ -513,6 +513,79 @@ p:last-child { margin-bottom: 0; }
   object-fit: cover;
 }
 
+.about-image--landscape {
+  aspect-ratio: 4/3;
+}
+
+.location-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  margin-bottom: 40px;
+}
+
+.location-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+}
+
+.location-card-img {
+  position: relative;
+  aspect-ratio: 4/3;
+  flex-shrink: 0;
+}
+
+.location-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.location-card-body {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.location-card-body h2 {
+  margin-bottom: 12px;
+}
+
+.location-shared-contact {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+  padding: 20px 32px;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.loc-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text);
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.loc-contact-item:hover {
+  color: var(--lavender);
+}
+
+@media (max-width: 768px) {
+  .location-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .about-badge {
   position: absolute;
   bottom: 32px;
