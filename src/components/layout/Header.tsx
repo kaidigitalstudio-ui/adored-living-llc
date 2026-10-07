@@ -6,7 +6,6 @@ const PHONE_HREF = 'tel:+12489319009'
 
 const NAV_LINKS = [
   { to: '/about', label: 'Our Approach' },
-  { to: '/homes', label: 'The Homes' },
   { to: '/care', label: 'Care' },
   { to: '/locations', label: 'Locations' },
   { to: '/faq', label: 'FAQ' },

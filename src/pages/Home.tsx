@@ -87,7 +87,7 @@ export default function Home() {
                 <li>Beautiful outdoor spaces for family visits and quiet moments</li>
                 <li>Compassionate support that honors dignity, independence, and choice</li>
               </ul>
-              <Link to="/homes" className="btn btn-primary" style={{ marginTop: 28 }}>Explore the homes</Link>
+              <Link to="/locations" className="btn btn-primary" style={{ marginTop: 28 }}>Explore the homes</Link>
             </div>
           </div>
         </div>

@@ -23,6 +23,7 @@ const AMENITIES = [
   'Home-cooked meals together', 'Daily activities & outings', 'Housekeeping & laundry',
   'On-site personal care 24/7', 'Wellness & mobility support', 'Family visits anytime',
   'Beautiful common rooms', 'Landscaped, secure grounds', 'Salon & grooming visits',
+  'Wi-Fi & cable TV', 'Wheelchair accessible', 'Transportation arranged',
 ]
 
 export default function Care() {

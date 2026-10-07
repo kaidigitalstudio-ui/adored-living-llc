@@ -22,7 +22,6 @@ export default function Footer() {
           <div>
             <h5>Explore</h5>
             <Link to="/about">Our Approach</Link>
-            <Link to="/homes">The Homes</Link>
             <Link to="/care">Care &amp; Services</Link>
             <Link to="/locations">Locations</Link>
             <Link to="/faq">FAQ</Link>
