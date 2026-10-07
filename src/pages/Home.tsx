@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import CTABand from '../components/ui/CTABanner'
 import Placeholder from '../components/ui/Placeholder'
+import Testimonials from '../components/ui/Testimonials'
 
 const PHONE = '(248) 931-9009'
 const PHONE_HREF = 'tel:+12489319009'
@@ -124,11 +125,13 @@ export default function Home() {
         <div className="wrap quote reveal">
           <div className="stars"><i /><i /><i /><i /><i /></div>
           <blockquote>
-            "Mom isn't just looked after here — she's <span>known and loved.</span> We finally stopped worrying."
+            "Because of your caring, our Dad's final journey was <span>filled with comfort and peace.</span>"
           </blockquote>
-          <div className="by">Sarah M. <em>— daughter of a resident, Rochester Hills</em></div>
+          <div className="by">The Moore Family <em>— family of a resident</em></div>
         </div>
       </section>
+
+      <Testimonials />
 
       <section className="section" style={{ textAlign: 'center', paddingBottom: 0 }}>
         <div className="wrap reveal">

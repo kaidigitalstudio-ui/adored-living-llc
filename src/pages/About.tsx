@@ -91,8 +91,8 @@ export default function About() {
       <section className="section feature">
         <div className="wrap quote reveal">
           <div className="stars"><i /><i /><i /><i /><i /></div>
-          <blockquote>"They didn't just care for my father — they <span>welcomed our whole family.</span>"</blockquote>
-          <div className="by">James R. <em>— son of a resident, Clarkston</em></div>
+          <blockquote>"Our family will be forever grateful that <span>we found Adored Living.</span>"</blockquote>
+          <div className="by">The Carlson Family <em>— family of a resident</em></div>
         </div>
       </section>
 
