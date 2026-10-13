@@ -102,6 +102,7 @@ const HOMES: HomeData[] = [
     landmarks: 'Near Rochester Municipal Park · 10 min to Ascension Providence Rochester',
     amenities: ['Private & companion suites', 'Chef-prepared meals', 'Sunroom & reading lounge', 'Landscaped, secure garden', '24/7 personal care', 'Salon & grooming visits'],
     gallery: ['exterior — front', 'great room', 'bedroom suite', 'garden'],
+    video: '/rochester-home.mp4',
     photos: [
       '/rochester/IMG_5184.jpg', '/rochester/IMG_5186.jpg', '/rochester/IMG_5189.jpg',
       '/rochester/IMG_5195.jpg', '/rochester/IMG_5198.jpg', '/rochester/IMG_5200.jpg',
@@ -207,7 +208,8 @@ function LocationBlock({ h, onPhoto }: { h: HomeData; onPhoto: (photos: string[]
               src={h.video}
               controls
               playsInline
-              poster={h.video.replace('.mov', '-poster.jpg')}
+              preload="metadata"
+              poster={h.video.replace(/\.\w+$/, '-poster.jpg')}
               style={{
                 width: '100%',
                 borderRadius: 4,
