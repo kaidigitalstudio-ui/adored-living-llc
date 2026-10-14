@@ -57,7 +57,7 @@ export default function Home() {
               <h2>The Adored Living Difference</h2>
             </div>
           </div>
-          <ul className="reveal" style={{ listStyle: 'none', display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '14px 40px', marginTop: 8 }}>
+          <ul className="reveal cols-2" style={{ listStyle: 'none', gap: '14px 40px', marginTop: 8 }}>
             {DIFFERENCE_ITEMS.map((item, i) => (
               <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 13, fontSize: 17, color: 'var(--ink)' }}>
                 <span style={{ flexShrink: 0, width: 22, height: 22, marginTop: 2, borderRadius: '50%', background: 'var(--accent-tint)', backgroundImage: 'radial-gradient(circle at center, var(--accent-deep) 3.5px, transparent 4px)', display: 'inline-block' }} />

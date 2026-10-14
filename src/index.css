@@ -39,3 +39,5 @@ img.ph{object-fit:cover;width:100%;display:block}
 .ft-grid a.brand small{color:var(--ink-faint)}
 @media (width<=560px){.nav-right{display:none}.nav-hamburger{margin-right:-8px;padding:12px 8px}.ft-grid a,.ft-grid p{margin-bottom:0;padding:9px 0}.ft-grid h5{margin-bottom:6px}.link-arrow{padding:10px 0}}
 .mobile-nav a.mobile-nav-cta{color:var(--on-accent);font-family:var(--font-body);letter-spacing:0;border-bottom:none;justify-content:center;padding:16px 0;font-size:17px}
+.cols-2{grid-template-columns:repeat(2,1fr);display:grid}
+@media (width<=600px){.cols-2{grid-template-columns:1fr}}

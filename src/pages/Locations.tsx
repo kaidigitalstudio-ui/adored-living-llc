@@ -133,7 +133,7 @@ function LocationBlock({ h, onPhoto }: { h: HomeData; onPhoto: (photos: string[]
             </div>
             <div style={{ marginTop: 30 }}>
               <h4 style={{ background: 'transparent', border: 'none', padding: 0, marginBottom: 16 }}>Amenities</h4>
-              <div className="amen-grid" style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
+              <div className="amen-grid cols-2">
                 {h.amenities.map((a, i) => <div className="a" key={i}>{a}</div>)}
               </div>
             </div>
