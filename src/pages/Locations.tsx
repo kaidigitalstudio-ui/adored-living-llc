@@ -17,6 +17,7 @@ interface HomeData {
   landmarks: string
   amenities: string[]
   gallery: string[]
+  galleryImgs?: string[]
   events: { cap: string; tall?: boolean; wide?: boolean; src?: string; pos?: string }[]
   video?: string
   photos?: string[]
@@ -58,6 +59,7 @@ const HOMES: HomeData[] = [
     landmarks: 'Near Deer Lake · 12 min to McLaren Clarkston',
     amenities: ['Private & companion suites', 'Chef-prepared meals', 'Wooded patio & walking paths', 'Cozy fireside common room', '24/7 personal care', 'Memory & companion care'],
     gallery: ['exterior — front', 'living room', 'dining table', 'patio'],
+    galleryImgs: ['/clarkston.webp', '/clarkston/living-room-music.jpg', '/life/puzzle.jpg', '/life/living-room-chat.jpg'],
     video: '/clarkston-home.mov',
     events: [
       { cap: 'Afternoon with a puppy visitor', tall: true, src: '/clarkston/puppy-visit.jpg' },
@@ -127,10 +129,12 @@ function LocationBlock({ h, onPhoto }: { h: HomeData; onPhoto: (photos: string[]
           <PhotoGallery photos={h.photos} city={h.city} onPhoto={onPhoto} />
         ) : (
           <div className="gallery reveal" style={{ gridAutoRows: '190px', marginBottom: 28 }}>
-            <Placeholder className="g-wide g-tall" label={h.gallery[0]} />
-            <Placeholder label={h.gallery[1]} />
-            <Placeholder label={h.gallery[2]} />
-            <Placeholder className="g-wide" label={h.gallery[3]} />
+            {['g-wide g-tall', '', '', 'g-wide'].map((cls, i) => h.galleryImgs?.[i] ? (
+              <img key={i} className={`ph ${cls}`.trim()} src={h.galleryImgs[i]} alt={`${h.city} home — ${h.gallery[i]}`}
+                onClick={() => onPhoto(h.galleryImgs!, i)} style={{ cursor: 'zoom-in' }} />
+            ) : (
+              <Placeholder key={i} className={cls} label={h.gallery[i]} />
+            ))}
           </div>
         )}
 
