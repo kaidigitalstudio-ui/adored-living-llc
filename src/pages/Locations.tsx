@@ -159,8 +159,12 @@ function LocationBlock({ h, onPhoto }: { h: HomeData; onPhoto: (photos: string[]
         <div className="loc-2col">
           <div className="reveal">
             <div className="map">
-              <div className="pin" />
-              <span className="map-label">map — {h.city}, MI</span>
+              <iframe
+                title={`Map of the ${h.city} home`}
+                src={`https://www.google.com/maps?q=${encodeURIComponent(h.address.join(', '))}&output=embed`}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
             <div style={{ marginTop: 30 }}>
               <h4 style={{ background: 'transparent', border: 'none', padding: 0, marginBottom: 16 }}>Amenities</h4>
