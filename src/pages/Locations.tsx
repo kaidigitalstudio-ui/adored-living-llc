@@ -30,7 +30,7 @@ const HOMES: HomeData[] = [
     blurb: 'A serene residence near Rochester\'s parks and medical corridor — calm, leafy, and minutes from family.',
     address: ['185 E South Blvd', 'Rochester Hills, MI 48307'],
     landmarks: 'Near Rochester Municipal Park · 10 min to Ascension Providence Rochester',
-    amenities: ['Private & companion suites', 'Chef-prepared meals', 'Sunroom & reading lounge', 'Landscaped, secure garden', '24/7 personal care', 'Salon & grooming visits'],
+    amenities: ['Private & companion suites', 'Sunroom & reading lounge', 'Landscaped, secure garden', '24/7 personal care', 'Salon & grooming visits'],
     gallery: ['exterior — front', 'great room', 'bedroom suite', 'garden'],
     video: '/rochester-home.mp4',
     photos: [
@@ -57,7 +57,7 @@ const HOMES: HomeData[] = [
     blurb: 'Nestled among Clarkston\'s lakes and woods — the same attentive care in a peaceful, wooded setting.',
     address: ['5111 Heath Ave', 'Clarkston, MI 48346'],
     landmarks: 'Near Deer Lake · 12 min to McLaren Clarkston',
-    amenities: ['Private & companion suites', 'Chef-prepared meals', 'Wooded patio & walking paths', 'Cozy fireside common room', '24/7 personal care', 'Memory & companion care'],
+    amenities: ['Private & companion suites', 'Wooded patio & walking paths', 'Cozy fireside common room', '24/7 personal care', 'Memory & companion care'],
     gallery: ['exterior — front', 'living room', 'dining table', 'patio'],
     galleryImgs: ['/clarkston.webp', '/clarkston/living-room-music.jpg', '/life/puzzle.jpg', '/life/living-room-chat.jpg'],
     video: '/clarkston-home.mov',

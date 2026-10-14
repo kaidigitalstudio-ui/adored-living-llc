@@ -6,7 +6,6 @@ import LifeGallery from '../components/ui/LifeGallery'
 const SERVICES = [
   { h: 'Personal care & daily living', p: 'Discreet, respectful help with bathing, dressing, grooming, and mobility — as much or as little as each resident needs.', tag: 'Every day' },
   { h: 'Medication management', p: 'Trained staff store, schedule, and administer medications accurately, coordinating with physicians and pharmacies.', tag: 'Licensed' },
-  { h: 'Chef-prepared meals', p: 'Three home-style meals and snacks daily, accommodating dietary needs and the dishes residents love most.', tag: '3 daily' },
   { h: 'Housekeeping & laundry', p: 'Light housekeeping, linens, and personal laundry handled with care so days are spent living, not chores.', tag: 'Included' },
   { h: 'Memory & companion care', p: 'Gentle, structured support for residents living with memory loss, plus warm companionship for everyone.', tag: 'Specialized' },
   { h: 'Appointments & transportation', p: 'We coordinate medical appointments and arrange transportation so getting where you need to go is simple.', tag: 'On request' },
