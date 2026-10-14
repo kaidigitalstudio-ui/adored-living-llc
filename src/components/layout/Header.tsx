@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { to: '/care', label: 'Care' },
   { to: '/locations', label: 'Locations' },
   { to: '/faq', label: 'FAQ' },
+  { to: '/give', label: 'Give' },
 ]
 
 export default function Header() {
