@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { useState, useCallback } from 'react'
 import CTABand from '../components/ui/CTABanner'
 import PageHero from '../components/ui/PageHero'
-import Placeholder from '../components/ui/Placeholder'
+import JustifiedGallery from '../components/ui/JustifiedGallery'
 import Lightbox from '../components/ui/Lightbox'
 
 const PHONE = '(248) 931-9009'
@@ -16,9 +16,7 @@ interface HomeData {
   address: string[]
   landmarks: string
   amenities: string[]
-  gallery: string[]
-  galleryImgs?: string[]
-  events: { cap: string; tall?: boolean; wide?: boolean; src?: string; pos?: string }[]
+  events: { cap: string; src: string }[]
   video?: string
   photos?: string[]
 }
@@ -31,7 +29,6 @@ const HOMES: HomeData[] = [
     address: ['185 E South Blvd', 'Rochester Hills, MI 48307'],
     landmarks: 'Near Rochester Municipal Park · 10 min to Ascension Providence Rochester',
     amenities: ['Private & companion suites', 'Sunroom & reading lounge', 'Landscaped, secure garden', '24/7 personal care', 'Salon & grooming visits'],
-    gallery: ['exterior — front', 'great room', 'bedroom suite', 'garden'],
     video: '/rochester-home.mp4',
     photos: [
       '/rochester/IMG_5184.jpg', '/rochester/IMG_5186.jpg', '/rochester/IMG_5189.jpg',
@@ -43,12 +40,12 @@ const HOMES: HomeData[] = [
       '/rochester/IMG_5240.jpg', '/rochester/IMG_5243.jpg',
     ],
     events: [
-      { cap: 'Summer cookout on the deck', tall: true, src: '/rochester/summer-cookout.jpg' },
+      { cap: 'Summer cookout on the deck', src: '/rochester/summer-cookout.jpg' },
       { cap: '100th birthday celebration', src: '/rochester/birthday-100.jpg' },
       { cap: 'Fireside afternoon', src: '/rochester/fireside.jpg' },
       { cap: 'Halloween craft afternoon', src: '/rochester/halloween-craft.jpg' },
-      { cap: 'Birthday party under the pergola', wide: true, src: '/rochester/deck-birthday.jpg' },
-      { cap: 'Puzzle morning', src: '/rochester/puzzle-morning.jpg', pos: 'center 30%' },
+      { cap: 'Birthday party under the pergola', src: '/rochester/deck-birthday.jpg' },
+      { cap: 'Puzzle morning', src: '/rochester/puzzle-morning.jpg' },
     ],
   },
   {
@@ -58,15 +55,14 @@ const HOMES: HomeData[] = [
     address: ['5111 Heath Ave', 'Clarkston, MI 48346'],
     landmarks: 'Near Deer Lake · 12 min to McLaren Clarkston',
     amenities: ['Private & companion suites', 'Wooded patio & walking paths', 'Cozy fireside common room', '24/7 personal care', 'Memory & companion care'],
-    gallery: ['exterior — front', 'living room', 'dining table', 'patio'],
-    galleryImgs: ['/clarkston.webp', '/clarkston/living-room-music.jpg', '/life/puzzle.jpg', '/life/living-room-chat.jpg'],
+    photos: ['/clarkston.webp', '/clarkston/living-room-music.jpg', '/life/puzzle.jpg', '/life/living-room-chat.jpg'],
     video: '/clarkston-home.mov',
     events: [
-      { cap: 'Afternoon with a puppy visitor', tall: true, src: '/clarkston/puppy-visit.jpg' },
+      { cap: 'Afternoon with a puppy visitor', src: '/clarkston/puppy-visit.jpg' },
       { cap: 'Piano practice', src: '/clarkston/piano.jpg' },
-      { cap: 'Live music afternoon', src: '/clarkston/live-music.jpg', pos: 'center 20%' },
+      { cap: 'Live music afternoon', src: '/clarkston/live-music.jpg' },
       { cap: 'Western theme night', src: '/clarkston/western-night.jpg' },
-      { cap: 'Group chair exercise class', wide: true, src: '/clarkston/movement-class.jpg' },
+      { cap: 'Group chair exercise class', src: '/clarkston/movement-class.jpg' },
       { cap: 'Stretching together', src: '/clarkston/chair-exercise.jpg' },
     ],
   },
@@ -76,33 +72,13 @@ const PHOTOS_PREVIEW = 6
 
 function PhotoGallery({ photos, city, onPhoto }: { photos: string[]; city: string; onPhoto: (photos: string[], index: number) => void }) {
   const [expanded, setExpanded] = useState(false)
-  const preview = photos.slice(0, PHOTOS_PREVIEW)
-  const rest = photos.slice(PHOTOS_PREVIEW)
-  const imgStyle = (extra?: object) => ({
-    display: 'block', width: '100%', borderRadius: 3,
-    imageOrientation: 'from-image' as const, cursor: 'zoom-in',
-    ...extra,
-  })
+  const shown = expanded ? photos : photos.slice(0, PHOTOS_PREVIEW)
   return (
     <div className="reveal" style={{ marginBottom: 28 }}>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10, marginBottom: expanded ? 10 : 0 }}>
-        {preview.map((src, i) => (
-          <img key={i} src={src} alt={`${city} home interior`}
-            onClick={() => onPhoto(photos, i)}
-            style={imgStyle({ height: 280, objectFit: 'cover' })}
-          />
-        ))}
-      </div>
-      {expanded && rest.length > 0 && (
-        <div style={{ columns: '3 280px', columnGap: 10 }}>
-          {rest.map((src, i) => (
-            <img key={i} src={src} alt={`${city} home interior`}
-              onClick={() => onPhoto(photos, PHOTOS_PREVIEW + i)}
-              style={imgStyle({ marginBottom: 10 })}
-            />
-          ))}
-        </div>
-      )}
+      <JustifiedGallery
+        photos={shown.map(src => ({ src, alt: `${city} home` }))}
+        onOpen={i => onPhoto(photos, i)}
+      />
       {photos.length > PHOTOS_PREVIEW && (
         <button onClick={() => setExpanded(e => !e)} className="btn btn-ghost" style={{ marginTop: 8 }}>
           {expanded ? 'Show fewer photos' : `See all ${photos.length} photos`}
@@ -125,18 +101,7 @@ function LocationBlock({ h, onPhoto }: { h: HomeData; onPhoto: (photos: string[]
           <Link to="/contact" className="btn btn-primary">Schedule a tour</Link>
         </div>
 
-        {h.photos ? (
-          <PhotoGallery photos={h.photos} city={h.city} onPhoto={onPhoto} />
-        ) : (
-          <div className="gallery reveal" style={{ gridAutoRows: '190px', marginBottom: 28 }}>
-            {['g-wide g-tall', '', '', 'g-wide'].map((cls, i) => h.galleryImgs?.[i] ? (
-              <img key={i} className={`ph ${cls}`.trim()} src={h.galleryImgs[i]} alt={`${h.city} home — ${h.gallery[i]}`}
-                onClick={() => onPhoto(h.galleryImgs!, i)} style={{ cursor: 'zoom-in' }} />
-            ) : (
-              <Placeholder key={i} className={cls} label={h.gallery[i]} />
-            ))}
-          </div>
-        )}
+        {h.photos && <PhotoGallery photos={h.photos} city={h.city} onPhoto={onPhoto} />}
 
         {h.video && (
           <div className="reveal" style={{ marginBottom: 48 }}>
@@ -198,43 +163,11 @@ function LocationBlock({ h, onPhoto }: { h: HomeData; onPhoto: (photos: string[]
             </div>
             <p>Cookouts, birthdays, music afternoons, family visits — a glimpse of everyday joy.</p>
           </div>
-          <div className="events-grid reveal">
-            {(() => {
-              const eventPhotos = h.events.filter(e => e.src).map(e => e.src!)
-              let photoIdx = -1
-              return h.events.map((e, i) => {
-                if (e.src) photoIdx++
-                const idx = photoIdx
-                return e.src ? (
-                <img
-                  key={i}
-                  src={e.src}
-                  alt={e.cap}
-                  onClick={() => onPhoto(eventPhotos, idx)}
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    objectPosition: e.pos,
-                    borderRadius: 3,
-                    display: 'block',
-                    cursor: 'zoom-in',
-                    gridColumn: e.wide ? 'span 2' : undefined,
-                    gridRow: e.tall ? 'span 2' : undefined,
-                  }}
-                />
-              ) : (
-                <Placeholder
-                  key={i}
-                  label={e.cap}
-                  style={{
-                    gridColumn: e.wide ? 'span 2' : undefined,
-                    gridRow: e.tall ? 'span 2' : undefined,
-                  }}
-                />
-              )
-            })
-            })()}
+          <div className="reveal">
+            <JustifiedGallery
+              photos={h.events.map(e => ({ src: e.src, alt: e.cap }))}
+              onOpen={i => onPhoto(h.events.map(e => e.src), i)}
+            />
           </div>
         </div>
       </div>
