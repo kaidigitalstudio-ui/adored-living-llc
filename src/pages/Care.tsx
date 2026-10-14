@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import CTABand from '../components/ui/CTABanner'
 import PageHero from '../components/ui/PageHero'
-import Placeholder from '../components/ui/Placeholder'
+import LifeGallery from '../components/ui/LifeGallery'
 
 const SERVICES = [
   { h: 'Personal care & daily living', p: 'Discreet, respectful help with bathing, dressing, grooming, and mobility — as much or as little as each resident needs.', tag: 'Every day' },
@@ -65,7 +65,7 @@ export default function Care() {
               </ul>
               <Link to="/contact" className="btn btn-primary">Talk through your needs</Link>
             </div>
-            <div className="reveal"><Placeholder label="interior — caregiver with resident" /></div>
+            <div className="reveal"><img className="ph" src="/life/caregiver-cards.jpg" alt="Caregiver sharing a laugh with a resident at the table" loading="lazy" /></div>
           </div>
         </div>
       </section>
@@ -84,6 +84,7 @@ export default function Care() {
               <div className="a" key={i}>{a}</div>
             ))}
           </div>
+          <LifeGallery />
         </div>
       </section>
 

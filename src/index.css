@@ -8,3 +8,7 @@
 .letter blockquote:before{content:"\201C";font-family:var(--font-head);color:var(--accent);opacity:.5;height:22px;margin-bottom:8px;font-size:52px;line-height:1;display:block}
 .letter figcaption{border-top:1px solid var(--line-soft);color:var(--ink-soft);margin-top:20px;padding-top:16px;font-size:14.5px;font-weight:600}
 .letter figcaption em{color:var(--ink-faint);font-style:normal;font-weight:500}
+img.ph{object-fit:cover;width:100%;display:block}
+.life-gallery{margin-top:56px}
+.life-grid{columns:3 260px;column-gap:12px}
+.life-grid img{break-inside:avoid;border-radius:var(--card-radius);cursor:zoom-in;width:100%;margin-bottom:12px;display:block}

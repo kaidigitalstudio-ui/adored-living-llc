@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import CTABand from '../components/ui/CTABanner'
-import Placeholder from '../components/ui/Placeholder'
 import Testimonials from '../components/ui/Testimonials'
 
 const PHONE = '(248) 931-9009'
@@ -44,7 +43,7 @@ export default function Home() {
               </div>
             </div>
             <div className="hero-figure">
-              <Placeholder label="interior — sunlit living room" />
+              <img className="ph" src="/life/fall-picnic-wave.jpg" alt="Resident and family member waving and smiling at an outdoor fall picnic" />
             </div>
           </div>
         </div>
@@ -73,7 +72,7 @@ export default function Home() {
         <div className="wrap">
           <div className="feature-grid">
             <div className="reveal">
-              <Placeholder label="interior — dining & common room" />
+              <img className="ph" src="/life/living-room-chat.jpg" alt="Two residents chatting in the living room" loading="lazy" />
             </div>
             <div className="reveal">
               <span className="eyebrow">The homes</span>

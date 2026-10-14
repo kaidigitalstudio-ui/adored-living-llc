@@ -31,7 +31,7 @@ export default function About() {
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="wrap">
           <div className="feature-grid">
-            <div className="reveal"><Placeholder label="interior — sitting room with family" /></div>
+            <div className="reveal"><img className="ph" src="/life/family-visit-laughs.jpg" alt="Resident laughing with her son during a family visit" style={{ objectPosition: 'center 30%' }} /></div>
             <div className="reveal prose">
               <span className="eyebrow">Our approach</span>
               <h2 style={{ fontSize: 'clamp(28px,3.4vw,42px)', marginBottom: 22 }}>Exceptional care begins with meaningful relationships.</h2>
