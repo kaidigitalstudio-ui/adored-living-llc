@@ -1,6 +1,5 @@
 import CTABand from '../components/ui/CTABanner'
 import PageHero from '../components/ui/PageHero'
-import Placeholder from '../components/ui/Placeholder'
 
 const STATS = [
   { n: '1:3', l: 'Caregiver-to-resident ratio' },
@@ -83,7 +82,7 @@ export default function About() {
               <p>The name Adored Living was inspired by a simple phrase spoken often by our beloved Grandma Sally. Instead of saying "I love you," she would smile and say, <strong>"I adore you."</strong> Those words carried warmth, acceptance, and a deep sense of belonging.</p>
               <p>That simple expression became the heart of our mission. We believe every person deserves to feel cherished, respected, and genuinely cared for. At Adored Living, our goal is for every resident and family to experience the same feeling Grandma Sally shared so effortlessly — to know they are valued, cared for, and truly adored.</p>
             </div>
-            <div className="reveal"><Placeholder label="family moment — Grandma Sally" /></div>
+            <div className="reveal"><img className="ph" src="/grandma-sally.jpg" alt="Grandma Sally smiling at a family gathering" style={{ aspectRatio: '4/5', maxWidth: 420, margin: '0 auto' }} /></div>
           </div>
         </div>
       </section>
