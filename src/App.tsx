@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
 import ScrollAnimations from './components/ScrollAnimations'
+import Seo from './components/Seo'
 import Home from './pages/Home'
 import About from './pages/About'
 import Care from './pages/Care'
@@ -14,6 +15,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollAnimations />
+      <Seo />
       <a className="skip-link" href="#main">Skip to main content</a>
       <Header />
       <main id="main">

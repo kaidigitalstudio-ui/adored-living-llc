@@ -1,0 +1,48 @@
+{
+  "siteUrl": "https://adored-living-llc.vercel.app",
+  "siteName": "Adored Living",
+  "pages": {
+    "/": {
+      "title": "Adored Living | Assisted Living in Rochester Hills & Clarkston, MI",
+      "description": "Small, home-like assisted living in Rochester Hills and Clarkston, Michigan. 24/7 personal care, home-cooked meals, and caregivers who know every resident by name.",
+      "image": "/og/home.jpg",
+      "card": { "photo": "/life/fall-picnic-wave.jpg", "pos": "50% 40%", "eyebrow": "Assisted Living · Michigan", "heading": "A home where every life is <em>truly adored.</em>" }
+    },
+    "/about": {
+      "title": "Our Approach | Adored Living",
+      "description": "Care that begins with knowing the person. The story behind Adored Living and how our small residential homes put dignity, warmth, and consistency first.",
+      "image": "/og/about.jpg",
+      "card": { "photo": "/life/family-visit-laughs.jpg", "pos": "50% 30%", "eyebrow": "Our approach", "heading": "Care that begins with <em>knowing the person.</em>" }
+    },
+    "/care": {
+      "title": "Care & Services | Adored Living",
+      "description": "Personal care, medication management, memory support, housekeeping, and daily activities, shaped around each resident and adjusted as needs change.",
+      "image": "/og/care.jpg",
+      "card": { "photo": "/life/painting-class.jpg", "pos": "50% 50%", "eyebrow": "Care & services", "heading": "Personal care, <em>thoughtfully delivered.</em>" }
+    },
+    "/locations": {
+      "title": "Our Homes in Rochester Hills & Clarkston | Adored Living",
+      "description": "Tour our two Michigan assisted living homes in Rochester Hills and Clarkston. Photos, video tours, amenities, maps, and directions.",
+      "image": "/og/locations.jpg",
+      "card": { "photo": "/rochester-home-poster.jpg", "pos": "50% 50%", "eyebrow": "Rochester Hills & Clarkston", "heading": "Find the home <em>nearest your family.</em>" }
+    },
+    "/faq": {
+      "title": "Frequently Asked Questions | Adored Living",
+      "description": "Honest answers about care levels, caregiver ratios, costs, insurance, visiting, and daily life at Adored Living's assisted living homes.",
+      "image": "/og/faq.jpg",
+      "card": { "photo": "/life/living-room-chat.jpg", "pos": "50% 50%", "eyebrow": "FAQ", "heading": "The questions families <em>ask us most.</em>" }
+    },
+    "/contact": {
+      "title": "Contact & Tours | Adored Living",
+      "description": "Schedule a private tour of our Rochester Hills or Clarkston home. Call (248) 931-9009 or email adoredlivingllc@gmail.com.",
+      "image": "/og/contact.jpg",
+      "card": { "photo": "/clarkston.webp", "pos": "50% 50%", "eyebrow": "Contact & tours", "heading": "Let's find the right home, <em>together.</em>" }
+    },
+    "/give": {
+      "title": "Give in Memory | Adored Living",
+      "description": "Honor a loved one with a memorial gift that brings music, celebrations, and small comforts to the residents of Adored Living.",
+      "image": "/og/give.jpg",
+      "card": { "photo": "/life/hug.jpg", "pos": "45% 40%", "eyebrow": "Give in memory", "heading": "Honor a life by <em>brightening another.</em>" }
+    }
+  }
+}
