@@ -25,6 +25,7 @@ export default function Footer() {
             <Link to="/care">Care &amp; Services</Link>
             <Link to="/locations">Locations</Link>
             <Link to="/faq">FAQ</Link>
+            <Link to="/give">Give in Memory</Link>
           </div>
 
           <div>

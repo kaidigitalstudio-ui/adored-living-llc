@@ -29,6 +29,7 @@ const FAQ_GROUPS: FAQGroup[] = [
       { question: 'What\'s included in the monthly cost?', answer: 'Personal care, meals, housekeeping and laundry, activities, and 24/7 staffing are included. Because needs vary, we provide a clear, personalized quote after a care assessment — with no hidden fees.' },
       { question: 'Do you accept long-term care insurance?', answer: 'Many families use long-term care insurance, VA benefits, or private funds. Coverage varies by plan and program — we\'re happy to walk through your specific situation and what documentation is typically needed.' },
       { question: 'Can residents bring their own furniture?', answer: 'Absolutely. Familiar furnishings and treasured belongings are welcome and encouraged — they\'re a big part of what makes a suite feel like home.' },
+      { question: 'Can we make a donation in memory of a loved one?', answer: 'Yes, and many families do. Memorial gifts go toward music, celebrations, activities, and small comforts for our residents. You can find details and suggested obituary wording on our Give in Memory page, linked at the bottom of every page.' },
       { question: 'Are there visiting hours?', answer: 'Family is welcome anytime. We do ask for a quick hello to staff on arrival so we can support a great visit, but there are no fixed visiting hours.' },
     ],
   },

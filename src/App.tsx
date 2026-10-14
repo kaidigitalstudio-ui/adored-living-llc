@@ -8,6 +8,7 @@ import Care from './pages/Care'
 import Locations from './pages/Locations'
 import FAQ from './pages/FAQ'
 import Contact from './pages/Contact'
+import Give from './pages/Give'
 
 export default function App() {
   return (
@@ -23,6 +24,8 @@ export default function App() {
           <Route path="/locations" element={<Locations />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/give" element={<Give />} />
+          <Route path="/donate" element={<Give />} />
           <Route path="/services" element={<Care />} />
           <Route path="/homes" element={<Locations />} />
           <Route path="/locations/rochester-hills" element={<Locations />} />
