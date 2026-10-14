@@ -32,3 +32,6 @@ img.ph{object-fit:cover;width:100%;display:block}
 .copy-block p{color:var(--ink);font-size:16.5px;line-height:1.65}
 @media (width<=940px){.give-uses{grid-template-columns:1fr 1fr}.give-grid{grid-template-columns:1fr;gap:36px}.give-card{position:static}}
 @media (width<=480px){.give-uses{grid-template-columns:1fr}}
+.feature-grid.wide-media{grid-template-columns:1.35fr 1fr;gap:48px}
+.feature-grid.wide-media .ph{aspect-ratio:4/3}
+@media (width<=820px){.feature-grid.wide-media{grid-template-columns:1fr;gap:36px}}

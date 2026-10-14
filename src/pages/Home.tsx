@@ -70,7 +70,7 @@ export default function Home() {
 
       <section className="section feature" id="homes">
         <div className="wrap">
-          <div className="feature-grid">
+          <div className="feature-grid wide-media">
             <div className="reveal">
               <img className="ph" src="/life/living-room-chat.jpg" alt="Two residents chatting in the living room" loading="lazy" />
             </div>
