@@ -1,4 +1,15 @@
 {
   "cleanUrls": true,
+  "redirects": [
+    { "source": "/about-us", "destination": "/about", "permanent": true },
+    { "source": "/contact-us", "destination": "/contact", "permanent": true },
+    { "source": "/faqs", "destination": "/faq", "permanent": true },
+    { "source": "/services", "destination": "/care", "permanent": true },
+    { "source": "/testimonials", "destination": "/#letters", "permanent": true },
+    { "source": "/donations", "destination": "/give", "permanent": true },
+    { "source": "/donate", "destination": "/give", "permanent": true },
+    { "source": "/homes", "destination": "/locations", "permanent": true },
+    { "source": "/locations/:slug", "destination": "/locations", "permanent": true }
+  ],
   "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }
