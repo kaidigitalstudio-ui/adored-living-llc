@@ -1,4 +1,4 @@
-export interface Letter {
+interface Letter {
   body: string[]
   by: string
   role: string
@@ -6,7 +6,7 @@ export interface Letter {
 
 // Transcribed from handwritten cards sent to Colleen and Dominic.
 // Light edits only: spelling, punctuation, and crossed-out words removed.
-export const LETTERS: Letter[] = [
+const LETTERS: Letter[] = [
   {
     body: [
       'A simple thank you card could never express all the gratitude in our hearts for all you\'ve done for Don. Because of your caring, our Dad\'s final journey was filled with comfort and peace. You came into our lives during our most saddened moments and made us feel comfort and that our Dad was safe.',

@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 
 const PHONE = '(248) 931-9009'
 const PHONE_HREF = 'tel:+12489319009'
+const FACEBOOK_URL = 'https://www.facebook.com/Adored-Living-LLC-Senior-care-facilities-102174582372866/'
 
 export default function Footer() {
   return (
@@ -39,6 +40,7 @@ export default function Footer() {
             <h5>Contact</h5>
             <a href={PHONE_HREF}>{PHONE}</a>
             <a href="mailto:adoredlivingllc@gmail.com">adoredlivingllc@gmail.com</a>
+            <a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer">Facebook</a>
           </div>
         </div>
 

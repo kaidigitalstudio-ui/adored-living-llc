@@ -56,7 +56,7 @@ const HOMES: HomeData[] = [
     landmarks: 'Near Deer Lake · 12 min to McLaren Clarkston',
     amenities: ['Private & companion suites', 'Wooded patio & walking paths', 'Cozy fireside common room', '24/7 personal care', 'Memory & companion care'],
     photos: ['/clarkston.webp', '/clarkston/living-room-music.jpg', '/life/puzzle.jpg', '/life/living-room-chat.jpg'],
-    video: '/clarkston-home.mov',
+    video: '/clarkston-home.mp4',
     events: [
       { cap: 'Afternoon with a puppy visitor', src: '/clarkston/puppy-visit.jpg' },
       { cap: 'Piano practice', src: '/clarkston/piano.jpg' },
