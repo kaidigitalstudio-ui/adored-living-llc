@@ -64,7 +64,7 @@ export default function Care() {
               </ul>
               <Link to="/contact" className="btn btn-primary">Talk through your needs</Link>
             </div>
-            <div className="reveal"><img className="ph" src="/life/caregiver-cards.jpg" alt="Caregiver sharing a laugh with a resident at the table" loading="lazy" /></div>
+            <div className="reveal"><img className="ph" src="/life/garden-party-friends.jpg" alt="Smiling resident at an outdoor garden party with a friend and caregiver" loading="lazy" style={{ objectPosition: 'center 30%' }} /></div>
           </div>
         </div>
       </section>

@@ -35,6 +35,8 @@ test('every image and video referenced in the source exists in public/', () => {
   const sources = [...walk(join(root, 'src')), join(root, 'index.html')].map(f => readFileSync(f, 'utf8')).join('\n')
   const refs = new Set([...sources.matchAll(/['"`](\/[\w./-]+\.(?:jpe?g|png|webp|avif|svg|mp4|mov))['"`]/g)].map(m => m[1]))
   assert.ok(refs.size > 20, 'expected to find asset references')
+  // Video posters are derived from the video name in Locations.tsx, so check them explicitly.
+  for (const r of [...refs]) if (/\.(mp4|mov)$/.test(r)) refs.add(r.replace(/\.\w+$/, '-poster.jpg'))
   const missing = [...refs].filter(r => !existsSync(join(root, 'public', r)))
   assert.deepEqual(missing, [])
 })
