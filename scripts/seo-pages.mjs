@@ -42,6 +42,8 @@ const head = (route, p) => {
     `<meta property="og:title" content="${esc(p.title)}" />`,
     `<meta property="og:description" content="${esc(p.description)}" />`,
     `<meta property="og:image" content="${img}" />`,
+    `<meta property="og:image:secure_url" content="${img}" />`,
+    `<meta property="og:image:type" content="image/jpeg" />`,
     `<meta property="og:image:width" content="1200" />`,
     `<meta property="og:image:height" content="630" />`,
     `<meta property="og:image:alt" content="${esc(p.title)}" />`,
