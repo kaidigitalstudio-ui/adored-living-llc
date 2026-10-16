@@ -36,10 +36,17 @@ export default function JustifiedGallery({ photos, onOpen, rowHeight = 320 }: { 
   useLayoutEffect(() => {
     const el = ref.current
     if (!el) return
-    setWidth(el.clientWidth)
-    const ro = new ResizeObserver(() => setWidth(el.clientWidth))
+    const measure = () => setWidth(el.clientWidth)
+    measure()
+    // ResizeObserver covers layout changes; the window listener is a fallback for
+    // environments where it doesn't fire (e.g. some device rotations/emulators).
+    const ro = new ResizeObserver(measure)
     ro.observe(el)
-    return () => ro.disconnect()
+    window.addEventListener('resize', measure)
+    return () => {
+      ro.disconnect()
+      window.removeEventListener('resize', measure)
+    }
   }, [])
 
   const rs = photos.map(p => ratios[p.src] ?? 4 / 3)

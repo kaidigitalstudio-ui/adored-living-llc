@@ -43,6 +43,7 @@ const HOMES: HomeData[] = [
       { cap: 'Summer cookout on the deck', src: '/rochester/summer-cookout.jpg' },
       { cap: '100th birthday celebration', src: '/rochester/birthday-100.jpg' },
       { cap: 'Fireside afternoon', src: '/rochester/fireside.jpg' },
+      { cap: 'Live music afternoon', src: '/rochester/live-music.jpg' },
       { cap: 'Halloween craft afternoon', src: '/rochester/halloween-craft.jpg' },
       { cap: 'Birthday party under the pergola', src: '/rochester/deck-birthday.jpg' },
       { cap: 'Puzzle morning', src: '/rochester/puzzle-morning.jpg' },
@@ -60,7 +61,6 @@ const HOMES: HomeData[] = [
     events: [
       { cap: 'Afternoon with a puppy visitor', src: '/clarkston/puppy-visit.jpg' },
       { cap: 'Piano practice', src: '/clarkston/piano.jpg' },
-      { cap: 'Live music afternoon', src: '/clarkston/live-music.jpg' },
       { cap: 'Western theme night', src: '/clarkston/western-night.jpg' },
       { cap: 'Group chair exercise class', src: '/clarkston/movement-class.jpg' },
       { cap: 'Stretching together', src: '/clarkston/chair-exercise.jpg' },
